@@ -1,0 +1,12 @@
+<div class="padding-0" layout="column" ng-cloak>
+    <section layout="row" flex>
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')"
+                md-whiteframe="4" ui-view="menubar">
+        </md-sidenav>
+        <md-content flex ui-view="content" layout-padding>
+        </md-content>
+    </section>
+</div>

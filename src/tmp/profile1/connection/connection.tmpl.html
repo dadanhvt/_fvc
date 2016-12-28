@@ -1,0 +1,44 @@
+<div class="wrapper">
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+            <md-button class="md-block margin-0" ng-click="vm.connectedClick()">
+                <i class="zmdi zmdi-account"></i><span>  CONNECTED</span>
+                <md-tooltip>Connected</md-tooltip>
+            </md-button>
+            <md-button class="md-block margin-0" ng-click="vm.recommendClick()">
+                <i class="zmdi zmdi-accounts"></i><span>  RECOMMEND</span>
+                <md-tooltip>Recommend</md-tooltip>
+            </md-button>
+            <md-divider></md-divider>
+            <md-input-container md-no-float class="md-block phao-input-noerror">
+                <md-icon md-font-icon="zmdi zmdi-search" class="padding-left-10"></md-icon>
+                <input ng-model="vm.searchConnection" type="text" placeholder="Find people">
+            </md-input-container>
+            <span flex></span>
+        </md-toolbar>
+        <div class="content">
+            <md-list class="padding-0">
+                <md-list-item class="padding-0 padding-top-10">
+                    <md-grid-list flex md-cols="4" md-cols-sm="2" md-cols-xs="2" md-row-height="1:1" md-gutter="5px"
+                                  class="margin-10">
+                        <md-grid-tile class="connection-user-item" ng-click="vm.openImage($index)" ng-repeat="friend in vm.friends"
+                                      style="background-image: url({{friend.Avartar}});background-size : cover;">
+                            <div style="position: absolute;bottom: 0;max-height: 40px;width: 100%;">
+                                <div class="user-name" style="max-height: 40px;width: 100%; background: rgba(0, 0, 0, 0.8) !important;">
+                                    <center style="padding:5px;color:#efecca;">{{friend.username}}</center>
+                                </div>
+                                <div class="add-user" style="display:none;max-height: 40px;width: 100%; background: rgba(0, 0, 0, 0.8) !important;">
+                                    <md-button class="md-block margin-0" style="width: 100%">
+                                        <i class="zmdi zmdi-account-add" style="color:#efecca"></i><span style="color:#efecca">  Add</span>
+                                        <md-tooltip>Add friend</md-tooltip>
+                                    </md-button>
+                                </div>
+                                    <!--<md-button>Add</md-button>-->
+                            </div>
+                        </md-grid-tile>
+                    </md-grid-list>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-card>
+</div>

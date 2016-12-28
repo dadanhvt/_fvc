@@ -1,0 +1,56 @@
+@media (max-width: 600px){
+  .mobile-fullwidth-dialog {
+    min-width: 100%;
+    min-height: 100%;
+  }
+    .small-title, .small-title span{
+        font-size: 13px;
+    }
+  .footer-xs{
+    font-size: 12px;
+    font-weight: 200;
+  }
+    .profile-cover{
+        .yourfuture{
+            font-size: 20px !important;
+        }
+        .whatyoudo{
+            font-size: 20px !important;
+        }
+        .notomorrow{
+            font-size: 15px !important;
+        }.today{
+                     font-size: 60px !important;
+                 }
+    }
+    .profile-content .pf-content-tabs{
+        padding-top: 0px!important;
+    }
+    .profile-content .avatar{
+        padding-top: 0px!important;
+    }
+    .timeline-comment{
+        margin-left: 10px !important;
+    }
+}
+@media (min-width: 600px){
+  .width-size-responsive {
+    width: 100% !important;
+  }
+  .xs-margin-right-10{
+    margin-right: 10px !important;
+  }
+  .xs-margin-left-10{
+    margin-left: 10px!important;
+  }
+}
+@media (min-width: 992px){
+  .width-size-responsive {
+    width: 100% !important;
+  }
+}
+@media (min-width: 1200px){
+  .width-size-responsive {
+    width: 85% !important;
+  }
+}

@@ -1,0 +1,206 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex>
+                <span translate></span><span>{{vm.user.name}}</span>
+            </h2>
+            <md-button class="md-icon-button" ng-click="vm.printClick()" aria-label="print">
+                <md-icon md-font-icon="zmdi zmdi-print"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="{{'MANAGEMENT.LABEL.INFORMATION'|translate}}">
+                <md-content class="md-padding">
+                    <form name="profile">
+                        <div layout="row" layout-xs="column">
+                            <div flex="50" flex-xs="100" layout="column">
+                                <md-input-container class="md-block">
+                                    <label for="email" translate>USER.EMAIL.LABEL</label>
+                                    <input id="email" label="email" name="email" type="email"
+                                           ng-model="vm.userTmp.email" ng-disabled="true" required/>
+                                </md-input-container>
+
+                                <md-input-container class="md-block">
+                                    <label for="name" translate>USER.NAME.LABEL</label>
+                                    <input id="name" label="name" name="name" type="text" ng-model="vm.userTmp.name"
+                                           required/>
+                                    <div ng-messages="profile.name.$error">
+                                        <div ng-message when="required"><span translate>USER.NAME.PLEASE_ENTER</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                                <md-input-container class="md-block"
+                                                    ng-if="vm.userTmp.role != 'ADMIN' && vm.userTmp.role != 'EMP'">
+                                    <label for="wallet" translate>USER.WALLET.LABEL</label>
+                                    <input id="wallet" label="wallet" name="wallet" type="number"
+                                           ng-model="vm.userTmp.wallet" required/>
+                                    <div ng-messages="profile.wallet.$error">
+                                        <div ng-message when="required"><span translate>USER.WALLET.PLEASE_ENTER</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div flex layout="column">
+                                <md-input-container>
+                                    <label for="password" translate>USER.PASSWORD.LABEL</label>
+                                    <input id="password" label="password" name="password" type="password"
+                                           ng-model="vm.userTmp.password"/>
+                                </md-input-container>
+                                <md-select ng-model="vm.userTmp.role" ng-if="vm.userTmp.role != 'ADMIN'">
+                                    <md-option value="EMP" translate="USER.ROLE.EMP">Employee</md-option>
+                                    <md-option value="CUS_BASIC" translate="USER.ROLE.CUS_BASIC">Customer Basic
+                                    </md-option>
+                                    <md-option value="CUS_VIP" translate="USER.ROLE.CUS_VIP">Customer Vip</md-option>
+                                    <md-option value="CUS_PENTIUM" translate="USER.ROLE.CUS_PENTIUM">Customer Pentium
+                                    </md-option>
+                                    <md-option value="BANNED" translate="USER.ROLE.BANNED">Banned</md-option>
+                                </md-select>
+                            </div>
+                        </div>
+                        <md-button ng-click="vm.updateUserClick()" class="md-raised md-primary margin-left-0"
+                                   ng-disabled="!profile.$dirty || profile.$invalid"
+                                   translate="USER.BUTTON.UPDATE"></md-button>
+                        <md-button ng-click="vm.resetClick()" class="md-raised md-primary margin-left-0"
+                                   ng-disabled="!profile.$dirty" translate="USER.BUTTON.RESET"></md-button>
+                    </form>
+                </md-content>
+            </md-tab>
+            <md-tab label="{{'MANAGEMENT.LABEL.WEBSITES'|translate}}"
+                    ng-if="vm.userTmp.role == 'CUS_BASIC'||vm.userTmp.role == 'CUS_VIP'||vm.userTmp.role == 'CUS_PENTIUM'">
+                <md-content class="md-padding">
+                    <table class="md-table">
+                        <thead>
+                        <tr>
+                            <th translate="MANAGEMENT.WEBSITE.NAME">Name</th>
+                            <th translate="MANAGEMENT.WEBSITE.URL">Url</th>
+                            <th class="text-right" translate="MANAGEMENT.WEBSITE.URL_ACTIVE">Active</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="website in vm.websites">
+                            <td>{{website.website.name}}</td>
+                            <td>{{website.website.url}}</td>
+                            <td class="text-right"><a ng-click="vm.deleteWebsite($index)" href=""
+                                                      class="padding-right-10" ng-if="website.id == ''">Delete</a>
+                                <md-switch ng-init="website.status = (website.status == 1)" style="float:right"
+                                           ng-model="website.status" ng-change="vm.onActiveChange(website.status)"
+                                           ng-if="website.id !='' "></md-switch>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <md-list>
+                        <md-subheader class="md-accent" translate="MANAGEMENT.WEBSITE.ADDNEW_LABEL">Add a new website
+                        </md-subheader>
+                        <form ng-submit="vm.addWebsite(vm.websiteName,vm.websiteUrl)" layout="column" name="newWeb">
+                            <div layout="row" layout-sm="column">
+                                <md-input-container>
+                                    <label for="websiteName" translate="MANAGEMENT.WEBSITE.NAME">Name</label>
+                                    <input type="text" id="websiteName" label="websiteName" name="websiteName"
+                                           ng-model="vm.websiteName">
+                                </md-input-container>
+                                <md-input-container>
+                                    <label for="url" translate="MANAGEMENT.WEBSITE.URL">URL</label>
+                                    <input type="text" id="url" label="url" name="url" ng-model="vm.websiteUrl"
+                                           ng-pattern="/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/i">
+                                    <div ng-messages="newWeb.url.$error">
+                                        <div ng-message when="pattern"><span translate="MANAGEMENT.WEBSITE.URL_NOTREAL">Please fill real URL</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                                <md-button class=" md-primary md-raised" ng-disabled="!vm.websiteName || !vm.websiteUrl"
+                                           type="submit" translate="MANAGEMENT.WEBSITE.ADDNEW">Add website
+                                </md-button>
+                            </div>
+                        </form>
+                    </md-list>
+                    <md-button class="md-raised md-primary margin-left-0" ng-click="vm.updateWebsiteClick()"
+                               translate="USER.BUTTON.UPDATE"></md-button>
+                </md-content>
+            </md-tab>
+            <md-tab label="{{'MANAGEMENT.LABEL.DECENTRALIZATION'|translate}}" >
+                <md-content class="md-padding">
+                    <md-list ng-if="vm.relations.superiors.length > 0">
+                        <md-subheader class="md-primary"
+                                      translate="MANAGEMENT.DECENTRALIZATION.SUPERIOR"></md-subheader>
+                        <md-list-item class="md-3-line" ng-repeat="user in vm.relations.superiors">
+                            <img class="md-avatar animate" style="height:46px !important;"
+                                 ng-src="assets/images/user/{{::user.role}}.png" alt="{{::user.name}}">
+                            <div class="md-list-item-text">
+                                <div class="email-inbox-list-item-name-time" layout="row"
+                                     layout-align="space-between start">
+                                    <h3>{{user.name}}</h3>
+                                </div>
+                                <h4><i>{{user.email}}</i></h4>
+                                <h4><i translate="USER.ROLE.{{user.role}}"></i> <i
+                                    translate="USER.POSITION.{{user.pivot.position}}"></i></h4>
+                            </div>
+                            <md-divider ng-hide="$last"></md-divider>
+                        </md-list-item>
+                    </md-list>
+                    <md-list ng-if="vm.relations.inferiors.length > 0">
+                        <md-subheader class="md-primary"
+                                      translate="MANAGEMENT.DECENTRALIZATION.INFERIOR"></md-subheader>
+                        <md-list-item class="md-3-line" ng-repeat="user in vm.relations.inferiors">
+                            <img class="md-avatar animate" style="height:46px !important;"
+                                 ng-src="assets/images/user/{{::user.role}}.png" alt="{{::user.name}}">
+                            <div class="md-list-item-text">
+                                <div class="email-inbox-list-item-name-time" layout="row"
+                                     layout-align="space-between start">
+                                    <h3>{{user.name}}</h3>
+                                    <a ng-click="vm.deleteRelation($index, user)" class="md-caption" translate="GENERAL.DELETE"></a>
+                                </div>
+                                <h4><i>{{user.email}}</i></h4>
+                                <h4><i translate="USER.ROLE.{{user.role}}"></i> <i
+                                    translate="USER.POSITION.{{user.pivot.position}}"></i></h4>
+                            </div>
+                            <md-divider ng-hide="$last"></md-divider>
+                        </md-list-item>
+                    </md-list>
+                    <md-list ng-if="vm.userTmp.role == 'EMP'||vm.userTmp.role == 'ADMIN'">
+                        <md-subheader class="md-accent" translate="MANAGEMENT.DECENTRALIZATION.ADDNEW_LABEL">Add new
+                            inferior
+                        </md-subheader>
+                        <form ng-submit="vm.addWebsite(vm.websiteName,vm.websiteUrl)" layout="column" name="newWeb">
+                            <div layout="row" layout-sm="column">
+                                <md-autocomplete md-selected-item="vm.selectedItem"
+                                                 md-search-text="vm.searchText"
+                                                 md-items="user in vm.querySearchUser(vm.searchText)"
+                                                 md-item-text="user.name" md-min-length="0"
+                                                 placeholder="{{'MANAGEMENT.LABEL.SEARCH'}}"
+                                                 md-menu-class="autocomplete-user-decentralization" flex="50" flex-sm ="100" class="margin-top-20">
+                                    <md-item-template>
+                                        <div class="md-list-item-text">
+                                            <img class="md-avatar animate" style="height:46px !important;"
+                                                 ng-src="assets/images/user/{{::user.role}}.png" alt="{{::user.name}}">
+                                            <span style="white-space: pre-line;">{{user.name}}</span>
+                                        </div>
+                                    </md-item-template>
+                                </md-autocomplete>
+                                <md-select ng-model="vm.position" ng-disabled="!vm.selectedItem ||vm.selectedItem.role == 'ADMIN' || vm.selectedItem.role == 'EMP'">
+                                    <md-option value="TS" translate="USER.POSITION.TS">All</md-option>
+                                    <md-option value="TECH" translate="USER.POSITION.TECH">Tech</md-option>
+                                    <md-option value="SELL" translate="USER.POSITION.SELL">Sell</md-option>
+                                </md-select>
+                                <md-button class=" md-primary md-raised" ng-disabled="!vm.selectedItem" type="submit"
+                                           translate="MANAGEMENT.DECENTRALIZATION.ADDNEW" ng-click="vm.addDecentralization()">Add
+                                </md-button>
+                            </div>
+                        </form>
+                    </md-list>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.okClick()" class="md-primary" aria-label="{{GENERAL.OK | translate}}"
+                   translate="GENERAL.OK"></md-button>
+    </md-dialog-actions>
+</md-dialog>

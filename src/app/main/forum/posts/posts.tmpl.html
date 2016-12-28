@@ -1,0 +1,86 @@
+<div class="content">
+    <md-card class="margin-0 margin-bottom-10 padding-left-10 padding-right-10" layout="column"
+             layout-align="center center" ng-if="!$root.user">
+        <p>{{zm.hello}}</p>
+        <div layout="row">
+            <md-button class="md-primary" ng-click="$root.signinDialog(true)">Sign-in</md-button>
+            <md-button class="md-raised md-warn" ui-sref="phaojlar.default.signup">register now</md-button>
+        </div>
+    </md-card>
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" layout="row" class="toolbar-light">
+            <span class="small-title padding-left-10" style="line-height: 10px;padding-top:13px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" layout="row">
+                <i class="zmdi zmdi-edit padding-right-10"></i>
+                <span layout="column">
+                    <span>Tieu de thread Tieu de thread Tieu de thread Tieu de thread</span><br>
+                    <span style="font-size: 11px;">Viết bởi phao, 30/8/14.</span>
+                </span>
+            </span>
+            <span flex></span>
+            <md-button ng-if="$root.user" class="md-block margin-0"><i class="zmdi zmdi-replay margin-right-10"></i>Replay
+                post
+            </md-button>
+            <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i
+                class="zmdi zmdi-replay margin-right-10"></i>Sign-in to replay
+            </md-button>
+        </md-toolbar>
+        <div class="content padding-10" layout="column">
+            <div layout="column">
+                <div layout="row" layout-xs="column" layout-align-xs="center center">
+                    <div layout="column" class="padding-right-10"style="width: 140px;" layout-align="start center">
+                        <img src="app/main/profile/images/1.jpg" style="width: 140px; height: 140px;">
+                        <a href="">PháoJlar </a>
+                    </div>
+                    <md-divider></md-divider>
+                    <div flex layout="column">
+                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;">ply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumpply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumly dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including vers</div>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row" class="padding-top-10">
+                    <span flex></span>
+                    <span>like</span>
+                    <span>replay</span>
+                </div>
+            </div>
+            <div layout="column" class="padding-left-20">
+                <div layout="column">
+                    <div layout="row">
+                        <div layout="column" class="padding-right-10"style="width: 140px;" layout-align="start center">
+                            <img src="app/main/profile/images/1.jpg" style="width: 140px; height: 140px;">
+                            <a href="">PháoJlar </a>
+                        </div>
+                        <md-divider></md-divider>
+                        <div flex layout="column">
+                            <div class="padding-left-10 padding-bottom-10" style="text-align: justify;">ply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumpply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumly dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including vers</div>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div layout="row" class="padding-top-10">
+                        <span flex></span>
+                        <span>like</span>
+                        <span>replay</span>
+                    </div>
+                </div>
+                <div layout="column">
+                    <div layout="row">
+                        <div layout="column" class="padding-right-10"style="width: 140px;" layout-align="start center">
+                            <img src="app/main/profile/images/1.jpg" style="width: 140px; height: 140px;">
+                            <a href="">PháoJlar </a>
+                        </div>
+                        <md-divider></md-divider>
+                        <div flex layout="column">
+                            <div class="padding-left-10 padding-bottom-10" style="text-align: justify;">ply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumpply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumly dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including vers</div>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div layout="row" class="padding-top-10">
+                        <span flex></span>
+                        <span>like</span>
+                        <span>replay</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </md-card>
+</div>

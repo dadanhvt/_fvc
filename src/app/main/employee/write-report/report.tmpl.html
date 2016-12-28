@@ -1,0 +1,38 @@
+<div layout="row">
+    <span layout-padding>{{vm.reports.length}} báo cáo</span>
+    <span flex></span>
+    <md-select ng-model="vm.selectedCustomer" ng-change="vm.changeCustomer()" style="margin: 0">
+        <md-option ng-repeat="customer in vm.customers" ng-value="customer">{{customer.name}}
+        </md-option>
+    </md-select>
+    <md-button class="md-icon-button" aria-label="Settings" ng-click="vm.addReportClick($event)">
+        <md-tooltip>
+            Báo cáo mới
+        </md-tooltip>
+        <md-icon md-font-icon="zmdi zmdi-edit"></md-icon>
+    </md-button>
+</div>
+<div class="email-inbox full-height overflow-hidden" layout="row" flex>
+    <div class="email-inbox-list md-whiteframe-z1" flex="100" layout="column">
+        <md-content>
+            <section class="email-inbox-list-animate-repeat" ng-if="vm.reports.length > 0">
+                <md-list>
+                    <md-list-item class="email-inbox-list-item email-inbox-list-animate-repeat md-3-line"
+                                  ng-repeat="report in vm.reports" ng-click="vm.openReport(report, $event)"
+                                  ng-class="{'email-inbox-list-item-unread': report.unread == 1 }">
+                        <div class="md-list-item-text">
+                            <div class="email-inbox-list-item-name-time" layout="row"
+                                 layout-align="space-between start">
+                                <h3>{{::report.subject}}</h3>
+                                <p class="md-caption" am-time-ago="report.created_at"></p>
+                            </div>
+                            <p class="mail-p-nowrap">{{report.content | plaintext}}</p>
+                        </div>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </section>
+            <h2 ng-if="vm.reports.length === 0" translate>Bạn chưa viết báo cáo nào cho người này</h2>
+        </md-content>
+    </div>
+</div>

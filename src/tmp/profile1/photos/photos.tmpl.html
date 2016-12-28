@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <!-- Box Basic Information -->
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+            <span class="padding-top-8 padding-left-10">Photos gallery</span>
+            <span flex></span>
+        </md-toolbar>
+        <div class="content">
+            <md-list class="padding-0">
+                <md-list-item class="padding-0 padding-top-10">
+                    <md-grid-list flex md-cols="4" md-cols-sm="2" md-cols-xs="2" md-row-height="1:1" md-gutter="5px" class="margin-10">
+                        <md-grid-tile ng-click="vm.openImage($index)" ng-repeat="image in vm.images"
+                                      style="background-image: url({{image.Url}});background-size : cover;">
+                        </md-grid-tile>
+                    </md-grid-list>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-card>
+</div>

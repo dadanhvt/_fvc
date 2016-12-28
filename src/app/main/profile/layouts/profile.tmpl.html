@@ -1,0 +1,84 @@
+<div class="profile-cover" layout="row" layout-align="center start" style="position: absolute;" hide-xs>
+    <div layout="column" style="opacity: .4;">
+        <h1 class="margin-0 yourfuture" ><span style="border-bottom: 1px tomato solid">YOUR <span style="color:tomato;">FUTURE</span> IS DEFINED BY</span></h1>
+        <div layout="row">
+            <div layout="column">
+                <h1 class="margin-0"><span class="whatyoudo" style="font-size: 30px;">WHAT <span style="color: tomato;">YOU</span> DO</span></h1>
+                <h1 class="margin-0"><span class="notomorrow" style="text-decoration: line-through;font-size: 25px;">NOT TOMORROW</span></h1>
+            </div>
+            <span class="today" style="font-size: 70px;color: tomato">TODAY</span>
+        </div>
+    </div>
+</div>
+<div class="width-size-responsive padding-bottom-20" >
+    <div class="wrapper" >
+        <md-content layout="row" layout-xs="column" style="overflow:hidden !important;background: transparent;padding-top: 0px;" class="profile-content">
+            <div hide-xs class="avatar" layout="column" layout-xs="row" style="padding-top: 50px; width: 160px">
+                <md-card class="avatar-image" flex-xs="30" style="position: relative;">
+                    <div class="avatar-change" ng-click="vm.UpdateAvatar()" style="position: absolute;cursor: pointer;width: 100%;background: rgba(0, 0, 0, 0.5);opacity: 0;" ng-if="$root.user.id ==  $root.profileUser">
+                        <center style="padding:5px;color:#efecca;"><i class="zmdi zmdi-camera"></i><span style="color:#efecca;font-size: 10px">  Profile picture</span></center>
+                    </div>
+                    <img src="{{$root.currentUser.avatar}}" style="width: 144px; height: 144px;">
+                    <div class="avatar" style="text-align: center">
+                        <span>1562</span>
+                        <span>Total Connections</span>
+                    </div>
+                </md-card>
+                <div class="avatar-info" flex-xs style="margin: 10px">
+                    <p>Name :{{$root.currentUser.name}}</p>
+                    <p>Graphic Desgin</p>
+                    <a href="#/profile/3/about" ng-if="$root.user.id ==  $root.profileUser">Improve your profile</a>
+                </div>
+            </div>
+            <div hide show-xs>
+                <md-card class="avatar-image padding-20" flex style="background: #efecca;">
+                    <md-button class="md-icon-button" ng-click="vm.UpdateAvatar()" style="position: absolute;" ng-if="$root.user.id ==  $root.profileUser">
+                        <i class="zmdi zmdi-camera"></i>
+                        <md-tooltip>Edit</md-tooltip>
+                    </md-button>
+                    <div  layout="row" layout-align="center center"><img src="{{$root.currentUser.avatar}}" style="border-radius: 50%;width: 144px; height: 144px;border: 4px solid #fff;box-shadow: 0 8px 17px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);">
+                    </div>
+                    <div class="avatar" style="text-align: center">
+                        <span>1562</span>
+                        <span>Total Connections</span>
+                    </div>
+                </md-card>
+            </div>
+            <div flex style="padding-top: 117px;" class="pf-content-tabs">
+                <md-tabs md-selected="vm.currentNavItem" aria-label="menu-nav-bar" style="background: white;">
+                    <md-tab ng-click="vm.goAbout()" label="About"></md-tab>
+                    <md-tab ng-click="vm.goTimeline()" label="Timeline" ></md-tab>
+                    <md-tab ng-click="vm.goPhotos()" label="Photos"></md-tab>
+                    <md-tab ng-click="vm.goConnection()" label="Connection" ></md-tab>
+                </md-tabs>
+                <div class="ext-content padding-10" style="background: rgba(255,255,255,0.4);" ui-view></div>
+            </div>
+
+            <div layout="column">
+                <div class="progress" style="padding-top: 117px;background: transparent;width: 200px; margin-left:8px;" hide-xs ng-if="$root.user.id ==  $root.profileUser">
+                    <div style="background: white;">
+                        <div class="padding-10" style="height: 26px; border-bottom: 2px #002f2f solid;">Profile Completeness</div>
+                        <div class="padding-10">
+                            <canvas id="doughnut" class="chart chart-doughnut"
+                                    chart-data="vm.chartData" chart-labels="vm.chartLabels" chart-colors="vm.chartColor">
+                            </canvas>
+                            <center style="color:#DC3522; font-size: 30px">BEGINNER</center>
+                            <span style="font-size: 15px">+ Add a position <span style="color:black">to reach </span>60%</span>
+                            <md-divider></md-divider>
+                            <md-button class="md-block">
+                                <span>Update your profile</span>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress" style="padding-top: 10px;background: transparent;width: 200px; margin-left:8px;" ng-if="">
+                    <div style="background-color: white">Bạn có thể biết những người này</div>
+                    <div></div>
+                </div>
+            </div>
+        </md-content>
+    </div>
+</div>
+
+

@@ -1,0 +1,139 @@
+<div class="content">
+    <md-card class="margin-0 margin-bottom-10 padding-left-10 padding-right-10" layout="column"
+             layout-align="center center" ng-if="!$root.user">
+        <p>{{cm.hello}}</p>
+        <div layout="row">
+            <md-button class="md-primary" ng-click="$root.signinDialog(true)">Sign-in</md-button>
+            <md-button class="md-raised md-warn" ui-sref="phaojlar.default.signup">register now</md-button>
+        </div>
+    </md-card>
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+            <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
+                class="padding-left-10">Tieu de thread</span></span>
+            <span flex></span>
+            <md-button ng-if="$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
+            <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new</md-button>
+        </md-toolbar>
+        <div class="content padding-10" layout="column">
+            <md-data-table-container>
+                <table md-data-table class="md-data-table" md-progress="vm.deferred">
+                    <thead md-order="vm.query.order" md-trigger="vm.onChangeFilter">
+                    <tr>
+                        <th></th>
+                        <th name="Tiêu đề" order-by="name" decend-first></th>
+                        <th name="Ngày bắt đầu" order-by="created_at"></th>
+                        <th></th>
+                        <th></th>
+                        <th name="Trả lời cuối"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+            <md-data-table-pagination md-limit="15" md-page="1" md-total="13"
+                                      md-trigger="vm.onPaginationChange"></md-data-table-pagination>
+        </div>
+    </md-card>
+</div>

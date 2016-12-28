@@ -1,0 +1,99 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar layout-align="center">
+        <span class="padding-top-8 padding-left-10">Experiences</span>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <table md-data-table class="md-data-table" md-progress="vm.deferred">
+            <thead md-order="vm.query.order">
+            <tr>
+                <th class="padding-right-10 padding-left-10" name="No."></th>
+                <th class="padding-right-10 padding-left-10" name="Option"></th>
+                <th class="padding-right-10 padding-left-10" name="Company"></th>
+                <th class="padding-right-10 padding-left-10" name="Location"></th>
+                <th class="padding-right-10 padding-left-10" name="Title"></th>
+                <th class="padding-right-10 padding-left-10" name="Description"></th>
+                <th class="padding-right-10 padding-left-10" name="Work_from"></th>
+                <th class="padding-right-10 padding-left-10" name="Work_to"></th>
+                <th class="padding-right-10 padding-left-10" name="Currently"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="item in vm.experiences">
+                <td class="padding-right-10 padding-left-10">{{$index + 1}}</td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-button class="md-icon-button" ng-if="$index != (vm.experiences.length-1)"
+                               ng-click="vm.deleteExperience(item)">
+                        <i class="zmdi zmdi-delete"></i>
+                        <md-tooltip>Delete</md-tooltip>
+                    </md-button>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-autocomplete class="phao-no-frame"
+                                     md-no-cache="true"
+                                     md-search-text="item.company_name"
+                                     md-selected-item-change="vm.companyChange(item, company)"
+                                     md-search-text-change="vm.addExperience($index)"
+                                     md-items="company in vm.companyTextChange(item)"
+                                     md-item-text="company.name"
+                                     placeholder="Company name">
+                        <md-item-template>
+                            <span md-highlight-text="item.company_name" md-highlight-flags="ig">{{company.name}}</span>
+                        </md-item-template>
+                    </md-autocomplete>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <form name="company">
+                        <md-input-container style="width: 200px" md-no-float class="md-block phao-input-noerror">
+                            <input name="company" ng-model="item.location" placeholder="Location"
+                                   ng-change="vm.addExperience($index)" required>
+                        </md-input-container>
+                    </form>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-input-container style="width: 150px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.title" placeholder="Title" ng-change="vm.addExperience($index)">
+                    </md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-input-container style="width: 150px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.desc" placeholder="Description" ng-change="vm.addExperience($index)">
+                    </md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-0">
+                    <div class="layout-row">
+                        <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input
+                            ng-model="item.work_from_month" placeholder="Month" ng-change="vm.addExperience($index)">
+                        </md-input-container>
+                        <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input
+                            ng-model="item.work_from_year" placeholder="Year" ng-change="vm.addExperience($index)">
+                        </md-input-container>
+                    </div>
+                </td>
+                <td class="padding-right-10 padding-left-0">
+                    <div class="layout-row">
+                        <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input
+                            ng-disabled="item.currently" ng-model="item.work_to_month" placeholder="Month"
+                            ng-change="vm.addExperience($index)"></md-input-container>
+                        <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input
+                            ng-disabled="item.currently" ng-model="item.work_to_year" placeholder="Year"
+                            ng-change="vm.addExperience($index)"></md-input-container>
+                    </div>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-checkbox ng-model="item.currently" ng-change="vm.addExperience($index)"></md-checkbox>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>
+

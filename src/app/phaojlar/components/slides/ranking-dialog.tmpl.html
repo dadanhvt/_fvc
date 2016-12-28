@@ -1,0 +1,50 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex>
+                <span translate></span><span>Dùng thử kiểm tra thứ hạng google</span>
+            </h2>
+            <md-button class="md-icon-button" ng-click="vm.printClick()" aria-label="print">
+                <md-icon md-font-icon="zmdi zmdi-print"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-content flex>
+        <table md-data-table class="md-data-table" md-progress="vm.deferred">
+            <thead md-order="vm.orderBy">
+            <tr>
+                <th name="{{'GOOGLERANKING.LABEL.NO'|translate}}"></th>
+                <th name="{{'GOOGLERANKING.LABEL.KEYWORKNAME'|translate}}" order-by="name" decend-first></th>
+                <th name="{{'GOOGLERANKING.LABEL.RANK'|translate}}" order-by="rank"></th>
+                <th name="{{'GOOGLERANKING.LABEL.URL'|translate}}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="keyWord in vm.keyworks | orderBy: vm.orderBy">
+                <td>{{$index+1}}</td>
+                <td>{{keyWord.name}}</td>
+
+                <td>
+                    <img ng-if="keyWord.rank==-2" src="assets/images/page-loader.gif" style="height: 30px;width: 30px">
+                    <span ng-if="(keyWord.rank>0 && keyWord.rank<101)">{{keyWord.rank}}</span>
+                    <span ng-if="keyWord.rank==101" style="color: tomato" translate="GOOGLERANKING.LABEL.NOT100">Not in 100</span>
+                </td>
+                <td>
+                    <img ng-if="keyWord.rank==-2" src="assets/images/page-loader.gif" style="height: 30px;width: 30px">
+                    <a ng-if="keyWord.rank>0" ng-click="vm.goUrl(keyWord.url)">{{keyWord.url}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-content>
+    <md-dialog-actions layout="row">
+        <p>Website: {{vm.website}}</p>
+        <span flex></span>
+        <md-button ng-click="vm.okClick()" class="md-primary" aria-label="{{GENERAL.OK | translate}}"
+                   translate="GENERAL.OK"></md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,170 @@
+<div layout="column">
+    <div layout="row">
+        <span flex></span>
+        <span class="padding-top-10">Website:</span>
+        <md-input-container style="font-weight: 500;margin:0;" md-no-float>
+            <md-select placeholder="Choose your website" ng-model="vm.selectedWebsite" md-on-open="alert('a')"
+                       ng-change="vm.changeWebsite(vm.selectedWebsite)" aria-label="website">
+                <md-option ng-repeat="website in vm.websites" ng-value="website">{{website.website.name}}</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
+<div layout-fill layout="column">
+    <div layout="column" flex class="padding-20">
+        <md-header style="color: tomato; font-size: 30px; font-weight: 600;">{{vm.overview.general.url}}</md-header>
+        <p ng-bind-html="vm.overview.general.desc"></p>
+        <md-divider></md-divider>
+    </div>
+    <div layout="row" layout-xs="column" layout-wrap layout-fill ng-cloak>
+        <md-whiteframe class="md-whiteframe-1dp xs-margin-right-10 padding-20" flex=30" flex-xs="100" layout="column">
+            <md-header style="color: black;"><i class="zmdi zmdi-google-earth"></i> GLOBAL RANK</md-header>
+            <span style="color: #0f7595;">{{vm.overview.ranking.global.global}}</span>
+            <span style="color: tomato; font-size: 25px" layout="row"><span flex></span>#{{vm.global | number}}</span>
+        </md-whiteframe>
+        <md-whiteframe class="md-whiteframe-1dp padding-20" flex layout="column">
+            <md-header style="color: black;"><i class="zmdi zmdi-flag"></i> COUNTRY RANK</md-header>
+            <span style="color: #0f7595;">{{vm.overview.ranking.country.country}}</span>
+            <span style="color: tomato; font-size: 25px;" layout="row"><span flex></span>#{{vm.country | number}}</span>
+        </md-whiteframe>
+        <md-whiteframe class="md-whiteframe-1dp xs-margin-left-10 padding-20" flex=30" flex-xs="100" layout="column">
+            <md-header style="color: black;"><i class="zmdi zmdi-bookmark"></i> CATEGORY RANK</md-header>
+            <span style="color: #0f7595;">{{vm.overview.ranking.category.category}}</span>
+            <span style="color: tomato; font-size: 25px;" layout="row"><span
+                    flex></span>#{{vm.category | number}}</span>
+        </md-whiteframe>
+    </div>
+    <div layout="column" flex class="padding-20">
+        <md-header style="color: tomato; font-size: 30px; font-weight: 600;">Traffic Overview</md-header>
+        <md-divider></md-divider>
+    </div>
+    <div layout="row" layout-xs="column" class="margin-bottom-20">
+        <md-whiteframe class="md-whiteframe-1dp xs-margin-right-10 padding-20" flex=50" flex-xs="100" layout="column">
+            <md-header style="color: black;"><i class="zmdi zmdi-time-interval"></i> Engagement</md-header>
+            <div layout="column" class="padding-10">
+                    <span layout="row">
+                        <span style="color: #0f7595;">Total Visits</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{vm.overview.traffic.engagement.total_visits}}</span>
+                    </span>
+                <md-divider></md-divider>
+            </div>
+            <div layout="column" class="padding-10">
+                    <span layout="row">
+                        <span style="color: #0f7595;"><i class="zmdi zmdi-alarm-check"></i>  Avg. Visit Duration</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{vm.overview.traffic.engagement.visit_duration}}</span>
+                    </span>
+                <md-divider></md-divider>
+            </div>
+            <div layout="column" class="padding-10">
+                    <span layout="row">
+                        <span style="color: #0f7595;"><i class="zmdi zmdi-wallpaper"></i>  Pages per Visit</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{vm.overview.traffic.engagement.pages_per_visit}}</span>
+                    </span>
+                <md-divider></md-divider>
+            </div>
+            <div layout="column" class="padding-10">
+                    <span layout="row">
+                        <span style="color: #0f7595;"><i class="zmdi zmdi-rotate-right"></i>  Bounce Rate</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{vm.overview.traffic.engagement.bounce_rate}}</span>
+                    </span>
+            </div>
+        </md-whiteframe>
+        <md-whiteframe class="md-whiteframe-1dp padding-20" flex=50" flex-xs="100" layout="column">
+            <md-header style="color: black;"><i class="zmdi zmdi-search-for"></i> Traffic Sources</md-header>
+            <div layout="column" class="padding-10" ng-repeat="data in vm.overview.traffic.source">
+                    <span layout="row">
+                        <span style="color: #0f7595;">{{data.key}}</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{data.value}}</span>
+                    </span>
+                <span layout="row">
+                    <span style="width: {{data.value}}; border-bottom: 3px tomato solid;"></span>
+                    <span flex></span>
+                </span>
+            </div>
+        </md-whiteframe>
+    </div>
+    <div layout="row" layout-xs="column" class="margin-bottom-20" ng-if="vm.overview.traffic.country.length > 0">
+        <md-whiteframe class="md-whiteframe-1dp xs-margin-right-10 padding-20" flex=50" flex-xs="100" layout="column">
+            <md-header style="color: black;"><i class="zmdi zmdi-google-maps"></i> Traffic by countries</md-header>
+            <div layout="column" class="padding-10">
+                    <span layout="row">
+                        <span>Country</span>
+                        <span flex></span>
+                        <span>Traffic</span>
+                    </span>
+                <md-divider></md-divider>
+            </div>
+            <div layout="column" class="padding-10" ng-repeat="data in vm.overview.traffic.country">
+                    <span layout="row">
+                        <span style="color: #0f7595;">{{data.name}}</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{data.traffic}}</span>
+                    </span>
+                <md-divider ng-hide="$last"></md-divider>
+            </div>
+        </md-whiteframe>
+        <md-whiteframe hide-xs class="md-whiteframe-1dp xs-margin-right-10 padding-20" flex>
+            <div google-geochart-widget flex title="Bản đồ phân bố">
+                <div class="google-chart" google-chart chart="vm.geoChartData"></div>
+            </div>
+        </md-whiteframe>
+    </div>
+    <md-whiteframe class="md-whiteframe-1dp padding-20 margin-bottom-20" flex layout="column" ng-if="vm.overview.traffic.social.item.length > 0">
+        <md-header style="color: black;"><i class="zmdi zmdi-facebook"></i> Social({{vm.overview.traffic.social.total}})</md-header>
+        <div layout="column" class="padding-10" ng-repeat="data in vm.overview.traffic.social.item">
+                    <span layout="row">
+                        <img src="{{data.icon}}" alt="{{data.url}}" class="margin-right-10">
+                        <span>{{data.url}}</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{data.traffic}}</span>
+                    </span>
+            <span layout="row">
+                    <span style="width: {{data.traffic}}; border-bottom: 10px #0f7595 solid;"></span>
+                    <span flex></span>
+                </span>
+        </div>
+    </md-whiteframe>
+    <div layout="row" layout-xs="column" class="margin-bottom-20" ng-if="vm.overview.traffic.referrals.referring.length > 0 || vm.overview.traffic.referrals.destination.length > 0">
+        <md-whiteframe class="md-whiteframe-1dp xs-margin-right-10 padding-20" flex=50" flex-xs="100" layout="column">
+            <md-header style="color: black;">Top Referring Sites</md-header>
+            <div layout="column" class="padding-10" ng-repeat="data in vm.overview.traffic.referrals.referring">
+                    <span layout="row">
+                        <img src="{{data.icon}}" alt="{{data.url}}" class="margin-right-10">
+                        <span style="color: #0f7595;">{{data.url}}</span>
+                        <span flex></span>
+                    </span>
+            </div>
+        </md-whiteframe>
+        <md-whiteframe class="md-whiteframe-1dp padding-20" flex layout="column">
+            <md-header style="color: black;">Top Destination Sites</md-header>
+            <div layout="column" class="padding-10" ng-repeat="data in vm.overview.traffic.referrals.destination">
+                    <span layout="row">
+                        <img src="{{data.icon}}" alt="{{data.url}}" class="margin-right-10">
+                        <span style="color: #0f7595;">{{data.url}}</span>
+                        <span flex></span>
+                    </span>
+            </div>
+        </md-whiteframe>
+    </div>
+    <md-whiteframe class="md-whiteframe-1dp padding-20" flex layout="column" ng-if="vm.overview.traffic.subdomains.length > 0">
+        <md-header style="color: black;"><i class="zmdi zmdi-file-text"></i> Subdomain</md-header>
+        <div layout="column" class="padding-10" ng-repeat="data in vm.overview.traffic.subdomains">
+                    <span layout="row">
+                        <img src="{{data.icon}}" alt="{{data.url}}" class="margin-right-10">
+                        <span>{{data.url}}</span>
+                        <span flex></span>
+                        <span style="color: tomato;">{{data.traffic}}</span>
+                    </span>
+            <span layout="row">
+                    <span style="width: {{data.traffic}}; border-bottom: 10px #0f7595 solid;"></span>
+                    <span flex></span>
+                </span>
+        </div>
+    </md-whiteframe>
+
+</div>

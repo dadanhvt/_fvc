@@ -1,0 +1,44 @@
+html, body {
+  height: 100%;
+  font-size: 17px;
+  font-weight: 700;
+}
+body{
+  overflow: hidden;
+}
+.body-view{
+  height: 100%;
+}
+button,
+select,
+html,
+textarea,
+input,p,span {
+    color: #002f2f;
+  font-family: 'Cormorant Upright', sans-serif;
+}
+a {
+  color: #046380;
+  text-decoration: none;
+}
+.phao-content{
+  background-color: #e4e4e4;
+}
+.width-size-responsive {
+  margin-right: auto;
+  margin-left: auto;
+}
+md-input-container.phao-input-noerror{
+  margin: 0;
+}
+md-input-container.phao-input{
+  margin: 0;
+}
+md-input-container.phao-input-noerror .md-errors-spacer{
+    display: none;
+  min-width: 0px;
+}
+md-toolbar{
+  min-height: 50px;
+  max-height: 50px;
+}

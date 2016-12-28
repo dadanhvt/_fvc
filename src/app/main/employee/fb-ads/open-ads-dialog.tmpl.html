@@ -1,0 +1,61 @@
+<md-dialog flex="60" flex-xs="100">
+    <md-dialog-content layout-padding style="overflow-y: auto;overflow-x: hidden;">
+        <form name="campaign">
+            <div layout="row" layout-xs="column">
+                <div layout="column" flex="50" flex-xs="100">
+                    <md-input-container class="md-block phao-input" md-no-float>
+                        <span>Đường dẫn trang facebook</span>
+                        <input ng-disabled="true" placeholder="Đường dẫn trang facebook" id="desc" label="desc" name="desc" type="text"
+                               ng-model="vm.data.desc" required />
+                        <div ng-messages="campaign.desc.$error" ng-if="campaign.desc.$dirty || campaign.desc.$touched">
+                            <div ng-message when="required"><span translate style="color: rgb(221,44,0); font-size: 12px">Vui lòng nhập đường dẫn trang facebook</span></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block phao-input" md-no-float>
+                        <span>Tên chiến dịch</span>
+                        <input ng-disabled="true"  placeholder="tên chiến dịch" id="name" label="name" name="name" type="text"
+                               ng-model="vm.data.name" required />
+                        <div ng-messages="campaign.name.$error" ng-if="campaign.name.$dirty || campaign.name.$touched">
+                            <div ng-message when="required"><span translate style="color: rgb(221,44,0); font-size: 12px">Vui lòng nhập tên chiến dịch</span></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="phao-input">
+                        <span>Nơi quảng cáo</span>
+                        <md-select ng-disabled="true" ng-model="vm.data.type" aria-label="select type">
+                            <md-option ng-value="'FBPAGE'">Quảng cáo trang</md-option>
+                            <md-option ng-value="'FBPOST'">Quảng cáo bài viết</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout="column" flex="50" flex-xs="100">
+                    <md-input-container class="md-block phao-input" md-no-float>
+                        <span>Ngân sách hàng ngày(tối thiểu {{$root.config.fb_min_budget}})</span>
+                        <input ng-disabled="true" placeholder="Ngân sách hàng ngày" id="day_budget" label="day_budget" name="day_budget"
+                               type="number"
+                               ng-model="vm.data.day_budget" required min="{{$root.config.fb_min_budget}}"/>
+                        <div ng-messages="campaign.day_budget.$error" ng-if="campaign.day_budget.$dirty || campaign.day_budget.$touched">
+                            <div ng-message when="required"><span translate style="color: rgb(221,44,0); font-size: 12px">Vui lòng nhập ngân sách</span></div>
+                            <div ng-message when="min"><span translate style="color: rgb(221,44,0); font-size: 12px">Ngân sách tối thiểu {{$root.config.fb_min_budget}}</span></div>
+                        </div>
+                    </md-input-container>
+                    <span>Ngày bắt đầu</span>
+                    <md-datepicker ng-disabled="true" name="startDate" ng-model="vm.data.start_date" md-placeholder="Ngày bắt đầu" required md-min-date="vm.minStartDate" ng-change="vm.changeStartDate(vm.data.start_date)"></md-datepicker>
+                    <div ng-messages="campaign.startDate.$error" ng-if="campaign.startDate.$dirty || campaign.startDate.$touched">
+                        <div ng-message when="required"><span translate style="color: rgb(221,44,0); font-size: 12px">Vui lòng nhập ngày bắt đầu</span></div>
+                    </div>
+                    <span>Ngày kết thúc</span>
+                    <md-datepicker ng-disabled="true" name="endDate" ng-model="vm.data.end_date" md-placeholder="Ngày kết thúc" required md-min-date="vm.minEndDate"></md-datepicker>
+                    <div ng-messages="campaign.endDate.$error" ng-if="campaign.endDate.$dirty || campaign.endDate.$touched">
+                        <div ng-message when="required"><span translate style="color: rgb(221,44,0); font-size: 12px">Vui lòng nhập ngày kết thúc</span></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span ng-if="campaign.$valid">{{vm.formatNumber((vm.data.end_date - vm.data.start_date)/86400000)}} ngày - Tổng: {{vm.formatNumber((vm.data.end_date - vm.data.start_date)/86400000)*vm.data.day_budget}}</span>
+        <span flex></span>
+        <md-button ng-click="vm.cancelClick()" class="md-primary">Hủy</md-button>
+        <md-button ng-if="vm.data.unread == 1" ng-click="vm.okClick()" class="md-primary">Xác nhận chạy</md-button>
+    </md-dialog-actions>
+</md-dialog>

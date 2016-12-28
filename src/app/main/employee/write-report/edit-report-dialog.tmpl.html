@@ -1,0 +1,35 @@
+<md-dialog class="mobile-fullwidth-dialog" flex>
+    <md-toolbar class="toolbar-default">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Sửa báo cáo khách hàng: {{vm.selectedCustomer.name}}</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancel()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-divider></md-divider>
+
+    <md-dialog-content class="md-dialog-content">
+        <form name="reportForm" novalidate>
+            <md-input-container class="md-block">
+                <label for="subject" translate>Tiêu đề</label>
+                <input ng-model="vm.report.subject" name="subject" required>
+                <div ng-messages="reportForm.subject.$error">
+                    <div ng-message when="required">
+                        <span translate>Vui lòng nhập tiêu đề cho báo cáo</span>
+                    </div>
+                </div>
+            </md-input-container>
+            <div text-angular="text-angular" ng-model="vm.report.content" ></div>
+        </form>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.save()" class="md-primary" ng-disabled="reportForm.$invalid" aria-label="send">Lưu</md-button>
+    </md-dialog-actions>
+</md-dialog>

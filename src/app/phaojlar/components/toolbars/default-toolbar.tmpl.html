@@ -1,0 +1,52 @@
+<div hide-scroll style="max-height: 50px;padding-top:4px;padding-bottom:4px;" class="width-size-responsive md-toolbar-tools" layout="row">
+    <a href="/"><img style="height: 42px;" src="assets/images/TransparentLogo.png" alt=""></a>
+    <span flex><center>Franco-Viet Career</center></span>
+    <md-menu ng-if="$root.user" md-position-mode="target-right target" >
+        <md-button aria-label="Open demo menu" class="md-block" ng-click="$mdOpenMenu($event)">
+            <span>{{$root.user.name}}</span>
+        </md-button>
+        <md-menu-content>
+            <md-menu-item>
+                <md-button ui-sref="phaojlar.default.profile.about({userId: $root.user.id})">
+                    <i class="zmdi zmdi-account"></i><span class="padding-left-10">Profile</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="$root.signoutClick(true)">
+                    <i class="zmdi zmdi-square-right"></i><span class="padding-left-10">Sign-out</span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <span ng-if="!$root.user"><a href="" ng-click="$root.signinDialog(true)">Sign-in</a> | <a href="">Sign-up</a></span>
+</div>
+<md-toolbar class="md-toolbar-small">
+    <div class="md-toolbar-tools width-size-responsive toolbar">
+        <div hide-xs hide-sm>
+            <md-button ng-if="vm.hasMenu" ng-click="vm.toggleMenu()" class="md-icon-button margin-left-0 margin-right-0" aria-label="Menu" hide show-sm show-xs>
+                <md-icon ng-if="!vm.isMenuOpen" md-font-icon="zmdi zmdi-caret-right-circle" style="color:white;font-size: 20px;"></md-icon>
+                <md-icon ng-if="vm.isMenuOpen" md-font-icon="zmdi zmdi-caret-left-circle" style="color:white;font-size: 20px;"></md-icon>
+            </md-button>
+            <md-button aria-label="Big job" class="margin-right-0">
+                Big job
+            </md-button>
+            <md-button aria-label="Best company" class="margin-right-0">
+                Best company
+            </md-button>
+            <md-button aria-label="Discussions" class="margin-right-0" ui-sref="phaojlar.default.forum.index">
+                Discussions
+            </md-button>
+            <md-button aria-label="Top Headhunt" class="margin-right-0">
+                Top Headhunt
+            </md-button>
+            <md-button aria-label="Event" class="margin-right-0">
+                Event
+            </md-button>
+        </div>
+        <span flex></span>
+        <md-input-container md-no-float class="md-block phao-input-noerror search" style="color:#efecca;">
+            <input ng-model="vm.search" type="text" placeholder="Find" >
+            <md-icon md-font-icon="zmdi zmdi-search" style="display:inline-block;"></md-icon>
+        </md-input-container>
+    </div>
+</md-toolbar>

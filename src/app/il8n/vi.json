@@ -1,0 +1,169 @@
+{
+  "LANGUAGES": {
+    "LABEL": "Ngôn ngữ",
+    "ENGLISH": "Tiếng Anh",
+    "VIETNAM": "Tiếng Việt",
+    "LANGUAGE_CHANGED": "Đã đổi sang tiếng việt"
+  },
+  "GENERAL":{
+    "OK": "OK",
+    "HOME": "Trang chủ",
+    "ERROR": "Lỗi",
+    "CANCEL": "Hủy",
+    "DELETE": "Xóa"
+  },
+  "GOOGLERANKING":{
+    "BUTTON": {
+      "CHECK": "Kiểm tra thứ hạng",
+      "ADD_KEYWORD": "Thêm từ khóa"
+    },
+    "LABEL": {
+      "CHOOSEWEBSITE": "Website: ",
+      "NOT100": "Ngoài 100",
+      "NO": "STT",
+      "KEYWORKNAME": "Từ khóa",
+      "RANK": "Thứ hạng",
+      "URL": "Trang đích",
+      "LASTRANK": "Cũ"
+    }
+  },
+  "USER": {
+    "ROLE": {
+      "LABEL": "Quyền",
+      "ADMIN": "Quản trị viên",
+      "ALL": "Tất cả",
+      "EMP": "Quản lý",
+      "CUS": "Khách hàng",
+      "CUS_BASIC": "Khách hàng thường",
+      "CUS_VIP": "Khách hàng Vip",
+      "CUS_PENTIUM": "Khách hàng Platium",
+      "BANNED": "Đã bị cấm"
+    },
+    "BUTTON": {
+      "UPDATE": "Lưu",
+      "RESET": "Làm lại"
+    },
+    "TITLE": "Trang cá nhân",
+    "NAME": {
+      "LABEL": "Tên",
+      "PLEASE_ENTER": "Hãy điền tên của bạn"
+    },
+    "EMAIL": {
+      "LABEL": "email",
+      "PLEASE_ENTER": "Hãy điền địa chỉ email của bạn",
+      "PLEASE_VALID": "Vui lòng điền đúng định dạng email"
+    },
+    "WALLET": {
+      "LABEL": "Ví"
+    },
+    "POSITION":{
+      "SP": "",
+      "TECH": "Mảng công nghệ",
+      "SELL": "Mảng bán hàng",
+      "TS": "Công nghệ và bán hàng"
+    },
+    "PASSWORD": {
+      "LABEL": "Mật khẩu mới",
+      "CURRENT": "current",
+      "PLEASE_ENTER": "Hãy điền mật khẩu",
+      "MIN_LENGTH": "Mật khẩu phải chứa ít nhất 8 ký tự",
+      "SAME_PASSWORD": "Vui lòng điền mật khẩu giống nhau"
+    },
+    "PASSWORD_CONFIRM": {
+      "LABEL": "Xác nhận mật khẩu"
+    }
+  },
+  "RECEIVE": {
+    "MAIL": {
+      "TITLE": "Tin nhắn"
+    },
+    "REPORT": {
+      "TITLE": "Báo cáo"
+    },
+    "LABEL": {
+      "UNREAD": "Chưa đọc"
+    }
+  },
+  "MENU": {
+    "ACCOUNT": "Tài khoản",
+    "PROFILE": "Thông tin tài khoản",
+    "UPGRATE_ACCOUNT": "Nâng cấp tài khoản",
+    "CHARGE_MONEY": "Nạp tiền",
+    "MESSAGE": "Tin nhắn",
+    "WEB_ANALYST": "Phân tích website",
+    "WEB_RANKING": "Thứ hạng website",
+    "KEYWORD_RANKING": "Thứ hạng từ khóa",
+    "SIGNIN": "Đăng nhập",
+    "SIGNUP": "Đăng ký",
+    "SIGNOUT": "Đăng xuất",
+    "FORGET_PASS": "Quên mật khẩu",
+    "HOME": "Trang chủ",
+    "MKT_MANAGER": "Quản lý marketing online",
+    "RUN_GGADWORKS": "Chạy google adworks",
+    "RUN_FBADS": "Chạy facebook ads"
+  },
+  "LOGOUT": {
+    "LOGOUT_SUCCESS": "Đăng xuất thành công."
+  },
+  "ADS": {
+    "FB": {
+      "LABEL": {
+        "ALL": "Tất cả chiến dịch",
+        "INPROCESS": "Đang chạy",
+        "DONE": "Hoàn thành",
+        "DELAY": "Tạm hoãn"
+      }
+    }
+  },
+  "CAMPAIGN": {
+    "MESSAGES": {
+      "NAME_REQUIRED": "Bạn chưa nhập tên chiến dịch",
+      "NAME_LIMIT": "Tên chiến dịch dài nhất 255 ký tự",
+      "ADS_REQUIRED": "",
+      "SDATE_REQUIRED": "Bạn chưa nhập ngày bắt đầu",
+      "EDATE_REQUIRED": "Bạn chưa nhập ngày kết thúc",
+      "BUDGET_NUM": "Ngân sách phải là số",
+      "FB_MIN_BUDGET": "Chiến dịch Facebook cần ít nhất ",
+      "GG_MIN_BUDGET": "Chiến dịch Google cần ít nhất ",
+      "WALLET_ERROR": "Bạn không đủ tiền! vui lòng kiểm tra lại",
+      "INPUT_ERROR": "Lỗi nhập liệu",
+      "DATE_ERROR": "Lỗi ngày tháng"
+    },
+    "STATUS":{
+      "DONE": "Hoàn thành",
+      "INPRO": "Đang chạy",
+      "DELAY": "Tạm hoãn",
+      "UNREAD": "Chưa xác nhận"
+    }
+  },
+  "MANAGEMENT": {
+    "USER": {
+      "LIST": "QUẢN LÝ TÀI KHOẢN",
+      "NAME": "Họ tên",
+      "EMAIL": "Email",
+      "ROLE": "Quyền",
+      "WALLET": "Ví",
+      "DETAILS": "Chi tiết"
+    },
+    "WEBSITE": {
+      "NAME": "Trang web",
+      "URL": "Đường dẫn",
+      "URL_ACTIVE": "Cho phép",
+      "ADDNEW": "Thêm trang web",
+      "ADDNEW_LABEL": "Thêm website mới",
+      "URL_NOTREAL": "Vui lòng nhập đúng website"
+    },
+    "LABEL": {
+      "SEARCH": "Tìm tài khoản",
+      "INFORMATION": "THÔNG TIN",
+      "WEBSITES": "TRANG WEB",
+      "DECENTRALIZATION": "PHÂN CẤP"
+    },
+    "DECENTRALIZATION": {
+      "SUPERIOR": "Cấp trên",
+      "INFERIOR": "Cấp dưới",
+      "ADDNEW": "Thêm",
+      "ADDNEW_LABEL": "Thêm một cấp dưới"
+    }
+  }
+}

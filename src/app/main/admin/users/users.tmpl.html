@@ -1,0 +1,66 @@
+<div layout="column">
+    <div layout="row" layout-xs="column">
+        <div flex title="MANAGEMENT.USER.LIST">
+            <div layout="row" layout-xs="column" layout-margin>
+                <div flex="60" flex-xs="100" layout="row">
+                    <md-radio-group ng-model="vm.searchBy" flex="25" flex-xs="40" ng-change="vm.changeSearchFeild(vm.searchBy)">
+                        <md-radio-button value="name" class="md-primary" aria-checked="true" checked><label translate="MANAGEMENT.USER.NAME">Name</label></md-radio-button>
+                        <md-radio-button value="email"><label translate="MANAGEMENT.USER.EMAIL">Email</label></md-radio-button>
+                    </md-radio-group>
+                    <md-input-container flex>
+                        <label translate="MANAGEMENT.LABEL.SEARCH">Search</label>
+                        <input type="text" ng-model="vm.search" ng-change="vm.changeSearchText(vm.search)">
+                    </md-input-container>
+                </div>
+
+                <div flex>
+                    <md-select ng-model="vm.userRole" ng-change="vm.changUserRole(vm.userRole)">
+                        <md-option ng-value="''" translate="USER.ROLE.ALL">All</md-option>
+                        <md-option ng-value="'ADMIN'" translate="USER.ROLE.ADMIN">Admin</md-option>
+                        <md-option ng-value="'EMP'" translate="USER.ROLE.EMP">Employee</md-option>
+                        <md-option ng-value="'CUS'" translate="USER.ROLE.CUS">Customer</md-option>
+                        <md-option ng-value="'CUS_BASIC'" translate="USER.ROLE.CUS_BASIC">Customer Basic</md-option>
+                        <md-option ng-value="'CUS_VIP'" translate="USER.ROLE.CUS_VIP">Customer Vip</md-option>
+                        <md-option ng-value="'CUS_PENTIUM'" translate="USER.ROLE.CUS_PENTIUM">Customer Pentium</md-option>
+                        <md-option ng-value="'BANNED'" translate="USER.ROLE.BANNED">Banned</md-option>
+                    </md-select>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div flex></div>
+                <md-button ng-if="$root.user.role == 'ADMIN'||$root.user.role == 'EMP'" ng-click="vm.addUser()"
+                           class="md-raised md-primary">Thêm tài khoản
+                </md-button>
+            </div>
+
+            <md-data-table-container>
+                <table md-data-table class="md-data-table" md-progress="vm.deferred">
+                    <thead md-order="vm.query.order" md-trigger="vm.onChangeFilter">
+                        <tr>
+                            <th name="{{'MANAGEMENT.USER.NAME'|translate}}" order-by="name" decend-first></th>
+                            <th name="{{'MANAGEMENT.USER.EMAIL'|translate}}" order-by="email"></th>
+                            <th name="{{'MANAGEMENT.USER.PHONE'|translate}}"></th>
+                            <th name="{{'MANAGEMENT.USER.ROLE'|translate}}" order-by="role"></th>
+                            <th name="{{'MANAGEMENT.USER.DETAILS'|translate}}"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in vm.usersData.data">
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone}}</td>
+                            <td translate="USER.ROLE.{{user.role}}"></td>
+                            <td>
+                                <md-button ng-click="vm.openUser(user, $event)" class="md-icon-button" aria-label="Open User">
+                                    <md-icon md-font-icon="zmdi zmdi-search"></md-icon>
+                                </md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+            <md-data-table-pagination md-limit="vm.query.limit" md-limit-options="[10, 20, 30, 40, 50]" md-page="vm.query.page" md-total="{{vm.usersData.total}}" md-trigger="vm.onPaginationChange"></md-data-table-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<div layout="row" layout-align="center">
+    <div layout="column" flex="65" layout-margin layout-xs>
+        <!-- 1-->
+        <div class="background" layout-padding ng-model="vm.searchBy">
+            <div><p>LOREM IPSUM</p></div>
+            <div layout="row">
+            <!-- -->
+
+                <md-input-container flex>
+                    <input type="text" ng-model="vm.search" ng-change="vm.changeSearchText(vm.search)">
+                </md-input-container>
+                <!-- -->
+                <md-card-content ng-repeat="item in vm.advance" ng-model="advance">
+                    <md-select ng-model="advance" placeholder="Advance" class="md-no-underline">
+                        <label class="center color">{{item.advance}}</label>
+                        <md-option ng-value="'a'">{{item.item1}}</md-option>
+                        <md-option ng-value="'b'">{{item.item2}} </md-option>
+                        <md-option ng-value="'c'">{{item.item3}}</md-option>
+                        <md-option ng-value="'d'">{{item.item4}}</md-option>
+                    </md-select>
+                </md-card-content>
+            </div>
+            <div layout="row" >
+                <!-- function -->
+                <md-select ng-model="vm.Function" ng-repeat="item in vm.function" placeholder="Function"  flex="15" ng-change="vm.changsearchRole(vm.Function)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}</md-option>
+                    <md-option ng-value="'c'">{{item.item3}}</md-option>
+                    <md-option ng-value="'d'">{{item.item4}}</md-option>
+                </md-select>
+                <!-- -->
+                <!-- Industy -->
+                <md-select ng-model="vm.Industy" ng-repeat="item in vm.industy" placeholder="Industy" flex="15" ng-change="vm.changsearchRole(vm.Industy)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}  </md-option>
+                    <md-option ng-value="'c'">{{item.item3}}  </md-option>
+                </md-select>
+                <!-- -->
+                <!-- city -->
+                <md-select ng-model="vm.City" placeholder="City" ng-repeat="item in vm.city" flex="15" ng-change="vm.changsearchRole(vm.City)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}  </md-option>
+                    <md-option ng-value="'c'">{{item.item3}}  </md-option>
+                </md-select>
+                <!-- -->
+                <!-- title -->
+                <md-select ng-model="vm.tieuDe" ng-repeat="item in vm.title" placeholder="title" flex="15" ng-change="vm.changsearchRole(vm.tieuDe)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}  </md-option>
+                    <md-option ng-value="'c'">{{item.item3}}  </md-option>
+                </md-select>
+                <!-- -->
+                <!-- school -->
+                <md-select ng-model="vm.School" placeholder="school" ng-repeat="item in vm.school" flex="15" ng-change="vm.changsearchRole(vm.School)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}  </md-option>
+                    <md-option ng-value="'c'">{{item.item3}}  </md-option>
+                </md-select>
+                <!-- -->
+                <!-- company -->
+                <md-select ng-model="vm.Company" placeholder="company" ng-repeat="item in vm.company" flex="15" ng-change="vm.changsearchRole(vm.Company)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}  </md-option>
+                    <md-option ng-value="'c'">{{item.item3}}  </md-option>
+                </md-select>
+                <!-- -->
+                <!-- experience -->
+                <md-select ng-model="vm.Experience" placeholder="experience" ng-repeat="item in vm.experience" flex="15" ng-change="vm.changsearchRole(vm.Experience)">
+                    <md-option ng-value="'a'">{{item.item1}}</md-option>
+                    <md-option ng-value="'b'">{{item.item2}}  </md-option>
+                    <md-option ng-value="'c'">{{item.item3}}  </md-option>
+                </md-select>
+                <!-- -->
+            </div>
+
+        </div>
+        <!-- 2-->
+        <div class="background" layout-padding>
+            <div >
+                <p>TITLE</p>
+                <tbody>
+                <div layout="row" ng-repeat="item in vm.todos">
+                    <img src="../assets/images/user/Ellipse 1.jpg" width="80" height="80"/>
+                    <div layout="column" >
+                        <!-- -->
+                        <tr>
+                            <p>{{item.company}}</p>
+                            <p>{{item.location}}</p>
+                        </tr>
+                        <!-- -->
+                    </div>
+                </div>
+                </tbody>
+            </div>
+        </div>
+        <!-- 3.5-->
+        <div class="background" layout-margin hide-lg hide-gt-md hide-md>
+            <div style="font-weight: bold">job you may be interested in</div>
+            <div ng-repeat="item in vm.job">
+                <a href="#">
+                    <img src="../assets/images/user/Rectangle.jpg" width="50" height="50"/>
+                    {{item.job}}
+                    {{item.price}}
+                </a>
+            </div>
+            <md-divider></md-divider>
+            <div style="font-weight: bold">Recommend  company</div>
+            <div ng-repeat="item in vm.company">
+                <a href="#">
+                    <img src="../assets/images/user/Rectangle.jpg" width="50" height="50"/>
+                    {{item.company}}
+                    {{item.follow}}
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 3-->
+    <div class="background chieucao" layout-margin hide-xs hide-sm layout-padding>
+            <div style="font-weight: bold">job you may be interested in</div>
+            <div ng-repeat="item in vm.job">
+                <a href="#">
+                    <img src="../assets/images/user/Rectangle.jpg" width="50" height="50"/>
+                    {{item.job}}
+                    {{item.price}}
+                </a>
+            </div>
+            <md-divider></md-divider>
+            <div style="font-weight: bold">Recommend  company</div>
+            <div ng-repeat="item in vm.company">
+                <a href="#">
+                    <img src="../assets/images/user/Rectangle.jpg" width="50" height="50"/>
+                    {{item.company}}
+                    {{item.follow}}
+                </a>
+            </div>
+    </div>
+
+
+</div>

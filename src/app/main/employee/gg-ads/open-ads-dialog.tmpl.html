@@ -1,0 +1,90 @@
+<md-dialog flex="60" flex-xs="100">
+    <md-dialog-content layout-padding style="overflow-y: auto;overflow-x: hidden;">
+        <form name="campaign">
+            <div layout="row" layout-xs="column">
+                <div layout="column" flex="50" flex-xs="100">
+                    <md-input-container style="font-weight: 500;margin:0;"  class="md-block phao-input" md-no-float>
+                        <span>Chọn website</span>
+                        <md-select placeholder="Choose your website" ng-disabled="true" ng-model="vm.data.website"  aria-label="website" required>
+                            <md-option  ng-value="vm.data.website">{{vm.data.website.name}} - {{vm.data.website.url}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block phao-input" md-no-float>
+                        <span>Tên chiến dịch</span>
+                        <input ng-disabled="true" placeholder="tên chiến dịch" id="name" label="name" name="name" type="text"
+                               ng-model="vm.data.name"/>
+                    </md-input-container>
+                    <div class="phao-input">
+                        <span>Mạng</span>
+                        <p style="font-size: 14px;">Các trang web hiển thị quảng cáo của bạn cùng với kết quả tìm kiếm, bài viết mới hoặc nội dung khác của riêng chúng.</p>
+                        <div layout="row" layout-xs="column">
+                            <div>
+                                <span>Mạng tìm kiếm</span>
+                                <p style="font-size: 14px;">Bao gồm các trang web tìm kiếm của Google và các trang web không phải của Google sử dụng Google làm công cụ tìm kiếm</p>
+                            </div>
+                            <div>
+                                <md-checkbox ng-disabled="true" ng-change="vm.typeChange()" ng-model="vm.adsType" aria-label="remember" class="margin-0">
+                                    <span>Mạng hiển thị</span>
+                                </md-checkbox>
+                                <p style="font-size: 14px;">Bao gồm các trang web nội dung của Google và đối tác nội dung không phải của Google hiển thị quảng cáo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <md-input-container class="md-block"  md-no-float>
+                        <span>Từ khóa</span>
+                        <textarea ng-disabled="true" placeholder="Danh sách từ khóa" ng-model="vm.data.desc" rows="5" md-select-on-focus></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="column" flex="50" flex-xs="100">
+                    <md-input-container class="md-block phao-input" md-no-float>
+                        <span>Ngân sách hàng ngày(tối thiểu {{$root.config.gg_min_budget}})</span>
+                        <input ng-disabled="true" placeholder="Ngân sách hàng ngày" id="day_budget" label="day_budget" name="day_budget"
+                               type="number"
+                               ng-model="vm.data.day_budget" required min="{{$root.config.gg_min_budget}}"/>
+                    </md-input-container>
+                    <span>Ngày bắt đầu</span>
+                    <md-datepicker name="startDate" ng-model="vm.data.start_date" md-placeholder="Ngày bắt đầu" required md-min-date="vm.minStartDate" ng-disabled="true"></md-datepicker>
+                    <span>Ngày kết thúc</span>
+                    <md-datepicker ng-disabled="true" name="endDate" ng-model="vm.data.end_date" md-placeholder="Ngày kết thúc" required md-min-date="vm.minEndDate"></md-datepicker>
+                    <div class="phao-input">
+                        <span>Quảng cáo văn bản</span>
+                        <div layout="row" layout-xs="column">
+                            <div flex="30" flex-xs="100">
+                                <md-input-container class="md-block phao-input" md-no-float>
+                                    <span>Tiêu đề 1</span>
+                                    <input placeholder="Tiêu đề 1" id="gg_title1" label="gg_title1" name="gg_title1" type="text"
+                                           ng-model="vm.data.gg_title1" ng-disabled="true"/>
+                                </md-input-container>
+                                <md-input-container class="md-block phao-input" md-no-float>
+                                    <span>Tiêu đề 2</span>
+                                    <input placeholder="Tiêu đề 2" id="gg_title2" label="gg_title2" name="gg_title2" type="text"
+                                           ng-model="vm.data.gg_title2" ng-disabled="true"/>
+                                </md-input-container>
+                                <md-input-container class="md-block phao-input" md-no-float>
+                                    <span>Mô tả</span>
+                                    <input placeholder="Mô tả" id="gg_desc" label="gg_desc" name="gg_desc" type="text"
+                                           ng-model="vm.data.gg_desc" ng-disabled="true"/>
+                                </md-input-container>
+                            </div>
+                            <div flex>
+                                <span>Xem trước quảng cáo</span>
+                                <md-card layout-padding >
+                                    <span style="color: blue;">{{vm.data.gg_title1}} - {{vm.data.gg_title2}}</span>
+                                    <span class="padding-0" style="color: #00AA00; font-size: 14px"><span class="padding-0" style="background-color: #00AA00;color: white;">Quảng cáo</span>  <span style="color: #00AA00">{{vm.data.website.url}}</span></span>
+                                    <md-divider></md-divider>
+                                    <span class="padding-0" style="font-size: 14px;">{{vm.data.gg_desc}}</span>
+                                </md-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span ng-if="campaign.$valid">{{vm.formatNumber((vm.data.end_date - vm.data.start_date)/86400000)}} ngày - Tổng: {{vm.formatNumber((vm.data.end_date - vm.data.start_date)/86400000)*vm.data.day_budget}}</span>
+        <span flex></span>
+        <md-button ng-click="vm.cancelClick()" class="md-primary">Hủy</md-button>
+        <md-button ng-if="vm.data.unread == 1" ng-click="vm.okClick()" class="md-primary">Xác nhận chạy</md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,52 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar layout-align="center">
+        <span class="padding-top-8 padding-left-10">Languages</span>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <table md-data-table class="md-data-table" md-progress="vm.deferred">
+            <thead md-order="vm.query.order">
+            <tr>
+                <th name="No."></th>
+                <th name="Option"></th>
+                <th name="Language"></th>
+                <th name="Proficiency"></th>
+                <th name="Certificate"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="item in vm.languages">
+                <td>{{$index + 1}}</td>
+                <td style="padding: 0px!important;">
+                    <md-button  ng-if="$index != (vm.languages.length-1)" class="md-icon-button" ng-click="vm.deleteLanguage(item)">
+                        <i class="zmdi zmdi-delete margin-left-20"></i>
+                        <md-tooltip>Delete</md-tooltip>
+                    </md-button>
+                </td>
+                <td>
+                    <md-select ng-model="item.language_id" placeholder="Language" ng-change="vm.addLanguage($index)">
+                        <md-option ng-repeat="lang in vm.db_languages" ng-value="lang.id">{{lang.name}}</md-option>
+                    </md-select>
+                </td>
+                <td>
+                    <md-input-container style="width: 150px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.proficiency" placeholder="Proficiency" ng-change="vm.addLanguage($index)">
+                    </md-input-container>
+                </td>
+                <td>
+                    <md-input-container style="width: 150px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.certificate" placeholder="Certificate" ng-change="vm.addLanguage($index)">
+                    </md-input-container>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

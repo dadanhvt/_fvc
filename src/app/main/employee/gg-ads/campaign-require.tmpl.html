@@ -1,0 +1,41 @@
+<div layout="row">
+    <span layout-padding>{{vm.campaigns.length}} chiến dịch</span>
+    <span flex></span>
+    <md-select ng-model="vm.selectedCustomer" ng-change="vm.changeCustomer()" style="margin: 0">
+        <md-option ng-repeat="customer in vm.customers" ng-value="customer">{{customer.name}}
+        </md-option>
+    </md-select>
+</div>
+<div layout="row">
+    <md-tabs md-dynamic-height md-border-bottom flex>
+        <md-tab label="{{'ADS.FB.LABEL.UNREAD'|translate}}" ng-click="vm.allAdsClick()">
+        </md-tab>
+        <md-tab label="{{'ADS.FB.LABEL.INPROCESS'|translate}}" ng-click="vm.inprocessAdsClick()">
+        </md-tab>
+        <md-tab label="{{'ADS.FB.LABEL.DONE'|translate}}" ng-click="vm.doneAdsClick()">
+    </md-tabs>
+</div>
+<div class="full-height overflow-hidden" layout="row" flex>
+    <div class="email-inbox-list md-whiteframe-z1" flex="100" layout="column">
+        <md-content>
+            <section class="email-inbox-list-animate-repeat" ng-if="vm.campaigns.length > 0">
+                <md-list>
+                    <md-list-item class="email-inbox-list-item email-inbox-list-animate-repeat md-3-line"
+                                  ng-repeat="campaign in vm.campaigns" ng-click="vm.openCampaign(campaign, $event)"
+                                  ng-class="{'campaign-inpro': campaign.status == 'INPRO', 'campaign-delay': campaign.status == 'DELAY', 'campaign-done': campaign.status == 'DONE'}">
+                        <div class="md-list-item-text">
+                            <div class="email-inbox-list-item-name-time" layout="row"
+                                 layout-align="space-between start">
+                                <h3>[{{campaign.website.url}}]{{::campaign.name}}</h3>
+                                <p class="md-caption" ng-class="{'p-campaign-inpro': campaign.status == 'INPRO', 'p-campaign-delay': campaign.status == 'DELAY', 'p-campaign-done': campaign.status == 'DONE'}" translate="CAMPAIGN.STATUS.{{campaign.status}}"></p>
+                            </div>
+                            <p class="mail-p-nowrap">Ngân sách: {{campaign.total_budget}} | {{campaign.start_date}} - {{campaign.end_date}}</p>
+                        </div>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </section>
+            <h2 ng-if="vm.campaigns.length === 0" translate>Không có chiến dịch nào</h2>
+        </md-content>
+    </div>
+</div>

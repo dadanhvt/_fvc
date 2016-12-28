@@ -1,0 +1,169 @@
+{
+  "LANGUAGES": {
+    "LABEL": "Language",
+    "ENGLISH": "English",
+    "VIETNAM": "Vietnamese",
+    "LANGUAGE_CHANGED": "Language changed to English"
+  },
+  "GENERAL":{
+    "OK": "OK",
+    "HOME": "Home",
+    "ERROR": "Error",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete"
+  },
+  "GOOGLERANKING":{
+    "BUTTON": {
+      "CHECK": "Check ranking",
+      "ADD_KEYWORD": "Add keywords"
+    },
+    "LABEL": {
+      "CHOOSEWEBSITE": "Website: ",
+      "NOT100": "Not in 100",
+      "NO": "No.",
+      "KEYWORKNAME": "Keywords",
+      "RANK": "Rank",
+      "URL": "URL",
+      "LASTRANK": "Old"
+    }
+  },
+  "USER": {
+    "ROLE": {
+      "LABEL": "Role",
+      "ADMIN": "Admin",
+      "ALL": "All",
+      "EMP": "Manager",
+      "CUS": "Customer",
+      "CUS_BASIC": "Customer Basic",
+      "CUS_VIP": "Customer Vip",
+      "CUS_PENTIUM": "Customer Platium",
+      "BANNED": "Banned"
+    },
+    "BUTTON": {
+      "UPDATE": "Update",
+      "RESET": "Reset"
+    },
+    "POSITION":{
+      "SP": "",
+      "TECH": "Technical",
+      "SELL": "Sell",
+      "TS": "Technical and sell"
+    },
+    "PASSWORD": {
+      "LABEL": "new password",
+      "CURRENT": "current",
+      "PLEASE_ENTER": "Please enter a password",
+      "MIN_LENGTH": "Your password must be greater than 8 characters long",
+      "SAME_PASSWORD": "You need to enter the same password"
+    },
+    "PASSWORD_CONFIRM": {
+      "LABEL": "confirm password"
+    },
+    "TITLE": "Profile",
+    "NAME": {
+      "LABEL": "name",
+      "PLEASE_ENTER": "Please enter your name"
+    },
+    "EMAIL": {
+      "LABEL": "email",
+      "PLEASE_ENTER": "Please enter your email address",
+      "PLEASE_VALID": "Please enter a valid email address"
+    },
+    "WALLET": {
+      "LABEL": "Wallet"
+    }
+  },
+  "RECEIVE": {
+    "MAIL": {
+      "TITLE": "Mail box"
+    },
+    "REPORT": {
+      "TITLE": "Report"
+    },
+    "LABEL": {
+      "UNREAD": "Unread"
+    }
+  },
+  "MENU": {
+    "ACCOUNT": "Account",
+    "PROFILE": "Profile",
+    "UPGRATE_ACCOUNT": "Upgrade account",
+    "CHARGE_MONEY": "Charge money",
+    "MESSAGE": "Message",
+    "WEB_ANALYST": "Website analyst",
+    "WEB_RANKING": "Website ranking",
+    "KEYWORD_RANKING": "Keyword ranking",
+    "SIGNIN": "Sign in",
+    "SIGNUP": "Sign up",
+    "SIGNOUT": "Sign out",
+    "FORGET_PASS": "Forget password",
+    "HOME": "Home",
+    "MKT_MANAGER": "Marketing online management",
+    "RUN_GGADWORKS": "Run google adworks",
+    "RUN_FBADS": "Run facebook ads"
+  },
+  "LOGOUT": {
+    "LOGOUT_SUCCESS": "Logout success."
+  },
+  "ADS": {
+    "FB": {
+      "LABEL": {
+        "ALL": "All campaigns",
+        "INPROCESS": "In process",
+        "DONE": "Done",
+        "DELAY": "Delay"
+      }
+    }
+  },
+  "CAMPAIGN": {
+    "MESSAGES": {
+      "NAME_REQUIRED": "Bạn chưa nhập tên chiến dịch",
+      "NAME_LIMIT": "Tên chiến dịch dài nhất 255 ký tự",
+      "ADS_REQUIRED": "",
+      "SDATE_REQUIRED": "Bạn chưa nhập ngày bắt đầu",
+      "EDATE_REQUIRED": "Bạn chưa nhập ngày kết thúc",
+      "BUDGET_NUM": "Ngân sách phải là số",
+      "FB_MIN_BUDGET": "Chiến dịch Facebook cần ít nhất ",
+      "GG_MIN_BUDGET": "Chiến dịch Google cần ít nhất ",
+      "WALLET_ERROR": "Bạn không đủ tiền! vui lòng kiểm tra lại",
+      "INPUT_ERROR": "Lỗi nhập liệu",
+      "DATE_ERROR": "Lỗi ngày tháng"
+    },
+    "STATUS":{
+      "DONE": "Done",
+      "INPRO": "Running",
+      "DELAY": "Delay",
+      "UNREAD": "UnConfirm"
+    }
+  },
+  "MANAGEMENT": {
+    "USER": {
+      "LIST": "USERS MANAGEMENT",
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "ROLE": "Role",
+      "WALLET": "Wallet",
+      "DETAILS": "Details"
+    },
+    "WEBSITE": {
+      "NAME": "Name",
+      "URL": "URL",
+      "URL_ACTIVE": "Active",
+      "ADDNEW": "Add website",
+      "ADDNEW_LABEL": "Add a new website",
+      "URL_NOTREAL": "Please fill real URL"
+    },
+    "LABEL": {
+      "SEARCH": "Search user",
+      "INFORMATION": "INFORMATIONS",
+      "WEBSITES": "WEBSITES",
+      "DECENTRALIZATION": "DECENTRALIZATION"
+    },
+    "DECENTRALIZATION": {
+      "SUPERIOR": "Superiors",
+      "INFERIOR": "Inferiors",
+      "ADDNEW": "Add",
+      "ADDNEW_LABEL": "Add new inferior"
+    }
+  }
+}

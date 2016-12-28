@@ -1,0 +1,44 @@
+<md-dialog class="fullwidth-dialog" flex>
+    <md-toolbar class="toolbar-default" md-theme="{{vm.triSkin.elements.toolbar}}">
+        <div class="md-toolbar-tools">
+            <p class="mail-p-nowrap">{{vm.report.subject}}</p>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancel()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-divider></md-divider>
+
+    <md-dialog-content class="md-dialog-content">
+        <div class="open-report-description">
+            <div class="" layout="column">
+                <p>
+                    Tên bài viết: {{vm.report.subject}}
+                </p>
+                <md-content layout="row" layout-padding>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media" layout>
+                            <img ng-src="assets/images/user/{{vm.report.author.role}}.png" alt="" width="60" height="68">
+                        </div>
+                    </md-card-title-media>
+                    <md-card-title-text flex layout="column">
+                        <span class="md-headline">{{vm.report.author.name}}</span>
+                        <span class="md-headline" style="font-size: 15px;color:tomato;text-decoration:inherit" translate="USER.ROLE.{{vm.report.author.role}}">USER.ROLE.{{vm.report.author.role}}</span>
+                    </md-card-title-text>
+                </md-content>
+            </div>
+        </div>
+        <md-divider></md-divider>
+            <p class="md-block open-report-content" ng-bind-html="vm.report.content">
+            </p>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.cancel()">
+            OK
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

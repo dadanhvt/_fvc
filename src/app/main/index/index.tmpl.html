@@ -1,0 +1,83 @@
+<div class="index-benefit margin-bottom-20">
+    <h2 style="text-align: center">Sử dụng dịch vụ chúng tôi bạn được gì?</h2>
+    <div layout="row" layout-xs="column" layout-align="center start">
+        <div layout="column" flex="25" flex-xs="100" style="width: 100%;">
+            <i class="zmdi zmdi-swap-vertical-circle"></i>
+            <p class="header">Tiện lợi</p>
+            <p class="detail">Không cần cài đặt, hoạt động mọi lúc, mọi nơi với tất cả thiết bị có kết nối internet.</p>
+        </div>
+        <div layout="column" flex="25" flex-xs="100" style="width: 100%;">
+            <i class="zmdi zmdi-check-circle"></i>
+            <p class="header">Dễ sử dụng</p>
+            <p class="detail">Kiểm tra thứ hạng từ khóa chỉ trong 3 bước.</p>
+        </div>
+        <div layout="column" flex="25" flex-xs="100" style="width: 100%;">
+            <i class="zmdi zmdi-account-circle"></i>
+            <p class="header">Nhanh chóng</p>
+            <p class="detail">Thời gian trả kết quả được tối ưu cho dù kiểm tra cùng lúc hàng trăm từ khóa.</p>
+        </div>
+        <div layout="column" flex style="width: 100%;">
+            <i class="zmdi zmdi-star-circle"></i>
+            <p class="header">Chuyên nghiệp</p>
+            <p class="detail">Không phải nhập captcha cũng như phát sinh chi phí mua thêm proxy.</p>
+        </div>
+    </div>
+</div>
+<md-divider></md-divider>
+<div class="index-price-table">
+    <h2>Nâng cấp thành viên để được nhận ưu đãi</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+</div>
+<div class="pricing-table margin-bottom-20 margin-top-20" layout="row" layout-xs="column">
+    <div class="pricing-option">
+        <i class="zmdi zmdi-account-circle"></i>
+        <h1>Thành viên thường</h1>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+        <hr />
+        <div class="price">
+            <div class="front">
+                <span class="price">0 <b>VND</b></span>
+            </div>
+            <div class="back">
+                <a class="button" style="background-color: limegreen !important;">Free</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-option">
+        <i class="zmdi zmdi-assignment-account"></i>
+        <h1>Thành viên VIP</h1>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+        <hr />
+        <div class="price">
+            <div class="front">
+                <span class="price">{{vm.vipPrice}} <b>VND</b></span>
+            </div>
+            <div class="back">
+                <a ng-if="$root.user && $root.user.role == 'CUS_BASIC'" ng-click="vm.upgrateVip()" class="button">Nâng cấp</a>
+                <a ng-if="$root.user &&!($root.user.role == 'CUS_BASIC')" class="button" style="background-color: limegreen !important;">Không thể</a>
+                <a ng-if="!$root.user" href="#/auth/signin" class="button" translate="LOGIN.BUTTON"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-option">
+        <i class="zmdi zmdi-accounts-list-alt"></i>
+        <h1>Thành viên Platium</h1>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+        <hr />
+        <div class="price">
+            <div class="front">
+                <span class="price">{{vm.platiumPrice}} <b>VND</b></span>
+            </div>
+            <div class="back">
+                <a ng-if="$root.user && ($root.user.role == 'CUS_BASIC' || $root.user.role == 'CUS_VIP')" ng-click="vm.upgratePlatium()" class="button">Nâng cấp</a>
+                <a ng-if="$root.user &&!($root.user.role == 'CUS_BASIC' || $root.user.role == 'CUS_VIP')" class="button" style="background-color: limegreen !important;">Không thể</a>
+                <a ng-if="!$root.user" href="#/auth/signin" class="button" translate="LOGIN.BUTTON"></a>
+            </div>
+        </div>
+    </div>
+</div>

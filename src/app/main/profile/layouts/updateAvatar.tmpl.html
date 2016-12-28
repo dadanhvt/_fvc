@@ -1,0 +1,27 @@
+
+<div class="wrapper">
+
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+            <span class="padding-top-8 padding-left-10">Cập nhật ảnh đại diện</span>
+        </md-toolbar>
+        <div layout="row" class="box-select" ng-hide="vm.picFile !=null">
+            <div class="input-box">
+                <input type="file" id="file" class="input-text" ngf-select ng-model="vm.picFile" name="attachement" accept="image/png, image/jpeg, image/jpg, application/msword, application/vnd.ms-excel, application/pdf " />
+            </div>
+        </div>
+        <img ng-show="vm.picFile != null" ngf-src="vm.picFile" class="thumb" style="width: 250px;height: 250px">
+        <div>
+            <div ng-show="vm.picFile != null"  style="float:right">
+                <md-button class="md-icon-button" ng-click="vm.uploadCV()">
+                    <i class="zmdi zmdi-check"></i>
+                    <md-tooltip>Save</md-tooltip>
+                </md-button>
+                <md-button class="md-icon-button" ng-click="vm.picFile = null;" >
+                    <i class="zmdi zmdi-close"></i>
+                    <md-tooltip>Cancel</md-tooltip>
+                </md-button>
+            </div>
+        </div>
+    </md-card>
+</div>

@@ -1,0 +1,61 @@
+<div>
+    <div class="width-size-responsive footer-contact">
+        <div layout="row" layout-xs="column" >
+            <div flex="30" flex-xs="100" layout="column" layout-padding>
+                <md-content>
+                    <img src="assets/images/FrancoLogo.png" alt="">
+                    <p>Hơn 300 công ty Pháp đang chờ bạn. Kết nối với họ ngay để tìm kiếm công việc phù hợp cho bạn.</p>
+                    <md-button class="md-raised md-warn">Sign up for free</md-button>
+                </md-content>
+            </div>
+            <div flex="30" flex-xs="100" layout="column" layout-padding>
+                <md-content>
+                    <h4>Features</h4>
+                    <a href="/#/auth/signin">New Feed</a>
+                    <md-divider></md-divider>
+                    <a ng-click="vm.click()">Big Job</a>
+                    <md-divider></md-divider>
+                    <a href="">Best Company</a>
+                    <md-divider></md-divider>
+                    <a href="">Discussions</a>
+                    <md-divider></md-divider>
+                    <a href="">Top Headhunt</a>
+                    <md-divider></md-divider>
+                    <a href="">Event</a>
+                </md-content>
+            </div>
+            <div flex layout-padding>
+                <md-content>
+                    <h4>Feedback</h4>
+                    <form name="contactForm">
+                        <div layout-gt-sm="row">
+                            <md-input-container md-no-float class="md-block phao-input-noerror" flex-gt-sm>
+                                <input placeholder="Name">
+                            </md-input-container>
+
+                            <md-input-container md-no-float class="md-block phao-input-noerror" flex-gt-sm>
+                                <input placeholder="Email">
+                            </md-input-container>
+                        </div>
+                        <md-input-container md-no-float class="md-block phao-input-noerror">
+                            <textarea ng-model="user.biography" md-maxlength="150" rows="3" md-select-on-focus
+                                      placeholder="Message"></textarea>
+                        </md-input-container>
+                        <div layout-gt-sm="row">
+                            <span flex></span>
+                            <md-button class="md-raised md-warn">Send</md-button>
+                        </div>
+                    </form>
+                </md-content>
+            </div>
+        </div>
+    </div>
+    <md-toolbar class="md-toolbar-small footer-xs">
+        <div class="md-toolbar-tools width-size-responsive">
+            <h2>
+                <span style="color:#efecca;">Copyright © francovietcareer.com 2016 | D.Artists Pháo. All right reserved</span>
+            </h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+</div>

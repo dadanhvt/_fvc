@@ -1,0 +1,85 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar layout-align="center">
+        <span class="padding-top-8 padding-left-10">Educations</span>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <table md-data-table class="md-data-table" md-progress="vm.deferred">
+            <thead md-order="vm.query.order">
+            <tr>
+                <th class="padding-right-10 padding-left-10" name="No."></th>
+                <th class="padding-right-10 padding-left-10" name="Option"></th>
+                <th class="padding-right-10 padding-left-10" name="School"></th>
+                <th class="padding-right-10 padding-left-10" name="Degree"></th>
+                <th class="padding-right-10 padding-left-10" name="Field"></th>
+                <th class="padding-right-10 padding-left-10" name="Attended from"></th>
+                <th class="padding-right-10 padding-left-10" name="Attended to"></th>
+                <th class="padding-right-10 padding-left-10" name="Grade"></th>
+                <th class="padding-right-10 padding-left-10" name="Description"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="item in vm.educations">
+                <td class="padding-right-10 padding-left-10" >{{$index +1}}</td>
+                <td class="padding-right-10 padding-left-10" style="padding: 0px!important;">
+                    <md-button ng-if="$index != (vm.educations.length-1)" class="md-icon-button"
+                               ng-click="vm.deleteEducation(item)">
+                        <i class="zmdi zmdi-delete margin-left-20"></i>
+                        <md-tooltip>Delete</md-tooltip>
+                    </md-button>
+                </td>
+                <td class="padding-right-10 padding-left-10" >
+                    <md-autocomplete class="phao-no-frame"
+                                     md-no-cache="true"
+                                     md-search-text="item.school_name"
+                                     md-selected-item-change="vm.schoolChange(item, school)"
+                                     md-search-text-change="vm.addEducation($index)"
+                                     md-items="school in vm.schoolTextChange(item)"
+                                     md-item-text="school.name"
+                                     placeholder="School name">
+                        <md-item-template>
+                            <span md-highlight-text="item.school_name" md-highlight-flags="ig">{{school.name}}</span>
+                        </md-item-template>
+                    </md-autocomplete>
+                </td>
+                <td class="padding-right-10 padding-left-10" >
+                    <md-select ng-change="vm.addEducation($index)" placeholder="Degree" ng-model="item.degree"
+                               style="width: 100px">
+                        <md-option ng-value="degree.id" ng-repeat="degree in vm.degrees">{{degree.degree}}</md-option>
+                    </md-select>
+                </td>
+                <td class="padding-right-10 padding-left-10" >
+                    <md-input-container style="width: 150px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.feild" placeholder="Field of study" ng-change="vm.addEducation($index)">
+                    </md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-0" >
+                    <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input ng-model="item.study_from" placeholder="Attended from" ng-change="vm.addEducation($index)"></md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-0" >
+                    <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input ng-model="item.study_to" placeholder="Attended to" ng-change="vm.addEducation($index)"></md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-10" >
+                    <md-input-container style="width: 50px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.grade" placeholder="Grade" ng-change="vm.addEducation($index)">
+                    </md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-10" >
+                    <md-input-container style="width: 300px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.desc" placeholder="Description" ng-change="vm.addEducation($index)">
+                    </md-input-container>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>
+
+

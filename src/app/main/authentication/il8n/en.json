@@ -1,0 +1,119 @@
+{
+    "LOGIN": {
+        "TITLE": "Login",
+        "EMAIL": {
+            "LABEL": "email",
+            "PLEASE_ENTER": "Please enter your email address.",
+            "PLEASE_VALID": "Please enter a valid email address."
+        },
+        "PASSWORD": {
+            "LABEL": "password",
+            "PLEASE_ENTER": "Please enter your password."
+        },
+        "REMEMBER": "Remember Me",
+        "FORGOT": "Forgot password?",
+        "BUTTON": "Log in",
+        "SIGNUP_LINK": "Don't have an account? Create one now",
+        "SOCIAL": {
+            "OR": "or login with"
+        },
+        "MESSAGES": {
+            "EMAIL_REQUIRED": "Please enter your email address",
+            "EMAIL_LIMIT": "Your password must be small than 120 characters long",
+            "EMAIL_VALID": "Please enter a valid email address",
+            "PW_MINLENGTH": "Your password must be greater than 8 characters long",
+            "PW_REQUIRED": "Please enter a password",
+            "LOGGED": "You are Loggged",
+            "LOGIN_DENIED": "Username / Password Incorrect",
+            "LOGIN_SUCCESS": "Login success",
+            "LOGIN_BANNED": "You were banned! please contact ADMIN"
+        }
+    },
+    "SIGNUP": {
+        "TITLE": "Sign up",
+        "NAME": {
+            "LABEL": "name",
+            "PLEASE_ENTER": "Please enter your name"
+        },
+        "EMAIL": {
+            "LABEL": "email",
+            "PLEASE_ENTER": "Please enter your email address",
+            "PLEASE_VALID": "Please enter a valid email address"
+        },
+        "WEBSITE": {
+            "LABEL": "Website",
+            "PLEASE_VALID": "Please enter a valid website",
+            "PLEASE_ENTER": "Please your website"
+        },
+        "PASSWORD": {
+            "LABEL": "password",
+            "PLEASE_ENTER": "Please enter a password",
+            "MIN_LENGTH": "Your password must be greater than 8 characters long",
+            "SAME_PASSWORD": "You need to enter the same password"
+        },
+        "PASSWORD_CONFIRM": {
+            "LABEL": "confirm password"
+        },
+        "BUTTON": "Sign Up",
+        "HAVE_LOGIN": "Already have an account? Login here.",
+        "MESSAGES": {
+            "NAME_LIMIT": "Name limited 60 character",
+            "NAME_MINLENGTH": "Name more than 6 character",
+            "NAME_REQUIRED": "Please enter your name",
+            "EMAIL_REQUIRED": "Please enter your email address",
+            "EMAIL_LIMIT": "Email limited 120 character",
+            "EMAIL_VALID": "Please enter a valid email address",
+            "EMAIL_EXIST": "Email is used by another",
+            "PW_MINLENGTH": "Password more than 8 character",
+            "PW_REQUIRED": "Please enter your password",
+            "WEBSITE_REQUIRED": "Please enter your website",
+            "SIGNUP_DENIED": "Opp error! Please try again",
+            "SIGNUP_SUCCESS": "Sign up successful",
+            "ADDR_MAX": "Address limited 255 character",
+            "FB_MAX": "Facebook limited 255 character",
+            "BIO_MAX": "Bio limited 255 character",
+            "CURRENT_WRONG": "Current password wrong, please check again"
+        }
+    },
+    "PROFILE": {
+        "LABEL":{
+            "PROFILE":"PROFILE",
+            "PASSWORD":"PASSWORD"
+        },
+        "MESSAGES":{
+            "UNSUCCESSFUL": "Cannot be save, please check again!",
+            "SUCCESS": "Update profile success"
+        },
+        "TITLE": "Profile",
+        "NAME": {
+            "LABEL": "name",
+            "PLEASE_ENTER": "Please enter your name"
+        },
+        "EMAIL": {
+            "LABEL": "email",
+            "PLEASE_ENTER": "Please enter your email address",
+            "PLEASE_VALID": "Please enter a valid email address"
+        },
+        "ADDR": {
+            "LABEL": "address"
+        },
+        "FACEBOOK": {
+            "LABEL": "facebook"
+        },
+        "PHONE": {
+            "LABEL": "phone number",
+            "PLEASE_VALID": "Phone number must be a number"
+        },
+        "PASSWORD": {
+            "LABEL": "new password",
+            "CURRENT": "current",
+            "PLEASE_ENTER": "Please enter a password",
+            "MIN_LENGTH": "Your password must be greater than 8 characters long",
+            "SAME_PASSWORD": "You need to enter the same password"
+        },
+        "PASSWORD_CONFIRM": {
+            "LABEL": "confirm password"
+        },
+        "BUTTON": "Update Settings"
+    }
+}

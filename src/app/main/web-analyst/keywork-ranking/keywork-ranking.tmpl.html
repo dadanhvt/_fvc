@@ -1,0 +1,59 @@
+<div layout="column">
+    <div layout="row">
+        <md-button ng-click="vm.checkRanking()" class="md-raised md-primary" aria-label="keywork check">
+            <span translate="GOOGLERANKING.BUTTON.CHECK"></span>: {{vm.keyWords.length}} <span translate="GOOGLERANKING.LABEL.KEYWORKNAME"></span>
+        </md-button>
+        <span flex></span>
+        <span class="padding-top-10">Website:</span>
+        <md-input-container style="font-weight: 500;margin:0;">
+            <md-select ng-model="vm.selectedWebsite" ng-change="vm.getKeyworks(vm.selectedWebsite)" aria-label="select language">
+                <md-option ng-repeat="website in vm.websites" ng-value="website">{{website.website.name}}</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
+<div layout-fill layout="row" layout-align="center center">
+    <md-data-table-container flex style="font-size: 17px!important;">
+        <table md-data-table class="md-data-table">
+            <thead md-order="vm.orderBy">
+            <tr>
+                <th name="{{'GOOGLERANKING.LABEL.NO'|translate}}"></th>
+                <th name="{{'GOOGLERANKING.LABEL.KEYWORKNAME'|translate}}" order-by="name" decend-first></th>
+                <th name="{{'GOOGLERANKING.LABEL.LASTRANK'|translate}}" order-by="last"></th>
+                <th name="{{'GOOGLERANKING.LABEL.RANK'|translate}}" order-by="rank"></th>
+                <th name="{{'GOOGLERANKING.LABEL.URL'|translate}}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="keyWord in vm.keyWords | orderBy: vm.orderBy">
+                <td>{{$index+1}}</td>
+                <td class="keywork-name" ng-click="vm.deleteKeywork(keyWord, $index)"><span class="keywork-delete">x</span>{{keyWord.name}}</td>
+                <td>
+                    <img ng-if="keyWord.rank==-2" src="assets/images/page-loader.gif" style="height: 30px;width: 30px">
+                    <span ng-if="!(keyWord.rank==-2)">{{keyWord.last}}</span>
+                </td>
+                <td>
+                    <img ng-if="keyWord.rank==-2" src="assets/images/page-loader.gif" style="height: 30px;width: 30px">
+                    <span style="position: relative;" ng-if="(keyWord.rank>0 && keyWord.rank<101)">{{keyWord.rank}}<svg style="fill:green" ng-class="{'decrease': keyWord.rank > keyWord.last}" ng-if="((keyWord.rank != keyWord.last) && (keyWord.last != ''))" xmlns="http://www.w3.org/2000/svg" style="top:0;" width="15px" height="15px" viewBox="0 0 18 18" fit="" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><path d="M3,9 L4.06,10.06 L8.25,5.87 L8.25,15 L9.75,15 L9.75,5.87 L13.94,10.06 L15,9 L9,3 L3,9 L3,9 Z"></path></svg></span>
+                    <span ng-if="keyWord.rank==101" style="color: tomato" translate="GOOGLERANKING.LABEL.NOT100">Not in 100</span>
+                </td>
+                <td>
+                    <img ng-if="keyWord.rank==-2" src="assets/images/page-loader.gif" style="height: 30px;width: 30px">
+                    <a ng-if="keyWord.rank>0" ng-click="vm.goUrl(keyWord.url)">{{keyWord.url}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-data-table-container>
+</div>
+
+<div layout="column">
+    <md-input-container class="md-block"  md-no-float>
+        <textarea placeholder="Danh sách từ khóa mới" ng-model="vm.newKeyWord" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+    <div layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.addKeyworks()" class="md-raised md-primary margin-left-0" translate="GOOGLERANKING.BUTTON.ADD_KEYWORD">Thêm từ khóa
+        </md-button>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="index header shadow" id="indexspider">
+    <canvas id="spiders" spiders-directive style="z-index: -1 !important;"></canvas>
+    <div class="full-height" layout="row" layout-fill layout-align="space-around center" layout-xs="column">
+        <div layout="row" flex class="full-width" layout-align="center center">
+            <div flex="" flex-xs="100" class="padding-20 index" layout="column" layout-align="center center">
+                <div class="signin-font margin">
+                    <!-- -->
+                    <div class="deff-login">
+                        <br/>
+                        <div layout="row" layout-align="center center" style="font-size: 20px">Sign Up</div>
+                        <br/>
+                        <div layout="row" layout-align="center center">
+                            <button class="boder-none-nobg"><i class="zmdi zmdi-facebook-box"></i></button>
+                            <button class="boder-none-nobg"><i class="zmdi zmdi-google-plus"></i></button>
+                            <button class="boder-none-nobg"><i class="zmdi zmdi-linkedin"></i></button>
+                        </div>
+                    </div>
+                    <form name="signup" class="padding-left-20 padding-right-20">
+                        <md-input-container class="md-block" md-no-float>
+                            <md-icon md-font-icon="zmdi zmdi-account"></md-icon>
+                            <input placeholder="{{'SIGNUP.NAME.LABEL'|translate}}" id="name" label="name" name="name"
+                                   type="text" ng-model="vm.user.name" required/>
+                            <div ng-messages="signup.name.$error" ng-if="signup.email.$dirty || signup.name.$touched">
+                                <div ng-message when="required"><span translate>SIGNUP.NAME.PLEASE_ENTER</span></div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block" md-no-float>
+                            <md-icon md-font-icon="zmdi zmdi-email"></md-icon>
+                            <input placeholder="{{'SIGNUP.EMAIL.LABEL'|translate}}" id="email" label="email"
+                                   name="email" type="email" ng-model="vm.user.email" required/>
+                            <div ng-messages="signup.email.$error" ng-if="signup.email.$dirty || signup.email.$touched">
+                                <div ng-message when="required"><span translate>SIGNUP.EMAIL.PLEASE_ENTER</span></div>
+                                <div ng-message when="email"><span translate>SIGNUP.EMAIL.PLEASE_VALID</span></div>
+                            </div>
+                        </md-input-container>
+                        <md-radio-group ng-model="vm.user.gender" layout="row">
+                            <md-radio-button value="1" class="md-primary"><md-icon md-font-icon="zmdi zmdi-male"></md-icon> Male</md-radio-button>
+                            <md-radio-button value="0"><md-icon md-font-icon="zmdi zmdi-female"></md-icon> Female</md-radio-button>
+                        </md-radio-group>
+                        <md-input-container class="md-block" md-no-float>
+                            <md-icon md-font-icon="zmdi zmdi-key"></md-icon>
+                            <input placeholder="{{'SIGNUP.PASSWORD.LABEL'|translate}}" equals="{{vm.user.confirm}}"
+                                   id="password" label="password" name="password" type="password"
+                                   ng-model="vm.user.password" ng-minlength="8" required/>
+                            <div ng-messages="signup.password.$error"
+                                 ng-if="signup.password.$dirty || signup.password.$touched">
+                                <div ng-message when="required"><span translate>SIGNUP.PASSWORD.PLEASE_ENTER</span>
+                                </div>
+                                <div ng-message when="minlength"><span translate>SIGNUP.PASSWORD.MIN_LENGTH</span></div>
+                                <div ng-message when="equals"><span translate>SIGNUP.PASSWORD.SAME_PASSWORD</span></div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block" md-no-float>
+                            <md-icon md-font-icon="zmdi zmdi-key"></md-icon>
+                            <input placeholder="{{'SIGNUP.PASSWORD_CONFIRM.LABEL'|translate}}"
+                                   equals="{{vm.user.password}}" id="confirm" label="confirm" name="confirm"
+                                   type="password" ng-model="vm.user.confirm" ng-minlength="8" required/>
+                            <div ng-messages="signup.confirm.$error"
+                                 ng-if="signup.confirm.$dirty || signup.confirm.$touched">
+                                <div ng-message when="required"><span translate>SIGNUP.PASSWORD.PLEASE_ENTER</span>
+                                </div>
+                                <div ng-message when="minlength"><span translate>SIGNUP.PASSWORD.MIN_LENGTH</span></div>
+                                <div ng-message when="equals"><span translate>SIGNUP.PASSWORD.SAME_PASSWORD</span></div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row" layout-align="center center">
+                            <md-button ng-click="vm.signupClick()" ng-disabled="signup.$invalid"
+                                       class="md-raised md-primary" translate="SIGNUP.BUTTON"></md-button>
+                        </div>
+                        <center class="padding-20"><a ui-sref="phaojlar.default.signin"><span translate="LOGIN.TITLE"></span></a></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

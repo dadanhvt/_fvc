@@ -1,0 +1,38 @@
+<div class="index header" id="indexspider">
+    <canvas id="spiders" spiders-directive></canvas>
+    <div class="full-height" layout="row" layout-fill layout-align="space-around center" layout-xs="column">
+        <div layout="row" flex class="full-width" layout-align="center center">
+            <div flex="50"  flex-xs="100" class="padding-20 index" layout="column">
+                <div layout="row" layout-align="center center" class="background-radian">
+                    <h1 class="md-headline index" translate>DÙNG THỬ KIỂM TRA THỨ HẠNG TỪ KHÓA GOOGLE</h1>
+                </div>
+                <md-content class="md-padding margin-top-10 background-radian">
+                    <form name="ranking">
+                        <md-input-container class="md-block" md-no-float>
+                            <input placeholder="Nhập tên miền cần kiểm tra" id="website" label="website" name="website" type="text" ng-model="vm.ranking.website" ng-pattern="/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/i" required/>
+                            <div ng-messages="ranking.website.$error" ng-if="ranking.website.$dirty || ranking.website.$touched">
+                                <div ng-message when="required">
+                                    <span translate>Vui lòng nhập tên miền</span>
+                                </div>
+                                <div ng-message when="pattern"><span translate="MANAGEMENT.WEBSITE.URL_NOTREAL">Please fill real URL</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block" md-no-float>
+                            <textarea placeholder="Danh sách từ khóa cần kiểm tra (tối đa {{$root.config.guest_keywork_ranking}} từ khóa)" name="keyWords" ng-model="vm.ranking.keyWords" rows="5" md-select-on-focus required></textarea>
+                            <div ng-messages="ranking.keyWords.$error" ng-if="ranking.keyWords.$dirty || ranking.keyWords.$touched">
+                                <div ng-message when="required">
+                                    <span translate>Vui lòng nhập từ khóa</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row" layout-align="center center">
+                            <md-button ng-click="vm.rankingtrailer()" ng-disabled="ranking.$invalid" class="md-raised md-primary">DÙNG THỬ</md-button>
+                        </div>
+                    </form>
+                </md-content>
+
+            </div>
+        </div>
+    </div>
+</div>

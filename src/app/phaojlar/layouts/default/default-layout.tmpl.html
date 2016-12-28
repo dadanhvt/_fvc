@@ -1,0 +1,17 @@
+<div layout="row" class="full-height">
+    <!-- main content -->
+    <div layout="column" flex>
+        <!-- top toolbar -->
+        <div ui-view="toolbar"></div>
+        <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="navigation" ui-view="navigation">
+        </md-sidenav>
+        <!-- scrollable content -->
+        <div flex style="overflow-y: auto !important;" id="body-scroll">
+            <div flex class="phao-content">
+                <div ui-view="slide"></div>
+                <div style="background: transparent !important;"  ui-view="content" ></div>
+            </div>
+            <div ui-view="footer"></div>
+        </div>
+    </div>
+</div>

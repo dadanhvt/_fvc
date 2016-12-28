@@ -1,0 +1,148 @@
+<div class="wrapper">
+    <md-card class="margin-0 margin-bottom-10" ng-if="$root.profileUser == $root.user.id">
+        <md-input-container md-no-float class="md-block phao-input-noerror">
+            <form name="InputPost">
+                <md-input-container md-no-float class="md-block phao-input-noerror">
+                            <textarea ng-model="vm.postContent" rows="3" md-select-on-focus
+                                      placeholder="Write a comment..."></textarea>
+                </md-input-container>
+            </form>
+            <md-grid-list ng-if="vm.imagesUpload.length>0" flex md-cols="4" md-cols-sm="2" md-cols-xs="2"
+                          md-row-height="1:1" md-gutter="5px" class="margin-10 post-images">
+                <md-grid-tile ng-repeat="image in vm.imagesUpload">
+                    <img ngf-src="image" alt="" style="max-height: 100%;max-width: 100%;">
+                    <md-grid-tile-footer ng-click="vm.deleterImage($index)">
+                        <h3>Delete</h3>
+                    </md-grid-tile-footer>
+                </md-grid-tile>
+            </md-grid-list>
+            <md-toolbar layout="row" class="md-toolbar-small toolbar-light">
+                <md-button class="md-icon-button drop-box" ngf-select ngf-drop=""
+                           ng-model="vm.imagesUpload"
+                           ngf-multiple="true" ngf-pattern="'image/*'"
+                           ngf-accept="'image/*'"
+                           ngf-drag-over-class="dragOverClassObj"
+                           ngf-validate="{size: {max: '20MB', min: '10B'}, height: {max: 12000}, width: {max: 12000}, duration: {max: '5m'}}"
+                           ngf-keep="'distinct'"
+                           ngf-max-files="50" ngf-allow-dir="true"
+                           ngf-drop-available="true">
+                    <i class="zmdi zmdi-image"></i>
+                    <md-tooltip>Image</md-tooltip>
+                </md-button>
+                <span flex></span>
+                <md-button class="md-block margin-0" ng-click="vm.Poststt()">Post</md-button>
+            </md-toolbar>
+        </md-input-container>
+    </md-card>
+    <p ng-if="vm.posts.length == 0">Not have activitive yet!</p>
+    <div ng-repeat="post in vm.posts">
+        <md-card class="user-post margin-0 margin-bottom-10">
+            <md-card-header style=" background: #e6e2af!important;" class="padding-10">
+                <md-card-avatar>
+                    <img class="md-user-avatar" ng-src="{{vm.serverAssets}}upload/avatar/{{post.user.avatar}}"
+                         style="width: 40px;height: 40px;"/>
+                </md-card-avatar>
+
+                <md-card-header-text>
+                    <div layout="row">
+                        <span class="md-title"><a
+                            ui-sref="phaojlar.default.profile.timeline({userId: $root.profileUser})">{{post.user.name}}</a></span>
+                        <span flex></span>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert"></i>
+                                <md-tooltip>More</md-tooltip>
+                            </md-button>
+                            <md-menu-content width="2" class="padding-top-0 padding-bottom-0">
+                                <md-menu-item>
+                                    <md-button ng-click="vm.editClick(post)"><i class="zmdi zmdi-edit"></i> Edit
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="vm.deleteClick(vm.posts, $index)"><i class="zmdi zmdi-delete"></i> Delete
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                    <span class="md-subhead"><time am-time-ago="post.created_at"></time></span>
+                </md-card-header-text>
+            </md-card-header>
+            <p class="md-headline margin-0 padding-20" ng-hide="post.Editting">{{post.contents}}</p>
+            <md-grid-list ng-if="post.images.length>0" flex md-cols="4" md-cols-sm="2" md-cols-xs="2"
+                          md-row-height="1:1" md-gutter="5px" class="margin-10 post-images">
+                <md-grid-tile ng-repeat="image in post.images" ng-click="vm.openImage(post.images, $index)">
+                    <img ng-src="{{vm.serverAssets}}upload/post/{{image.name}}" alt=""
+                         style="max-height: 100%;max-width: 100%;">
+                </md-grid-tile>
+            </md-grid-list>
+            <md-divider></md-divider>
+            <div layout="row" layout-align="start center">
+                <md-button class="md-icon-button margin-0" ng-click="vm.toggleLikePost(post)">
+                    <i ng-class="{'zmdi-favorite-outline': post.is_liked.length==0, 'zmdi-favorite': post.is_liked.length>0}"
+                       class="zmdi" ng-style="post.is_liked.length>0 && {color: 'tomato'} || {color: 'black'}"></i>
+                    <md-tooltip>Like</md-tooltip>
+                </md-button>
+                <span>{{post.like_count.length>0?post.like_count[0].count:0}}</span>
+                <md-button class="md-icon-button margin-0">
+                    <i class="zmdi zmdi-comment-outline"></i>
+                    <md-tooltip>Comment</md-tooltip>
+                </md-button>
+                <span>{{post.comment_count.length>0?post.comment_count[0].count:0}}</span>
+            </div>
+            <md-divider></md-divider>
+            <md-button flex>Load more 5 comment</md-button>
+            <md-divider></md-divider>
+            <div class="timeline-comment">
+                <div ng-repeat="comment in post.comments">
+                    <div>
+                        <md-card-header style="padding: 5px 10px;">
+                            <md-card-avatar>
+                                <img class="md-user-avatar" ng-src="{{vm.serverAssets}}upload/avatar/{{comment.user.avatar}}"
+                                     style="width: 40px;height:40px"/>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <div layout="row">
+                                    <span class="md-title"><a href="#">{{comment.user.name}}</a></span>
+                                    <span flex></span>
+                                    <md-menu ng-if="$root.user.id == comment.user.id">
+                                        <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                            <md-tooltip>More</md-tooltip>
+                                        </md-button>
+                                        <md-menu-content width="2" class="padding-top-0 padding-bottom-0">
+                                            <md-menu-item>
+                                                <md-button ng-click="vm.editClick(comment)"><i class="zmdi zmdi-edit"></i>
+                                                    Edit
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ng-click="vm.deleteClick(post.comments, $index)"><i
+                                                    class="zmdi zmdi-delete"></i> Delete
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </div>
+                                <span class="md-subhead"><time am-time-ago="comment.created_at"></time></span>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <p class="margin-0 padding-10">{{comment.contents}}</p>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </div>
+                <div>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" style="position: relative">
+                            <textarea rows="2" md-select-on-focus ng-model="post.newCmt"
+                                      placeholder="Write a comment..."></textarea>
+                        <md-button class="md-icon-button margin-0" style="position: absolute; bottom: 0;right:0;"
+                                   ng-click="vm.Postcmt(post)">
+                            <i class="zmdi zmdi-mail-send"></i>
+                            <md-tooltip>Post</md-tooltip>
+                        </md-button>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</div>

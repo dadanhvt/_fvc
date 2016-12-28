@@ -1,0 +1,205 @@
+<!doctype html>
+<html class="no-js" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>FrancoViet</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+      <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+    <link rel="icon" type="image/png" href="icon.png" /><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material-data-table/dist/md-data-table.css" />
+    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
+    <link rel="stylesheet" href="../bower_components/perfect-scrollbar/src/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="app/app.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="../bower_components/highlightjs/styles/xcode.css">
+   <!-- endbuild -->
+  </head>
+  <body ng-class="bodyClasses">
+    <!--[if lt IE 10]>
+      <p class="">You are using an <strong>outdated</strong> browser. Please <a href="">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ng-show="$root.isShowPageLoader" style="position: absolute;left: 0;right: 0;top: 0;bottom: 0;background-color: #ffffff;background-color: rgba(255, 255, 255, 0.6);z-index: 999;"><img src="assets/images/page-loader.gif" style="position: fixed;top: 50%;left: 50%;"></div>
+    <div class="body-view" ui-view></div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-loader/angular-loader.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="../bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="../bower_components/highlightjs/highlight.pack.js"></script>
+    <script src="../bower_components/angular-translate/angular-translate.js"></script>
+    <script src="../bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="../bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+    <script src="../bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
+    <script src="../bower_components/angular-linkify/angular-linkify.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-material-data-table/dist/md-data-table.js"></script>
+    <script src="../bower_components/rangy/rangy-core.js"></script>
+    <script src="../bower_components/rangy/rangy-classapplier.js"></script>
+    <script src="../bower_components/rangy/rangy-highlighter.js"></script>
+    <script src="../bower_components/rangy/rangy-selectionsaverestore.js"></script>
+    <script src="../bower_components/rangy/rangy-serializer.js"></script>
+    <script src="../bower_components/rangy/rangy-textrange.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngularSetup.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-moment/angular-moment.js"></script>
+    <script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="../bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="../bower_components/angular-google-chart/ng-google-chart.js"></script>
+    <script src="../bower_components/angular-digest-hud/digest-hud.js"></script>
+    <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="../bower_components/countUp.js/dist/countUp.min.js"></script>
+    <script src="../bower_components/lodash/lodash.js"></script>
+    <script src="../bower_components/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+    <script src="../bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
+    <script src="../bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+    <script src="../bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script src="../bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="../bower_components/chart.js/dist/Chart.js"></script>
+    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="../bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+    <!-- endbower -->
+
+    <!-- enqueue all translations for calendar (remove if you dont need multilanguage) -->
+    <script src="../bower_components/fullcalendar/dist/locale-all.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <script src="app/phaojlar/layouts/layouts.module.js"></script>
+    <script src="app/phaojlar/layouts/default/default-menu.controller.js"></script>
+    <script src="app/phaojlar/layouts/default/default-layout.controller.js"></script>
+    <script src="app/phaojlar/components/components.module.js"></script>
+    <script src="app/phaojlar/components/toolbars/default-toolbar.controller.js"></script>
+    <script src="app/phaojlar/components/slides/spider-slide.controller.js"></script>
+    <script src="app/phaojlar/components/slides/ranking-dialog.controller.js"></script>
+    <script src="app/phaojlar/components/slides/default-slide.controller.js"></script>
+    <script src="app/phaojlar/components/sign-in/sign-in.controller.js"></script>
+    <script src="app/phaojlar/components/navigations/default-navigation.controller.js"></script>
+    <script src="app/phaojlar/components/menu/default-menu.controller.js"></script>
+    <script src="app/phaojlar/components/footers/default-footer.controller.js"></script>
+    <script src="app/main/web-analyst/web-analyst.module.js"></script>
+    <script src="app/main/web-analyst/website-ranking/website-ranking.controller.js"></script>
+    <script src="app/main/web-analyst/keywork-ranking/keywork-ranking.controller.js"></script>
+    <script src="app/main/receive/receive.module.js"></script>
+    <script src="app/main/receive/report/report.controller.js"></script>
+    <script src="app/main/receive/report/open-report-dialog.controller.js"></script>
+    <script src="app/main/receive/mail/mail.controller.js"></script>
+    <script src="app/main/profile/profile.module.js"></script>
+    <script src="app/main/profile/timeline/timeline.controller.js"></script>
+    <script src="app/main/profile/timeline/edit-post.controller.js"></script>
+    <script src="app/main/profile/photos/photos.controller.js"></script>
+    <script src="app/main/profile/photos/open-image.controller.js"></script>
+    <script src="app/main/profile/layouts/updateAvatar.controller.js"></script>
+    <script src="app/main/profile/layouts/profile.controller.js"></script>
+    <script src="app/main/profile/connection/connection.controller.js"></script>
+    <script src="app/main/profile/about/about.controller.js"></script>
+    <script src="app/main/forum/forum.module.js"></script>
+    <script src="app/main/forum/threads/threads.controller.js"></script>
+    <script src="app/main/forum/posts/posts.controller.js"></script>
+    <script src="app/main/index/index.module.js"></script>
+    <script src="app/main/forum/layouts/forum.controller.js"></script>
+    <script src="app/main/forum/index/index.controller.js"></script>
+    <script src="app/main/employee/employee.module.js"></script>
+    <script src="app/main/employee/write-report/report.controller.js"></script>
+    <script src="app/main/employee/write-report/fab-button.controller.js"></script>
+    <script src="app/main/employee/write-report/edit-report-dialog.controller.js"></script>
+    <script src="app/main/employee/write-report/add-report-dialog.controller.js"></script>
+    <script src="app/main/ads/ads.module.js"></script>
+    <script src="app/main/employee/gg-ads/open-ads-dialog.controller.js"></script>
+    <script src="app/main/employee/gg-ads/campaign-require.controller.js"></script>
+    <script src="app/main/employee/fb-ads/open-ads-dialog.controller.js"></script>
+    <script src="app/main/employee/fb-ads/campaign-require.controller.js"></script>
+    <script src="app/main/authentication/autthentication.module.js"></script>
+    <script src="app/main/authentication/signup/signup.controller.js"></script>
+    <script src="app/main/authentication/signin/signin.controller.js"></script>
+    <script src="app/main/authentication/find/find.controller.js"></script>
+    <script src="app/main/ads/google/run-ads.controller.js"></script>
+    <script src="app/main/ads/google/add-ads-dialog.controller.js"></script>
+    <script src="app/main/ads/facebook/run-ads.controller.js"></script>
+    <script src="app/main/ads/facebook/add-ads-dialog.controller.js"></script>
+    <script src="app/main/admin/admin.module.js"></script>
+    <script src="app/main/admin/users/users.controller.js"></script>
+    <script src="app/main/admin/users/users-list.controller.js"></script>
+    <script src="app/main/admin/users/user-dialog.controller.js"></script>
+    <script src="app/main/admin/users/languages-detail.controller.js"></script>
+    <script src="app/main/admin/users/experiences-detail.controller.js"></script>
+    <script src="app/main/admin/users/educations-detail.controller.js"></script>
+    <script src="app/main/admin/users/certifications-detail.controller.js"></script>
+    <script src="app/main/admin/config/config.controller.js"></script>
+    <script src="app/phaojlar/filters/filters.module.js"></script>
+    <script src="app/phaojlar/filters/plaintext.filter.js"></script>
+    <script src="app/phaojlar/directives/directives.module.js"></script>
+    <script src="app/phaojlar/directives/spiders.directive.js"></script>
+    <script src="app/phaojlar/directives/small.directive.js"></script>
+    <script src="app/phaojlar/directives/slide.directive.js"></script>
+    <script src="app/phaojlar/directives/pwmatch.directive.js"></script>
+    <script src="app/main/web-analyst/web-analyst.config.js"></script>
+    <script src="app/main/receive/receive.config.js"></script>
+    <script src="app/main/profile/profile.config.js"></script>
+    <script src="app/main/messenger/messenger.module.js"></script>
+    <script src="app/main/messenger/messenger.controller.js"></script>
+    <script src="app/main/messenger/messenger.config.js"></script>
+    <script src="app/main/index/index.controller.js"></script>
+    <script src="app/main/index/index.config.js"></script>
+    <script src="app/main/forum/forum.config.js"></script>
+    <script src="app/main/employee/employee.config.js"></script>
+    <script src="app/main/authentication/authentication.config.js"></script>
+    <script src="app/main/ads/ads.config.js"></script>
+    <script src="app/main/admin/admin.config.js"></script>
+    <script src="app/utils/func.js"></script>
+    <script src="app/utils/constant.js"></script>
+    <script src="app/phaojlar/phaojlar.module.js"></script>
+    <script src="app/phaojlar/userService.factory.js"></script>
+    <script src="app/phaojlar/user.factory.js"></script>
+    <script src="app/phaojlar/phaojlar.run.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/phaojlar/config.theme.js"></script>
+    <script src="app/phaojlar/config.route.js"></script>
+    <script src="app/phaojlar/api.service.js"></script>
+    <script src="app/phaojlar/Auth.factory.js"></script>
+    <script src="app/main/main.module.js"></script>
+    <script src="app/config.translate.js"></script>
+    <script src="app/config.route.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+  </body>
+</html>

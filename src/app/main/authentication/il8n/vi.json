@@ -1,0 +1,119 @@
+{
+  "LOGIN": {
+    "TITLE": "Đăng nhập",
+    "EMAIL": {
+      "LABEL": "email",
+      "PLEASE_ENTER": "Vui lòng nhập địa chỉ email.",
+      "PLEASE_VALID": "Vui lòng nhập đúng định dạng email."
+    },
+    "PASSWORD": {
+      "LABEL": "Mật khẩu",
+      "PLEASE_ENTER": "Vui lòng nhập mật khẩu."
+    },
+    "REMEMBER": "Lưu đăng nhâp",
+    "FORGOT": "Quên mật khẩu?",
+    "BUTTON": "Đăng nhập",
+    "SIGNUP_LINK": "Bạn chưa có tài khoản? Đăng ký ngay",
+    "SOCIAL": {
+      "OR": "Hoặc đăng nhập qua"
+    },
+    "MESSAGES": {
+      "EMAIL_REQUIRED": "Vui lòng nhập Email",
+      "EMAIL_LIMIT": "Email tối đa 120 ký tự",
+      "EMAIL_VALID": "Sai định dạng Email",
+      "PW_MINLENGTH": "Mật khẩu ít nhất 8 ký tự",
+      "PW_REQUIRED": "Vui lòng nhập mật khẩu",
+      "LOGGED": "Bạn đã đăng nhập, vui lòng đăng xuất trước",
+      "LOGIN_DENIED": "Email hoặc mật khẩu không chính xác",
+      "LOGIN_SUCCESS": "Đăng nhập thành công",
+      "LOGIN_BANNED": "Tài khoản đã bị khóa! Liên hệ quản trị để tiếp tục"
+    }
+  },
+  "SIGNUP": {
+    "TITLE": "Đăng ký",
+    "NAME": {
+      "LABEL": "Tên",
+      "PLEASE_ENTER": "Vui lòng nhập tên."
+    },
+    "EMAIL": {
+      "LABEL": "email",
+      "PLEASE_ENTER": "Vui lòng nhập địa chỉ email.",
+      "PLEASE_VALID": "Vui lòng nhập đúng định dạng email."
+    },
+    "WEBSITE": {
+      "LABEL": "Trang web",
+      "PLEASE_VALID": "Vui lòng nhập đúng định dạng trang web.",
+      "PLEASE_ENTER": "Vui lòng điền trang web của bạn"
+    },
+    "PASSWORD": {
+      "LABEL": "Mật khẩu",
+      "PLEASE_ENTER": "Vui lòng nhập mật khẩu.",
+      "MIN_LENGTH": "Mật khẩu phải chưa ít nhất 8 ký tự.",
+      "SAME_PASSWORD": "Bạn cần nhập mật khẩu giống nhau."
+    },
+    "PASSWORD_CONFIRM": {
+      "LABEL": "Xác nhận mật khẩu"
+    },
+    "BUTTON": "Đăng ký",
+    "HAVE_LOGIN": "Nếu bạn đã có tài khoản? đăng nhập.",
+    "MESSAGES": {
+      "NAME_LIMIT": "Tên tối đa 60 ký tự",
+      "NAME_MINLENGTH": "Tên tối thiểu 6 ký tự",
+      "NAME_REQUIRED": "Vui lòng nhập tên thành viên",
+      "EMAIL_REQUIRED": "Vui lòng nhập Email",
+      "EMAIL_LIMIT": "Email tối đa 120 ký tự",
+      "EMAIL_VALID": "Sai định dạng Email",
+      "EMAIL_EXIST": "Email đã có người sử dụng",
+      "PW_MINLENGTH": "Mật khẩu ít nhất 8 ký tự",
+      "PW_REQUIRED": "Vui lòng nhập mật khẩu",
+      "WEBSITE_REQUIRED": "Vui lòng nhập website của bạn",
+      "SIGNUP_DENIED": "Có lỗi xảy ra! Vui lòng thử lại sau",
+      "SIGNUP_SUCCESS": "Tạo tài khoản thành công",
+      "ADDR_MAX": "Địa chỉ tối đa 255 ký tự",
+      "FB_MAX": "Facebook tối đa 255 ký tự",
+      "BIO_MAX": "Mô tả tối đa 255 ký tự",
+      "CURRENT_WRONG": "Sai mật khẩu hiện tại, vui lòng kiểm tra lại"
+    }
+  },
+  "PROFILE": {
+    "LABEL":{
+      "PROFILE":"THÔNG TIN",
+      "PASSWORD":"MẬT KHẨU"
+    },
+    "MESSAGES":{
+      "UNSUCCESSFUL": "Không thể lưu, vui lòng kiểm tra lại!",
+      "SUCCESS": "Cập nhật thành công"
+    },
+    "TITLE": "Trang cá nhân",
+    "NAME": {
+      "LABEL": "Tên",
+      "PLEASE_ENTER": "Vui lòng nhập tên của bạn"
+    },
+    "EMAIL": {
+      "LABEL": "email",
+      "PLEASE_ENTER": "Vui lòng nhập địa chỉ email.",
+      "PLEASE_VALID": "Vui lòng nhập đúng định dạng email."
+    },
+    "ADDR": {
+      "LABEL": "địa chỉ"
+    },
+    "FACEBOOK": {
+      "LABEL": "facebook"
+    },
+    "PHONE": {
+      "LABEL": "số điện thoại",
+      "PLEASE_VALID": "Trường này bắt buộc là số"
+    },
+    "PASSWORD": {
+      "LABEL": "Mật khẩu mới",
+      "CURRENT": "Mật khẩu hiện tại",
+      "PLEASE_ENTER": "Vui lòng nhập mật khẩu.",
+      "MIN_LENGTH": "Mật khẩu phải chưa ít nhất 8 ký tự.",
+      "SAME_PASSWORD": "Bạn cần nhập mật khẩu giống nhau."
+    },
+    "PASSWORD_CONFIRM": {
+      "LABEL": "Xác nhận mật khẩu"
+    },
+    "BUTTON": "Lưu"
+  }
+}

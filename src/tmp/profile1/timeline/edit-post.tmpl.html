@@ -1,0 +1,22 @@
+<md-dialog class="mobile-fullwidth-dialog" flex="50" flex-sm="80" flex-xs="100">
+    <md-toolbar class="md-toolbar-small">
+        <div class="md-toolbar-tools">
+            <span>Edit post</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content flex>
+        <md-input-container md-no-float class="md-block phao-input-noerror">
+                            <textarea ng-model="vm.content" rows="3" md-select-on-focus
+                                      placeholder="Write a comment..."></textarea>
+        </md-input-container>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.saveClick()" class="md-primary">Save</md-button>
+        <md-button ng-click="vm.cancelClick()" class="md-primary">Cancel</md-button>
+    </md-dialog-actions>
+</md-dialog>

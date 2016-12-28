@@ -1,0 +1,62 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar layout-align="center">
+        <span class="padding-top-8 padding-left-10">Certifications</span>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <table md-data-table class="md-data-table" md-progress="vm.deferred">
+            <thead md-order="vm.query.order">
+            <tr>
+                <th class="padding-right-10 padding-left-10" name="No."></th>
+                <th class="padding-right-10 padding-left-10" name="Option"></th>
+                <th class="padding-right-10 padding-left-10" name="Certification"></th>
+                <th class="padding-right-10 padding-left-10" name="Authority"></th>
+                <th class="padding-right-10 padding-left-10" name="From"></th>
+                <th class="padding-right-10 padding-left-10" name="To"></th>
+                <th class="padding-right-10 padding-left-10" name="unExpire"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="item in vm.certifications">
+                <td class="padding-right-10 padding-left-10">{{$index + 1}}</td>
+                <td style="padding: 0px!important;">
+                    <md-button ng-if="$index != (vm.certifications.length-1)" class="md-icon-button" ng-click="vm.deleteCertification(item)">
+                        <i class="zmdi zmdi-delete"></i>
+                        <md-tooltip>Delete</md-tooltip>
+                    </md-button>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-input-container style="width: 200px" md-no-float class="md-block phao-input-noerror">
+                        <input name="certification" ng-model="item.name" placeholder="Certification"
+                               ng-change="vm.addCertification($index)" required>
+                    </md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-input-container style="width: 200px" md-no-float class="md-block phao-input-noerror">
+                        <input ng-model="item.authority" placeholder="Authority" ng-change="vm.addCertification($index)">
+                    </md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-0">
+                    <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input ng-model="item.date_from" placeholder="From" ng-change="vm.addCertification($index)"></md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-0">
+                    <md-input-container style="width: 100px" md-no-float class="md-block phao-input-noerror"><input ng-disabled="item.unexpire" ng-model="item.date_to" placeholder="To" ng-change="vm.addCertification($index)"></md-input-container>
+                </td>
+                <td class="padding-right-10 padding-left-10">
+                    <md-checkbox ng-model="item.unexpire" ng-change="vm.addCertification($index)"></md-checkbox>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>
+
+
+

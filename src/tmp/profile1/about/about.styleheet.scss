@@ -1,0 +1,21 @@
+.wrapper .box md-toolbar.md-default-theme:not(.md-menu-toolbar),.wrapper .box md-toolbar:not(.md-menu-toolbar){
+    color: #fff !important;
+    padding-left: 1%;
+}
+//.wrapper .box{
+//    margin-bottom: 20px;
+//    box-shadow: 10px 10px 5px #888888;
+//
+//}
+.wrapper .box .content md-chips.md-default-theme md-chip, .wrapper .box .content md-chips md-chip {
+    background: greenyellow!important;
+}
+.wrapper .box .content .row{
+    margin-left: 1% ;
+}
+.wrapper .row md-button{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+

@@ -1,0 +1,321 @@
+// import phaojlar module scss
+@import "phaojlar/phaojlar";
+
+// import app scss
+@import "scss/common";
+@import "main/forum/forum";
+
+// Add your CSS here
+
+// variables
+$icon-size: 3rem;
+$icon-color: #D8D8D8;
+$main-color: #F85E6A;
+// Pricing table
+.pricing-table {
+  display: table;
+  width: 100%;
+  .pricing-option {
+    width: 28%;
+    background:white;
+    float: left;
+    padding: 2%;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    &:nth-child(even) {
+      margin: 0 2%;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 2px 30px rgba(0,0,0,0.3);
+      transform: scale(1.04);
+      i, h1, span, b {
+        color: $main-color;
+      }
+      .front {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .back {
+        opacity: 1 !important;
+        visibility: visible !important;
+        a.button {
+          transform: translateY(0px) !important;
+        }
+      }
+    }
+    hr {
+      border:none;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    i {
+      font-size: $icon-size;
+      color: $icon-color;
+      transition: all .3s ease-in-out;
+    }
+    h1 {
+      margin: 10px 0;
+      color: #212121;
+      transition: all .3s ease-in-out;
+    }
+    p {
+      color: #999;
+      padding: 0 10px;
+      line-height: 1.3;
+    }
+    .price {
+      position: relative;
+      .front {
+        span.price {
+          font-size: 2rem;
+          text-transform: uppercase;
+          margin-top: 20px;
+          display: block;
+          font-weight: 700;
+          position: relative;
+          b {
+            position: absolute;
+            font-size: 1rem;
+            margin-left: 2px;
+            font-weight: 600;
+          }
+        }
+      }
+      .back {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        a.button {
+          background: $main-color;
+          padding: 15px 20px;
+          display: inline-block;
+          text-decoration: none;
+          color: white;
+          position: absolute;
+          font-size: 13px;
+          top: -5px;
+          left: 0;
+          right: 0;
+          width: 150px;
+          margin: auto;
+          text-transform: uppercase;
+          transform: translateY(20px);
+          transition: all .3s ease-in-out;
+          &:hover {
+            background: darken($main-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 600px) {
+  .pricing-table {
+    .pricing-option {
+      padding: 5%;
+      width: 90%;
+      &:nth-child(even) {
+        margin: 30px 0 !important;
+      }
+    }
+  }
+}
+.index-price-table{
+  text-align: center;
+}
+.index-benefit{
+  text-align: center;
+}
+.index-benefit p.detail{
+  margin: 0;
+  font-style: italic;
+}
+.index-benefit p.header{
+  font-size: 20px;
+  font-weight: 700;
+}
+.index-benefit i{
+  font-size: 170px;
+  color: #F85E6A;
+}
+svg.decrease{
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  fill: tomato !important;
+}
+.keywork-name{
+  cursor: pointer;
+}
+.keywork-name:hover span{
+  display: inline;
+  color:tomato;
+}
+.keywork-delete{
+  display: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 10px;
+  height: 10px;
+}
+.mail-p-nowrap{
+  font-size: 14px;
+  letter-spacing: 0.010em;
+  margin: 3px 0 1px 0;
+  font-weight: 400;
+  line-height: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.email-inbox-list-item-unread {
+  border-left: 2px solid #00f;
+}
+.open-report-content img{
+  width: 100% !important;
+  height: 100% !important;
+}
+.fullwidth-dialog {
+  max-width: 100%;
+  min-height: 100%;
+}
+.phao-pagination .md-button{
+  min-width: 0px;
+}
+.campaign-inpro{
+  border-left: 2px solid tomato;
+}
+.campaign-done{
+  border-left: 2px solid #00AA00;
+}
+.p-campaign-inpro{
+  color: tomato !important;
+}
+.p-campaign-done{
+  color: #00AA00 !important;
+}
+.md-toolbar-small{
+    min-height: 40px !important;
+    max-height:40px !important;
+}
+.padding-top-8{
+    padding-top:8px !important;
+}
+.toolbar button span{
+    color: #efecca !important;
+}
+.toolbar a span{
+    color: #efecca !important;
+}
+.toolbar a:hover span{
+    color: #efecca !important;
+}
+.md-toolbar-tools a {
+    color: #046380 !important;
+}
+.toolbar .search .zmdi-search::before{
+    color:#efecca;
+}
+.toolbar md-input-container.search .md-input {
+    color: #efecca;
+    border-color: #efecca;
+}
+.toolbar md-input-container.search input::-webkit-input-placeholder {
+    color: #efecca;
+}
+md-toast span{
+    color:#efecca !important;
+}
+md-toast .md-toast-content{
+    max-height: 40px !important;
+    min-height: 40px !important;
+    background-color: #002f2f;
+}
+.profile-cover{
+    height: 165px;
+    width: 100%;
+    background: rgba(165,206,226,1);
+    background: -moz-linear-gradient(left, rgba(165,206,226,1) 0%, rgba(185,191,194,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(165,206,226,1)), color-stop(100%, rgba(185,191,194,1)));
+    background: -webkit-linear-gradient(left, rgba(165,206,226,1) 0%, rgba(185,191,194,1) 100%);
+    background: -o-linear-gradient(left, rgba(165,206,226,1) 0%, rgba(185,191,194,1) 100%);
+    background: -ms-linear-gradient(left, rgba(165,206,226,1) 0%, rgba(185,191,194,1) 100%);
+    background: linear-gradient(to right, rgba(165,206,226,1) 0%, rgba(185,191,194,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5cee2', endColorstr='#b9bfc2', GradientType=1 );
+}
+.profile-content .avatar-image:hover .avatar-change{
+    opacity: 1 !important;
+}
+.profile-content .avatar-image .avatar-change:hover{
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+.toolbar-light{
+    background: #e6e2af !important;
+    color:#002f2f;
+}
+.timeline-comment{
+    margin-left:30px;
+    margin-right:10px;
+}
+.image-active{
+    opacity: 1 !important;
+}
+.connection-user-item:hover .user-name{
+    display: none !important;
+}
+.connection-user-item:hover .add-user{
+    display: block !important;
+}
+md-tooltip .md-content{
+    background: #002f2f;
+}
+md-tooltip span{
+    color: #efecca;
+}
+a:hover{
+    color:black !important;
+}
+a:hover span{
+    color:black !important;
+}
+md-input-container .md-input[disabled] {
+    color: #002f2f !important;
+}
+.user-item-edited{
+    background: antiquewhite !important;
+}
+.phao-no-frame md-autocomplete-wrap{
+    box-shadow: none !important;
+}
+.phao-no-frame md-input-container{
+    margin:0;
+    padding:2px !important;
+}
+.phao-no-frame md-input-container label{
+    display: none;
+}
+.phao-no-frame md-input-container .md-errors-spacer{
+    display: none;
+}
+md-grid-list.post-images{
+    cursor: pointer;
+}
+md-grid-list.post-images md-grid-tile-footer{
+    height:30px !important;
+    color: #efecca;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+md-grid-list.post-images md-grid-tile:hover md-grid-tile-footer{
+    display: flex;
+}
+md-grid-list.post-images md-grid-tile-footer:hover{
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

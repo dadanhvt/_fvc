@@ -1,0 +1,359 @@
+<div layout="row" class="full-height">
+    <!-- main content -->
+    <div layout="column" flex>
+        <!-- scrollable content -->
+        <div layout="row" layout-xs="column">
+            <div layout="row">
+                <span style="padding: 8px;">Search by: </span>
+                <md-select ng-model="vm.query.searchBy" ng-change="vm.query.page=1;vm.getData()"
+                           class="md-no-underline margin-0">
+                    <md-option value="name">Name</md-option>
+                    <md-option value="email">Email</md-option>
+                </md-select>
+                <span style="padding: 8px;">Role: </span>
+                <md-select ng-model="vm.query.role" ng-change="vm.query.page=1;vm.getData()"
+                           class="md-no-underline margin-0">
+                    <md-option ng-value="''">All</md-option>
+                    <md-option ng-value="'AD'">Admin</md-option>
+                    <md-option ng-value="'US'">candidate</md-option>
+                    <md-option ng-value="'HH'">Head Hunt</md-option>
+                    <md-option ng-value="'RE'">Recruiter</md-option>
+                    <md-option ng-value="'JP'">Job posting</md-option>
+                    <md-option ng-value="'BA'">Banned</md-option>
+                </md-select>
+                <md-input-container md-no-float class="md-block phao-input-noerror">
+                    <input name="email" type="text" ng-model="vm.query.search" placeholder="Search text"
+                           ng-change="vm.changeSearchText()">
+                </md-input-container>
+            </div>
+            <div flex layout="row">
+                <span flex></span>
+                <span style="padding: 8px;">Rows per page: </span>
+                <md-select ng-model="vm.query.limit" ng-change="vm.query.page=1;vm.getData()"
+                           class="md-no-underline margin-0">
+                    <md-option value="5">5</md-option>
+                    <md-option value="10">10</md-option>
+                    <md-option value="15">15</md-option>
+                    <md-option value="20">20</md-option>
+                    <md-option value="30">30</md-option>
+                    <md-option value="40">40</md-option>
+                    <md-option value="50">50</md-option>
+                </md-select>
+                <md-divider></md-divider>
+                <span style="padding: 8px;">{{vm.users.from}}-{{vm.users.to}} of {{vm.users.total}}</span>
+                <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
+                           ng-click="vm.query.page=1;vm.getData()">
+                    <i class="zmdi zmdi-skip-previous"></i>
+                </md-button>
+                <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
+                           ng-click="vm.query.page=vm.query.page-1;vm.getData()">
+                    <i class="zmdi zmdi-chevron-left"></i>
+                </md-button>
+                <md-button ng-disabled="vm.query.page == vm.users.last_page" class="md-icon-button" aria-label="More"
+                           ng-click="vm.query.page=vm.query.page+1;vm.getData()">
+                    <i class="zmdi zmdi-chevron-right"></i>
+                </md-button>
+                <md-button ng-disabled="vm.query.page == vm.users.last_page" class="md-icon-button" aria-label="More"
+                           ng-click="vm.query.page=vm.users.last_page;vm.getData()">
+                    <i class="zmdi zmdi-skip-next"></i>
+                </md-button>
+
+                <md-button class="md-block margin-0" ng-class="{'md-raised md-warn': vm.edited == true}"
+                           aria-label="More" ng-click="vm.saveUser()">
+                    <span>Save</span>
+                    <md-tooltip>Save</md-tooltip>
+                </md-button>
+
+            </div>
+        </div>
+        <div flex style="overflow: auto !important;">
+            <div flex>
+                <md-table-container flex>
+                    <table md-data-table class="md-data-table" flex>
+                        <thead md-order="vm.query.order" md-trigger="vm.onChangeFilter">
+                        <tr>
+                            <th class="padding-right-10 padding-left-10" name="No."></th>
+                            <th class="padding-right-10 padding-left-10" name="Option"></th>
+                            <th class="padding-right-10 padding-left-10" name="Username"></th>
+                            <th class="padding-right-10 padding-left-10" name="Password"></th>
+                            <th class="padding-right-10 padding-left-10" name="Name" order-by="Name" decend-first></th>
+                            <th class="padding-right-10 padding-left-10" name="Email" order-by="email"></th>
+                            <th class="padding-right-10 padding-left-10" name="Credit"></th>
+                            <th class="padding-right-10 padding-left-10" name="Free credit"></th>
+                            <th class="padding-right-10 padding-left-10" name="Gender"></th>
+                            <th class="padding-right-10 padding-left-10" name="Birth"></th>
+                            <th class="padding-right-10 padding-left-10" name="Phone"></th>
+                            <th class="padding-right-10 padding-left-10" name="Address"></th>
+                            <th class="padding-right-10 padding-left-10" name="Headline"></th>
+                            <th class="padding-right-10 padding-left-10" name="Job Function"></th>
+                            <th class="padding-right-10 padding-left-10" name="Industry"></th>.
+                            <th class="padding-right-10 padding-left-10" name="Nationality"></th>
+                            <th class="padding-right-10 padding-left-10" name="Summary"></th>
+                            <th class="padding-right-10 padding-left-10" name="Language"></th>
+                            <th class="padding-right-10 padding-left-10" name="Education"></th>
+                            <th class="padding-right-10 padding-left-10" name="Certification"></th>
+                            <th class="padding-right-10 padding-left-10" name="Experience"></th>
+                            <th class="padding-right-10 padding-left-10" name="CV"></th>
+                            <th class="padding-right-10 padding-left-10" name="Role"></th>
+                        </tr>
+                        </thead>
+                        <tbody flex>
+                        <tr ng-repeat="user in vm.users.data" ng-class="{'user-item-edited': user.isEdit == true}">
+                            <td class="padding-right-10 padding-left-10">{{(vm.query.page-1)*vm.query.limit +
+                                ($index+1)}}
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-button class="md-icon-button" ng-click="vm.deleteUser(user)"
+                                           ng-if="$index != (vm.users.data.length-1)">
+                                    <i class="zmdi zmdi-delete margin-right-30"></i>
+                                    <md-tooltip>Delete</md-tooltip>
+                                </md-button>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 150px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="name" ng-model="user.user_name" placeholder="Username" required
+                                           ng-change="vm.addUser($index)" disabled>
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 100px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="name" ng-model="user.password" placeholder="Password"
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 150px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="name" ng-model="user.name" placeholder="Name" required
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 150px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="email" type="email" ng-model="user.email" placeholder="Email" required
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 50px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="credit" ng-model="user.credit" placeholder="Credit" required
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 50px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="fcredit" ng-model="user.f_credit" placeholder="F-Credit" required
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-select ng-model="user.gender" placeholder="Gender" class="md-no-underline margin-0"
+                                           ng-change="vm.addUser($index)">
+                                    <md-option value="1">Male</md-option>
+                                    <md-option value="0">Female</md-option>
+                                </md-select>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-datepicker ng-model="user.birth" md-placeholder="Birthday"
+                                               ng-change="vm.addUser($index)"></md-datepicker>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 100px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input name="phone" ng-model="user.profile.phone" placeholder="Phone number"
+                                            ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <div layout="row">
+                                    <md-select ng-model="user.profile.country_code" style="width: 100px"
+                                               placeholder="Country"
+                                               ng-change="user.profile.city=null;vm.addUser($index)"
+                                               class="md-no-underline margin-0">
+                                        <md-option ng-repeat="item in vm.countries" ng-value="item.code">{{item.name}}
+                                        </md-option>
+                                    </md-select>
+                                    <md-select class="md-no-underline margin-0" ng-change="vm.addUser($index)"
+                                               placeholder="City" ng-model="user.profile.city"
+                                               md-on-open="vm.citySearch(user)" style="width: 100px">
+                                        <md-option ng-value="item.id" ng-repeat="item in user.profile.cities">
+                                            {{item.name}}
+                                        </md-option>
+                                    </md-select>
+                                    <!--<md-autocomplete class="phao-no-frame"-->
+                                    <!--md-no-cache="true"-->
+                                    <!--md-search-text="user.profile.countrySearch"-->
+                                    <!--md-search-text-change="vm.countryTextChange(user)"-->
+                                    <!--md-selected-item-change="vm.countryChange(user, item)"-->
+                                    <!--md-items="item in vm.countrySearch(user.profile.countrySearch)"-->
+                                    <!--md-selected-item="user.profile.country_f"-->
+                                    <!--md-item-text="item.name"-->
+                                    <!--md-min-length="0"-->
+                                    <!--md-require-match-->
+                                    <!--md-floating-label="Country"-->
+                                    <!--placeholder="Country">-->
+                                    <!--<md-item-template>-->
+                                    <!--<span md-highlight-text="user.country.searchText" md-highlight-flags="^i">{{item.name}}</span>-->
+                                    <!--</md-item-template>-->
+                                    <!--</md-autocomplete>-->
+                                    <!--<md-autocomplete class="phao-no-frame"-->
+                                    <!--md-no-cache="true"-->
+                                    <!--md-search-text-change="vm.cityTextChange(user)"-->
+                                    <!--md-selected-item="user.profile.city_f"-->
+                                    <!--md-search-text="user.profile.citySearch"-->
+                                    <!--md-selected-item-change="vm.cityChange(user, item)"-->
+                                    <!--md-items="item in vm.citySearch(user, user.profile.citySearch)"-->
+                                    <!--md-item-text="item.name"-->
+                                    <!--md-min-length="0"-->
+                                    <!--md-require-match="true"-->
+                                    <!--md-floating-label="City"-->
+                                    <!--placeholder="City">-->
+                                    <!--<md-item-template>-->
+                                    <!--<span md-highlight-text="user.country.citySearch" md-highlight-flags="^i">{{item.name}}</span>-->
+                                    <!--</md-item-template>-->
+                                    <!--</md-autocomplete>-->
+                                </div>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 150px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input type="text" ng-model="user.headline" placeholder="Headline"
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-select ng-model="user.profile.job_position" placeholder="Job Function" ng-change="vm.addUser($index)">
+                                    <md-option ng-repeat="item in vm.job_functions" ng-value="item.value">{{item.jf}}
+                                    </md-option>
+                                </md-select>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-select ng-model="user.profile.industry_id" placeholder="Industry">
+                                    <md-optgroup ng-repeat="item in vm.industries" label="{{item.group.name}}">
+                                        <md-option ng-repeat="indus in item.items" ng-value="indus.id">{{indus.name}}
+                                        </md-option>
+                                    </md-optgroup>
+                                </md-select>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-select ng-model="user.profile.nationality" style="width: 100px"
+                                           placeholder="Nationality"
+                                           ng-change="vm.addUser($index)"
+                                           class="md-no-underline margin-0">
+                                    <md-option ng-repeat="item in vm.countries | orderBy:'-nationality'" ng-value="item.code">{{item.nationality}}
+                                    </md-option>
+                                </md-select>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-input-container style="width: 300px" md-no-float
+                                                    class="md-block phao-input-noerror">
+                                    <input ng-model="user.profile.summary" placeholder="Summary"
+                                           ng-change="vm.addUser($index)">
+                                </md-input-container>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-menu>
+                                    <md-button style="margin-left: -15px;" class="md-block"
+                                               ng-click="$mdOpenMenu($event)">
+                                        <span>Language</span>
+                                    </md-button>
+                                    <md-menu-content width="2">
+                                        <md-menu-item ng-repeat="language in user.languages">
+                                            <span>{{vm.nameOfLang(language.language_id)}}</span>
+                                        </md-menu-item>
+                                        <md-menu-item ng-click="vm.detailLanguage(user)">
+                                            <md-button>
+                                                <span>Detail</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-menu>
+                                    <md-button style="margin-left: -20px;" class="md-block"
+                                               ng-click="$mdOpenMenu($event)">
+                                        <span>Study_at</span>
+                                    </md-button>
+                                    <md-menu-content width="2">
+                                        <md-menu-item ng-repeat="education in user.educations">
+                                            <span>{{education.school_name}}</span>
+                                        </md-menu-item>
+                                        <md-menu-item ng-click="vm.detailEducation(user)">
+                                            <md-button>
+                                                <span>Detail</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-menu>
+                                    <md-button style="margin-left: -20px;" class="md-block"
+                                               ng-click="$mdOpenMenu($event)">
+                                        <span>Certification</span>
+                                    </md-button>
+                                    <md-menu-content width="2">
+                                        <md-menu-item ng-repeat="certification in user.certifications">
+                                            <span>{{certification.name}}</span>
+                                        </md-menu-item>
+                                        <md-menu-item ng-click="vm.detailCertification(user)">
+                                            <md-button>
+                                                <span>Detail</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-menu>
+                                    <md-button style="margin-left: -20px;" class="md-block"
+                                               ng-click="$mdOpenMenu($event)">
+                                        <span>Work_at</span>
+                                    </md-button>
+                                    <md-menu-content width="2">
+                                        <md-menu-item ng-repeat="experience in user.experiences">
+                                            <span>{{experience.company_name}}</span>
+                                        </md-menu-item>
+                                        <md-menu-item ng-click="vm.detailExperience(user)">
+                                            <md-button>
+                                                <span>Detail</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </td>
+                            <td class="padding-right-10 padding-left-10" layout="row">
+                                <md-button class="md-icon-button margin-0" aria-label="More"
+                                           ngf-select="vm.uploadCV($index, user, $file)">
+                                    <i class="zmdi zmdi-upload"></i>
+                                    <md-tooltip>Upload</md-tooltip>
+                                </md-button>
+                                <md-button ng-disabled="user.profile.cv_url == ''||user.profile.cv_url == null"
+                                           target="_blank" class="md-icon-button margin-0" aria-label="More"
+                                           ng-href="assets/upload/cv/{{user.profile.cv_url}}">
+                                    <i class="zmdi zmdi-download"></i>
+                                    <md-tooltip>Download</md-tooltip>
+                                </md-button>
+                            </td>
+                            <td class="padding-right-10 padding-left-10">
+                                <md-select ng-model="user.role" placeholder="Role" class="md-no-underline margin-0"
+                                           ng-change="vm.addUser($index)">
+                                    <md-option ng-repeat="role in vm.roles" ng-value="role.role">{{role.name}}
+                                    </md-option>
+                                </md-select>
+                            </td>
+                        </tr>
+                        <tbody>
+                    </table>
+                </md-table-container>
+            </div>
+            <div id="user-list-go-bottom"></div>
+        </div>
+    </div>
+</div>
