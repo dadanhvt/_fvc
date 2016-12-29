@@ -131,7 +131,7 @@
                     fd.append("files[]", vm.imagesUpload[x]);
                 }
                 fd.append('contents', vm.postContent);
-                $rootScope.isShowPageLoader = true;
+                $rootScope.countLoader = $rootScope.countLoader + 1;if($rootScope.countLoader == 1)$rootScope.isShowPageLoader = true;
                 $http.post(SERVER_ADDNEWPOST, fd, {
                     transformRequest: angular.identity,
                     withCredentials: true,
@@ -145,7 +145,7 @@
                         });
                         vm.imagesUpload = [];
                         vm.postContent = '';
-                        $rootScope.isShowPageLoader = false;
+                        $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                         vm.posts.unshift(e.result);
                     })
 
@@ -155,7 +155,7 @@
                             position: 'bottom right',
                             hideDelay: 3000
                         });
-                        $rootScope.isShowPageLoader = false;
+                        $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                     });
             }
         }

@@ -18,13 +18,14 @@
             if(file !=null){
                 var fd = new FormData();
                 fd.append('file', vm.picFile);
-                console.log(file);
+                $rootScope.countLoader = $rootScope.countLoader + 1;if($rootScope.countLoader == 1)$rootScope.isShowPageLoader = true;
                 $http.post(SERVER_EDITAVATAR, fd, {
                     transformRequest: angular.identity,
                     withCredentials: true,
                     headers: {'Content-Type': undefined}
                 })
                     .success(function (e) {
+                        $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                         $mdToast.show({
                             template: '<md-toast><span flex>Upload success!</span></md-toast>',
                             position: 'bottom right',
@@ -33,7 +34,7 @@
                         $mdDialog.hide(e.result);
                     })
 
-                    .error(function () {
+                    .error(function () {$rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                         $mdToast.show({
                             template: '<md-toast><span flex>Error! Please try again.</span></md-toast>',
                             position: 'bottom right',

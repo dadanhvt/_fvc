@@ -22,7 +22,7 @@
          */
         this.getAPI = function (url, isLoader, cbSuccess, cbError) {
             if (isLoader == true) {
-                $rootScope.isShowPageLoader = true;
+                $rootScope.countLoader = $rootScope.countLoader + 1;if($rootScope.countLoader == 1)$rootScope.isShowPageLoader = true;
             }
             var deferred = $q.defer();
             $http({
@@ -35,7 +35,7 @@
                 timeout: CONST_SERVER_TIMEOUT
             }).success(function (data) {
                 if (isLoader == true) {
-                    $rootScope.isShowPageLoader = false;
+                    $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                 }
                 if(data.success == -1){
                     deferred.reject();
@@ -56,7 +56,7 @@
                     cbError(data, status, json);
                 }
                 if (isLoader == true) {
-                    $rootScope.isShowPageLoader = false;
+                    $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                 }
                 deferred.reject();
             });
@@ -74,7 +74,7 @@
          */
         this.postAPI = function (url, isLoader, inputData, cbSuccess, cbError) {
             if (isLoader == true) {
-                $rootScope.isShowPageLoader = true;
+                $rootScope.countLoader = $rootScope.countLoader + 1;if($rootScope.countLoader == 1)$rootScope.isShowPageLoader = true;
             }
             var deferred = $q.defer();
             $http({
@@ -88,7 +88,7 @@
                 timeout: CONST_SERVER_TIMEOUT
             }).success(function (data) {
                 if (isLoader == true) {
-                    $rootScope.isShowPageLoader = false;
+                    $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                 }
                 if(data.success == -1){
                     deferred.reject();
@@ -111,7 +111,7 @@
                 }
                 deferred.reject();
                 if (isLoader == true) {
-                    $rootScope.isShowPageLoader = false;
+                    $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                 }
             });
             return deferred.promise;
