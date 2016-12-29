@@ -43,8 +43,9 @@
     "angular-file-upload": "^2.3.4",
     "angular-filter": "^0.5.11",
     "angular-chart.js": "^1.0.3",
-      "ng-file-upload": "^12.2.12",
-      "ng-file-upload-shim": "^12.2.12"
+    "ng-file-upload": "^12.2.12",
+    "ng-file-upload-shim": "^12.2.12",
+    "angular-ui-tree": "^2.22.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8"
