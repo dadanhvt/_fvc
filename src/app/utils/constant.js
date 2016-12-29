@@ -33,6 +33,7 @@ var SERVER_DELETEPOST = SERVER + "deletePost";
 var SERVER_CHANGELIKE = SERVER + "changeLike";
 var SERVER_ADDNEWCOMMENT = SERVER + "addNewComment";
 var SERVER_ADDNEWPOST = SERVER + "addNewPost";
+var SERVER_AGETCATEGORIES = SERVER + "agetCategories";
 //App constant
 var CONST_SERVER_TIMEOUT = 18000;
 var LIMIT_PAGE = 15;

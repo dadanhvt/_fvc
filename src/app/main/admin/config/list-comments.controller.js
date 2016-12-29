@@ -1,3 +1,6 @@
+/**
+ * Created by kinhcan on 12/28/2016.
+ */
 (function() {
     'use strict';
 

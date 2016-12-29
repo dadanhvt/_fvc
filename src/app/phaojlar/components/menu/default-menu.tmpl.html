@@ -1,7 +1,4 @@
 <div>
-    <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools" translate="MENU.ACCOUNT"></h1>
-    </md-toolbar>
     <md-content>
         <div class="" layout="row" layout-align="start center">
             <md-content layout="row" layout-padding>
@@ -33,14 +30,29 @@
             <md-button href="#/auth/upgrate-account"><md-icon md-font-icon="zmdi zmdi-pin-account" class="margin-right-0"></md-icon><span translate="MENU.UPGRATE_ACCOUNT"></span></md-button>
         </md-menu-item>
     </md-content>
-    <md-toolbar class="md-theme-indigo" ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
-        <h1 class="md-toolbar-tools" translate="MENU.WEB_ANALYST"></h1>
+
+    <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Users</h1>
     </md-toolbar>
-    <md-content ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
+    <md-content>
         <md-menu-item>
-            <md-button href="#/web-analyst/website-ranking"><md-icon md-font-icon="zmdi zmdi-group-work" class="margin-right-0"></md-icon><span translate="MENU.WEB_RANKING"></span></md-button>
+            <md-button href="#/admin/users/list"><md-icon md-font-icon="zmdi zmdi-accounts-alt" class="margin-right-0"></md-icon><span>User List</span></md-button>
         </md-menu-item>
     </md-content>
+
+    <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Forum</h1>
+    </md-toolbar>
+    <md-content >
+        <md-menu-item>
+            <md-button href="#/admin/forum/categories"><md-icon md-font-icon="zmdi zmdi-layers" class="margin-right-0"></md-icon><span>Categories</span></md-button>
+        </md-menu-item>
+        <md-menu-item>
+            <md-button href="#/admin/forum/list-posts"><md-icon md-font-icon="zmdi zmdi-collection-image-o" class="margin-right-0"></md-icon><span>Posts</span></md-button>
+        </md-menu-item>
+    </md-content>
+
+
     <md-toolbar class="md-theme-indigo" ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
         <h1 class="md-toolbar-tools" translate="MENU.MKT_MANAGER"></h1>
     </md-toolbar>

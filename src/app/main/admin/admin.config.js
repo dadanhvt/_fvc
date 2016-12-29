@@ -16,23 +16,24 @@
                 url: '/admin/config',
                 templateUrl: 'app/main/admin/config/config.tmpl.html',
                 controller: 'AdminConfigController',
-                controllerAs: 'vm',
-                resolve: {
-                    access: ["Auth", function (Auth) {
-                        return Auth.hasRole('AD');
-                    }]
-                }
+                controllerAs: 'vm'
+            })
+            .state('phaojlar.menu.default.categories', {
+                url: '/admin/forum/categories',
+                templateUrl: 'app/main/admin/config/categories.tmpl.html',
+                controller: 'AdminCategoriesController'
+            })
+            .state('phaojlar.menu.default.list-posts', {
+                url: '/admin/forum/list-posts',
+                templateUrl: 'app/main/admin/config/list-posts.tmpl.html',
+                controller: 'AdminPostsController',
+                controllerAs : 'vm'
             })
             .state('phaojlar.menu.default.admin-users', {
                 url: '/admin/users',
                 templateUrl: 'app/main/admin/users/users.tmpl.html',
                 controller: 'AdminUsersController',
-                controllerAs: 'vm',
-                resolve: {
-                    access: ["Auth", function (Auth) {
-                        return Auth.hasRole('ADMIN');
-                    }]
-                }
+                controllerAs: 'vm'
             })
 
             .state('list-users', {
