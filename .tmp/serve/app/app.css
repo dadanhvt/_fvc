@@ -2376,10 +2376,10 @@ md-toolbar {
 .from-me p {
   color: white; }
 
-section {
+section.messenger-section {
   max-width: 550px;
   margin: 8px auto; }
-  section div {
+  section.messenger-section div {
     max-width: 255px;
     word-wrap: break-word;
     margin-bottom: 20px;
