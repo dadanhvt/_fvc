@@ -22,8 +22,9 @@
             key: 'vi'
         }])
         .run(['$rootScope', '$state', 'Auth', '$q', 'User', '$mdToast', function ($rootScope, $state, Auth, $q, User, $mdToast) {
+            $rootScope.countLoader = 0;
             $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
-                $rootScope.isShowPageLoader = false;
+                $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                 if (error  == Auth.UNAUTHORIZED) {
                     $mdToast.show({
                         template: '<md-toast><span flex>Vui lòng đăng nhập!</span></md-toast>',
@@ -42,10 +43,10 @@
             });
             $rootScope.skipSomeAsync = false;
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-                $rootScope.isShowPageLoader = true;
                 if ($rootScope.skipSomeAsync) {
                     return;
                 }
+                $rootScope.countLoader = $rootScope.countLoader + 1;if($rootScope.countLoader == 1)$rootScope.isShowPageLoader = true;
                 event.preventDefault();
                 User.updateProfile().profile(continueNavigation);
                 function continueNavigation (userProfile) {
@@ -57,7 +58,7 @@
             });
 
             $rootScope.$on('$stateChangeSuccess', function () {
-                $rootScope.isShowPageLoader = false;
+                $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
             });
         }]);
 })();
