@@ -6,7 +6,7 @@
             'phaojlar',
             'ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngMaterial', 'ngResource', 'chart.js', 'ngFileUpload','ui.tree',
             'ui.router', 'pascalprecht.translate', 'LocalStorageModule', 'googlechart', 'linkify', 'ui.calendar', 'angularMoment', 'textAngular', 'hljs', 'md.data.table', 'ngFileUpload',
-            'app.main','ui-notification','angularFileUpload','angular.filter'
+            'app.main','angularFileUpload','angular.filter'
         ])
         .config(function ($httpProvider, $mdDateLocaleProvider) {
             $httpProvider.defaults.withCredentials = true;
