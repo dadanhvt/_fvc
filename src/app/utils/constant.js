@@ -9,7 +9,6 @@ var SERVER_ASSETS = SERVER_IP + "assets/";
 var SERVER_AGETPROFILES = SERVER + "agetProfiles";
 var SERVER_AUPDATEUSERS = SERVER + "aupdateUsers";
 
-
 var SERVER_GETCONFIG = SERVER + "getConfig";
 var SERVER_SIGNIN = SERVER + "signin";
 var SERVER_SIGNOUT = SERVER + "signout";
