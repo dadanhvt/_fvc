@@ -37,57 +37,7 @@
 
                 }
                 $scope.data = e.result;
-                console.log($scope.data);
             });
-            // $scope.data = [{
-            //     'id': 1,
-            //     'title': 'node1',
-            //     'status' : false,
-            //     'nodes': [
-            //         {
-            //             'id': 11,
-            //             'title': 'node1.1',
-            //             'status' : false,
-            //             'nodes': []
-            //         },
-            //         {
-            //             'id': 12,
-            //             'title': 'node1.2',
-            //             'status' : true,
-            //             'nodes': []
-            //         }
-            //     ]
-            // }, {
-            //     'id': 2,
-            //     'title': 'node2',
-            //     'status' : true,
-            //     'nodes': [
-            //         {
-            //             'id': 21,
-            //             'title': 'node2.1',
-            //             'status' : false,
-            //             'nodes': []
-            //         },
-            //         {
-            //             'id': 22,
-            //             'title': 'node2.2',
-            //             'status' : false,
-            //             'nodes': []
-            //         }
-            //     ]
-            // }, {
-            //     'id': 3,
-            //     'title': 'node3',
-            //     'status' : true,
-            //     'nodes': [
-            //         {
-            //             'id': 31,
-            //             'title': 'node3.1',
-            //             'status' : false,
-            //             'nodes': []
-            //         }
-            //     ]
-            // }];
         }
 
         function newSubItem(scope) {
@@ -100,12 +50,13 @@
                     data:''
                 }
             }).then(function (data) {
-                if(data!='')
+                if(data.title != undefined)
                 {
                     var nodeData = scope.$modelValue;
                     nodeData.childs.push({
-                        id: nodeData.id * 10 + nodeData.childs.length + 1,
-                        title: data,
+                        id: "",
+                        title: data.title,
+                        alias: data.alias,
                         status :1,
                         childs: []
                     });
@@ -128,10 +79,11 @@
                     data:''
                 }
             }).then(function (data) {
-                if(data!=''){
+                if(data.title != undefined){
                     $scope.data.push({
-                        id: $scope.data.length + 1,
-                        title: data,
+                        id: "",
+                        title: data.title,
+                        alias: data.alias,
                         status: 1,
                         childs: []
                     });
@@ -151,11 +103,13 @@
                 controllerAs: 'vm',
                 escapeToClose: false,
                 locals : {
-                    data: nodeData.title
+                    data: nodeData
                 }
             }).then(function (data) {
-                if(data!=undefined){
-                    nodeData.title = data;
+                if(data.title != undefined)
+                {
+                    nodeData.title = data.title;
+                    nodeData.alias = data.alias;
                     $mdToast.show({
                         template: '<md-toast><span flex>Updated</span></md-toast>',
                         position: 'bottom right',
@@ -177,7 +131,6 @@
         }
 
         function toggle(scope) {
-            console.log(scope);
             scope.toggle();
         }
 
@@ -199,16 +152,25 @@
         };
 
         function save() {
-            var data = $scope.data;
+            var data = {
+                childs:$scope.data
+            };
 
-            //console.log(data);
-            var string=aliasConvert(data[1].title);
-            console.log(string);
-            var result={};
-            // for(var i =0; data.length ;i++)
-            // {
-            //
-            // }
+            apiService.postAPI(SERVER_AUPDATECATEGORIES, true, data, function (e) {
+                if (e.success != 1) {
+                    $mdToast.show({
+                        template: '<md-toast><span flex>Error! Please try again.</span></md-toast>',
+                        position: 'bottom right',
+                        hideDelay: 3000
+                    });
+                    return;
+                }
+                $mdToast.show({
+                    template: '<md-toast><span flex>Updated!</span></md-toast>',
+                    position: 'bottom right',
+                    hideDelay: 3000
+                });
+            });
         }
     }
 })();
