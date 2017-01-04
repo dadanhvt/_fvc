@@ -1,29 +1,26 @@
-<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="40" flex-xs="100">
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
     <md-toolbar layout-align="center">
         <span class="padding-top-8 padding-left-10">New</span>
     </md-toolbar>
 
-    <md-dialog-content class="margin-20">
-        <div layout="row" layout-align="start center">
+    <md-dialog-content>
+        <div layout="row" layout-padding>
             <span>Title</span>
             <md-input-container md-no-float class="md-block phao-input-noerror" flex>
                 <input name="title" ng-model="vm.title" placeholder="Title">
             </md-input-container>
         </div>
-        <div layout="row" layout-align="start center">
+        <div layout="row" layout-padding>
             <span>Alias</span>
             <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                <input name="alias" ng-model="vm.alias" ng-change="vm.checkSave=true" placeholder="Alias" >
+                <input name="alias" ng-model="vm.alias" placeholder="Alias">
             </md-input-container>
-            <md-button class="md-raised md-primary" ng-click="vm.suggest()" >Suggest</md-button>
-            <md-button class="md-raised md-primary" ng-click="vm.checkAlias()" >Check</md-button>
         </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
         <div layout="row">
             <span flex></span>
-            <md-button class="md-raised md-primary" ng-disabled="vm.checkSave" ng-click="vm.save()">Save</md-button>
-            <md-button class="md-raised md-primary" ng-click="vm.cancel()">Cancel</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
         </div>
     </md-dialog-actions>
 </md-dialog>

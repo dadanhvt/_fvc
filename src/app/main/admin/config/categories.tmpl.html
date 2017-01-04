@@ -1,9 +1,8 @@
 <script type="text/ng-template" id="nodes_renderer.html">
-        <div  class="tree-node tree-node-content" layout="row">
+        <div  class="tree-node tree-node-content" layout="row"
+              ng-class="{'line_odd': depth()==1}">
             <div ui-tree-handle layout="row" flex>
-                <span style="margin-top: 10px; margin-left: 10px;">{{node.title}}
-                    <span>({{node.posts_count.length}} posts)</span>
-                </span>
+                <span style="margin-top: 10px; margin-left: 10px;">{{node.title}}</span>
                 <span flex></span>
             </div>
             <md-select class="md-no-underline margin-0"
@@ -27,7 +26,7 @@
                         <md-button  ng-click="newSubItem(this)"><i class="zmdi zmdi-plus"></i> Add
                         </md-button>
                     </md-menu-item>
-                    <md-menu-item ng-if="!((node.childs.length > 0) ||(node.posts_count.length>0))" >
+                    <md-menu-item>
                         <md-button  ng-click="removeItem(this)"><i class="zmdi zmdi-close"></i> Delete
                         </md-button>
                     </md-menu-item>

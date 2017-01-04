@@ -1,43 +1,18 @@
 <div class="content">
     <md-card class="margin-0 margin-bottom-10 padding-left-10 padding-right-10" layout="column"
              layout-align="center center" ng-if="!$root.user">
-        <p>{{vm.hello}}</p>
+        <p>{{cm.hello}}</p>
         <div layout="row">
             <md-button class="md-primary" ng-click="$root.signinDialog(true)">Sign-in</md-button>
-            <md-button class="md-raised md-warn" ui-sref="phaojlar.default.signup">Register now</md-button>
+            <md-button class="md-raised md-warn" ui-sref="phaojlar.default.signup">register now</md-button>
         </div>
     </md-card>
     <md-card class="margin-0 margin-bottom-10">
         <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
             <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
-                class="padding-left-10">{{vm.categories.title}}</span></span>
+                class="padding-left-10">Tieu de thread</span></span>
             <span flex></span>
-        </md-toolbar>
-        <div class="content padding-10" layout="column">
-            <div class="thread">
-                <div ng-repeat="child in vm.categories.childs" class="padding-left-10">
-                    <div layout="column" class="padding-10">
-                        <div layout="row">
-                            <a href="#/discussions/{{child.alias}}"><i class="zmdi zmdi-folder-outline"></i><span class="padding-left-10">{{child.title}}</span></a>
-                            <span flex></span>
-                            <span>Views</span>
-                        </div>
-                        <div layout="row">
-                            <span flex style="font-size: 15px">Newpost</span>
-                            <span style="font-size: 15px">post by</span>
-                        </div>
-                    </div>
-                    <md-divider ng-if="!$last"></md-divider>
-                </div>
-            </div>
-        </div>
-    </md-card>
-    <md-card class="margin-0 margin-bottom-10" ng-hide="vm.posts.total==0">
-        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
-            <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
-                class="padding-left-10">{{vm.categories.title}}</span></span>
-            <span flex></span>
-            <md-button ng-if="$root.user&&(vm.categories.status==1)" class="md-block margin-0" ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
+            <md-button ng-if="$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
             <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new</md-button>
         </md-toolbar>
         <div class="content padding-10" layout="column">
@@ -45,52 +20,120 @@
                 <table md-data-table class="md-data-table" md-progress="vm.deferred">
                     <thead md-order="vm.query.order" md-trigger="vm.onChangeFilter">
                     <tr>
-                        <th name="Title" order-by="title" decend-first></th>
                         <th></th>
-                        <th name="Last comment"></th>
+                        <th name="Tiêu đề" order-by="name" decend-first></th>
+                        <th name="Ngày bắt đầu" order-by="created_at"></th>
+                        <th></th>
+                        <th></th>
+                        <th name="Trả lời cuối"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="post in vm.posts.data">
-                        <td>
-                            <span><a ng-href="#/discussions/{{vm.categories.alias}}/{{post.id}}">{{post.name}}</a></span><br>
-                            <span style="font-size: 11px;">Post by <a ng-href="#/profile/{{post.author.id}}/about">{{post.author.name}}</a>
-                                at {{post.created_at}}
-                            </span>
-                        </td>
-                        <td>
-                            <span>Commmennts: 15 </span><br>
-                            <span style="font-size: 11px;">Seen: 20 </span>
-                        </td>
-                        <td>
-                            <span>Phaojlar</span><br>
-                            <span style="font-size: 11px;">4/2/2016</span>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>avatar</td>
+                            <td>
+                                <span><a href="">Tên bài viết</a></span><br>
+                                <span style="font-size: 11px;">Phaojlar lúc 2/2/2016</span>
+                            </td>
+                            <td>Ngày bắt đầu</td>
+                            <td>
+                                <span>Trả lời: </span><br>
+                                <span style="font-size: 11px;">Lượt xem: </span>
+                            </td>
+                            <td>
+                                <span>15</span><br>
+                                <span style="font-size: 11px;">256</span>
+                            </td>
+                            <td>
+                                <span>Phaojlar</span><br>
+                                <span style="font-size: 11px;">4/2/2016</span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </md-data-table-container>
-            <div flex layout="row">
-                <span flex></span>
-                <md-divider></md-divider>
-                <span style="padding: 8px;">{{vm.posts.from}}-{{vm.posts.to}} of {{vm.posts.total}}</span>
-                <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=1;vm.getData()">
-                    <i class="zmdi zmdi-skip-previous"></i>
-                </md-button>
-                <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=vm.query.page-1;vm.getData()">
-                    <i class="zmdi zmdi-chevron-left"></i>
-                </md-button>
-                <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=vm.query.page+1;vm.getData()">
-                    <i class="zmdi zmdi-chevron-right"></i>
-                </md-button>
-                <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=vm.posts.last_page;vm.getData()">
-                    <i class="zmdi zmdi-skip-next"></i>
-                </md-button>
-            </div>
+            <md-data-table-pagination md-limit="15" md-page="1" md-total="13"
+                                      md-trigger="vm.onPaginationChange"></md-data-table-pagination>
         </div>
     </md-card>
 </div>

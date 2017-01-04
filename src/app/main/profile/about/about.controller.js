@@ -93,7 +93,7 @@
                     grade : "",
                     study_from :"",
                     feild:""
-                };
+                }
                 vm.about.educations.push(data);
             }
 
@@ -121,7 +121,8 @@
                     title : "",
                     location:"",
                     work_from:""
-                };
+                }
+                console.log(vm.about.experiences)
                 vm.about.experiences.push(data);
             }
         }
@@ -199,7 +200,8 @@
                     var data = {
                         name: vm.about.name,
                         gender: vm.about.gender,
-                        birth: date2String(vm.about.birth)
+                        birth: date2String(vm.about.birth),
+
                     };
 
                     apiService.postAPI(SERVER_EDITBASICINFO, true, data, function (e) {

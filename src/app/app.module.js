@@ -4,7 +4,7 @@
     angular
         .module('app', [
             'phaojlar',
-            'ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngMaterial', 'ngResource', 'chart.js', 'ngFileUpload','ui.tree','ngCkeditor',
+            'ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngMaterial', 'ngResource', 'chart.js', 'ngFileUpload','ui.tree',
             'ui.router', 'pascalprecht.translate', 'LocalStorageModule', 'googlechart', 'linkify', 'ui.calendar', 'angularMoment', 'textAngular', 'hljs', 'md.data.table', 'ngFileUpload',
             'app.main','ui-notification','angularFileUpload','angular.filter'
         ])

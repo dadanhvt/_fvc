@@ -2018,7 +2018,8 @@ a:hover {
   display: block;
   float: left;
   position: relative;
-  zoom: 1; }
+  zoom: 1;
+  max-width: 50%; }
 
 .breadcrumb .crust .arrow span {
   top: -20px; }

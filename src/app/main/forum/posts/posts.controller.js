@@ -7,128 +7,40 @@
 
     /* @ngInject */
 
-    function ForumPostController($state,$mdDialog,apiService,$stateParams,$mdToast,$rootScope) {
-        var vm = this;
-
-        vm.hello = 'Xin Chào ! Nếu đây là chuyến thăm đầu tiên của bạn vào Diễn đàn , hãy chắc chắn kiểm tra quy cách ' +
+    function ForumPostController($mdDialog) {
+        var zm = this;
+        zm.hello = 'Xin Chào ! Nếu đây là chuyến thăm đầu tiên của bạn vào Diễn đàn , hãy chắc chắn kiểm tra quy cách ' +
             'bằng cách nhấn vào liên kết ở dưới . Bạn phải đăng ký trước khi bạn có thể đăng bài : nhấp vào liên kết ' +
             'đăng ký ở trên để tiến hành . Để bắt đầu xem bài viết , chọn diễn đàn mà bạn muốn ghé thăm từ sự chọn lựa bên dưới.';
-
-        vm.likePost =likePost;
-        vm.likeComment = likeComment;
-        vm.getComments = getComments;
-        vm.addComment =addComment;
-        vm.server = SERVER_ASSETS;
-
-        init();
-        function init() {
-
-            vm.aliasCategory = $stateParams.alias;
-            vm.idPost = $stateParams.idPost;
-            vm.commentContent ='';
-            vm.query = {
-                limit: 5,
-                page: 1
-            };
-            apiService.getAPI(SERVER_GETFORUMPOST + "?alias=" + vm.aliasCategory + "&id=" + vm.idPost+"$limit=5", true, function (e) {
-                if (!(e.success == 1)) {
-                    $state.go("phaojlar.default.forum.index");
-                }else{
-                    vm.post= e.result;
-                    vm.bracum =[];
-                    var tmp = findItembyAlias($rootScope.categories, vm.aliasCategory);
-                    vm.bracum.push(tmp);
-
-                    while (tmp.parent_id)
-                    {
-                        tmp = findItem($rootScope.categories,tmp.parent_id);
-                        vm.bracum.unshift(tmp);
-                    }
-                    $rootScope.bracum = vm.bracum;
-
-                    vm.query.page = $stateParams.page?parseInt($stateParams.page):1;
-                    getComments();
-                }
-            });
-        }
-
-
-        function likePost() {
-            var param = {id: vm.post.id};
-
-            apiService.postAPI(SERVER_POSTLIKEFORUMPOST, false, param, function (e) {
-                if (e.success != 1) {
-                    $mdToast.show({
-                        template: '<md-toast><span flex>Cann\'t change like, please try again!</span></md-toast>',
-                        position: 'bottom right',
-                        hideDelay: 3000
-                    });
-                    return;
-                }
-                if (e.result == '0') {
-                    vm.post.is_liked = false;
-                    vm.post.like_count=  vm.post.like_count - 1;
-                } else if (e.result == '1') {
-                    vm.post.is_liked=true;
-                    vm.post.like_count =  vm.post.like_count + 1;
-                }
-            });
-        }
-        function likeComment(comment) {
-            var param = {id: comment.id};
-
-            apiService.postAPI(SERVER_POSTLIKEFORUMPOST, false, param, function (e) {
-                if (e.success != 1) {
-                    $mdToast.show({
-                        template: '<md-toast><span flex>Cann\'t change like, please try again!</span></md-toast>',
-                        position: 'bottom right',
-                        hideDelay: 3000
-                    });
-                    return;
-                }
-                if (e.result == '0') {
-                    comment.is_liked = [];
-                    comment.like_count[0].count = comment.like_count[0].count - 1;
-                } else if (e.result == '1') {
-                    comment.is_liked.push($rootScope.user);
-                    if (comment.like_count.length > 0) {
-                        comment.like_count[0].count = comment.like_count[0].count + 1;
-                    } else {
-                        comment.like_count.push({count: 1});
-                    }
-                }
-            });
-
-        }
-        function getComments() {
-            apiService.getAPI(SERVER_GETFORUMCOMMENTS +"?id="+ vm.idPost+"&limit="+vm.query.limit+"&page="+vm.query.page, true, function (e) {
-                if (!(e.success == 1)) {
-                    $state.go("phaojlar.default.forum.index");
-                }
-                vm.comments= e.result;
-            });
-        }
-
-        function addComment() {
-            if (vm.commentContent && vm.commentContent != '') {
-                var param = {
-                    id: vm.post.id,
-                    contents: vm.commentContent,
-                    limit : vm.query.limit
-                };
-                apiService.postAPI(SERVER_POSTADDFORUMCOMMENT, false, param, function (e) {
-                    if (e.success != 1) {
-                        $mdToast.show({
-                            template: '<md-toast><span flex>Cann\'t comments, please try again!</span></md-toast>',
-                            position: 'bottom right',
-                            hideDelay: 3000
-                        });
-                        return;
-                    }
-                    $state.go("phaojlar.default.forum.posts",{alias:vm.aliasCategory, idPost:vm.idPost, page:e.result});
-                });
+        zm.tieude = 'SEZONUL 84 - Sunteti gata ?';
+        zm.titleInfo = [
+            {
+                dateEdit:'Last Edit : 15/7/1997 lúc 18:06',
+                numbers:'#1',
+                datePost :'Ngày 15/7/1996 lúc 18:06',
+                title: 'Title',
+                name: 'Bom Binladen',
+                date: 'Ngày Tham Gia : 15/8/2013',
+                postition:'Admin Forum',
+                content: "ply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumpply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumly dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                button:'TRẢ LỜI',
+                datepost:'Date Post : 20/11/1996'
+            },
+            {
+                dateEdit:'Last Edit : 15/7/1997 lúc 18:06',
+                numbers:'#2',
+                datePost :'Ngày 15/7/1996 lúc 18:06',
+                title: 'Title',
+                name: 'Bom Binladen',
+                postition:'Admin Forum',
+                date: 'Ngày Tham Gia : 15/8/2013',
+                content: "ply ply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumdummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                button:'TRẢ LỜI',
+                datepost:'Date Post : 20/11/1996'
             }
-        }
+        ];
+
+
     }
 })();
 

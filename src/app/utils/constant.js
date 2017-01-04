@@ -2,7 +2,6 @@
  * Created by Tinti on 7/17/2016.
  */
 var SERVER_IP = "http://developapi.nghilon.vn/francovietcareer.com/";
-//var SERVER_IP = "http://192.168.1.15/franco/src/";
 var SERVER = SERVER_IP + "api/";
 var SERVER_ASSETS = SERVER_IP + "assets/";
 //ADMIN
@@ -35,19 +34,6 @@ var SERVER_CHANGELIKE = SERVER + "changeLike";
 var SERVER_ADDNEWCOMMENT = SERVER + "addNewComment";
 var SERVER_ADDNEWPOST = SERVER + "addNewPost";
 var SERVER_AGETCATEGORIES = SERVER + "agetCategories";
-var SERVER_ACHECKCATEGORY = SERVER + "acheckCategory";
-var SERVER_AUPDATECATEGORIES = SERVER + "aupdateCategories";
-var SERVER_GETCATEGORIES = SERVER + "getCategories";
-var SERVER_GETCATEGORIESBYALIAS = SERVER + "getCategoriesByAlias";
-var SERVER_GETPOSTSPAGINATE = SERVER + "getPostsPaginate";
-var SERVER_GETFORUMPOST = SERVER + "getForumPost";
-var SERVER_GETFORUMCOMMENTS = SERVER + "getForumComments";
-var SERVER_POSTLIKEFORUMPOST = SERVER + "postLikeForumPost";
-var SERVER_POSTADDFORUMCOMMENT = SERVER + "postAddForumComment";
-var SERVER_POSTADDPOSTFORUM = SERVER + "postAddPostForum";
-
-
-
 //App constant
 var CONST_SERVER_TIMEOUT = 18000;
 var LIMIT_PAGE = 15;

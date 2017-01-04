@@ -44,6 +44,7 @@
             }, 1000);
         }
         function createData() {
+            console.log(vm.query);
         }
 
         vm.todos = [

@@ -6,76 +6,160 @@
         .controller('ForumThreadsController', ForumThreadsController);
 
     /* @ngInject */
-    function ForumThreadsController($stateParams,apiService,$mdDialog,$rootScope,$state) {
-        var vm = this;
+    function ForumThreadsController() {
+        var cm = this;
 
-        vm.hello = 'Xin Chào ! Nếu đây là chuyến thăm đầu tiên của bạn vào Diễn đàn , hãy chắc chắn kiểm tra quy cách ' +
+        cm.hello = 'Xin Chào ! Nếu đây là chuyến thăm đầu tiên của bạn vào Diễn đàn , hãy chắc chắn kiểm tra quy cách ' +
             'bằng cách nhấn vào liên kết ở dưới . Bạn phải đăng ký trước khi bạn có thể đăng bài : nhấp vào liên kết ' +
             'đăng ký ở trên để tiến hành . Để bắt đầu xem bài viết , chọn diễn đàn mà bạn muốn ghé thăm từ sự chọn lựa bên dưới.';
 
-        vm.getData = getData;
-        vm.addNewPost= addNewPost;
-        vm.categories={};
+        cm.register = 'ĐĂNG KÍ';
 
-        init();
-        function init() {
-            vm.query = {
-                limit: 5,
-                page: 1
-            };
-            vm.aliasCategory = $stateParams.alias;
+        cm.forumMenu = [
+            {page: "Ngữ Pháp Tiếng Pháp"},
+            {page: "Văn Hóa Pháp"},
+            {page: "Luyện Thi DELF/TCF"},
+            {page: "Chia Sẽ Tài Liệu"},
+            {page: "Hỏi Đáp-Tư Vấn"},
+            {page: "Thông Tin học Bổng"},
+            {page: "Kinh Nghiệm Du Học"},
+            {page: "Trao Đổi Mua Bán"},
+            {page: "Gia Sư"},
+            {page: "Rao Vặt Tại Việt Nam"},
+            {page: "Rao Vặt Tại Pháp"},
+            {page: "Thông Tin Bổ Ích"},
+            {page: "Trung Tâm Dạy Học"}
+        ];
 
-            apiService.getAPI(SERVER_GETCATEGORIESBYALIAS+"?alias="+ vm.aliasCategory+"&limit="+ vm.query.limit, true, function (e) {
-                if (e.success != 1) {
-                    $state.go("phaojlar.default.forum.posts");
-                }
-                else
-                {
-                    vm.categories = e.result;
-                    vm.posts = e.result.posts;
-                    vm.bracum =[];
-                    var tmp = findItembyAlias($rootScope.categories, vm.aliasCategory);
-                    vm.bracum.push(tmp);
+        cm.titleInfo = [
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            },
+            {
+                who : "SEZONUL 84 - Sunteti gata ?",
+                start : "Bắt đầu bởi Zaharia Cristian ",
+                when : "Hôm qua 19:56",
+                answer : "Trả lời : 1",
+                view : "Xem : 14",
+                postsby : "Zaharia Cristian",
+                time : "Hôm qua , 07:57"
+            }
+        ];
 
-                    while (tmp.parent_id)
-                    {
-                        tmp = findItem($rootScope.categories,tmp.parent_id);
-                        vm.bracum.unshift(tmp);
-                    }
-                    $rootScope.bracum = vm.bracum;
-                }
-            });
-        }
-        vm.query.page = $stateParams.page?parseInt($stateParams.page):1;
-        function getData() {
-            apiService.getAPI(SERVER_GETPOSTSPAGINATE + "?limit=" + vm.query.limit+"&alias="+vm.aliasCategory + "&page=" + vm.query.page, false, function (e) {
-                if (!(e.success == 1)) {
-                    $mdDialog.show(
-                        $mdDialog.alert()
-                            .clickOutsideToClose(true)
-                            .title('Error')
-                            .textContent('Cannot load data! please try again.')
-                            .ok('OK!')
-                    );
-                    return;
-                }
-                vm.posts = e.result;
-            });
-        }
-        function addNewPost() {
-            $mdDialog.show({
-                controller: 'AddPostController',
-                templateUrl: 'app/main/forum/threads/addpost.tmpl.html',
-                controllerAs: 'vm',
-                escapeToClose: false,
-                locals: {
-                    alias: vm.aliasCategory
-                }
-            }).then(function (id) {
-                $state.go("phaojlar.default.forum.posts",{alias:vm.aliasCategory, idPost:id, page:1});
-            });
-
-        }
     }
 
 })();

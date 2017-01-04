@@ -29,6 +29,7 @@
                     total_budget: parseInt(data.total_budget),
                     desc: data.desc
                 };
+                console.log(vm.data);
                 vm.isRe = true;
             }else{
                 vm.isRe = false;
