@@ -6,13 +6,13 @@
         .controller('ForumLayoutController', ForumLayoutController);
 
     /* @ngInject */
-    function ForumLayoutController($state) {
+    function ForumLayoutController(categories,$rootScope) {
         var vm = this;
+
         init();
         function init() {
-            if($state.current.name == 'phaojlar.default.forum'){
-                $state.go('phaojlar.default.forum.index');
-            }
+            $rootScope.categories = categories.result;
+            vm.data =categories.result;
         }
     }
 })();

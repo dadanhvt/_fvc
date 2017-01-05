@@ -11,6 +11,7 @@
             'app.main.admin',
             'app.main.employee',
             'app.main.profile',
-            'app.main.forum'
+            'app.main.forum',
+            'app.main.messenger'
             ]);
 })();
