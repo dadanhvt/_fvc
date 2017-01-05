@@ -4,9 +4,9 @@
     angular
         .module('app', [
             'phaojlar',
-            'ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngMaterial', 'ngResource', 'chart.js', 'ngFileUpload','ui.tree',
+            'ngAnimate', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngMaterial', 'ngResource', 'chart.js', 'ngFileUpload','ui.tree','ngCkeditor',
             'ui.router', 'pascalprecht.translate', 'LocalStorageModule', 'googlechart', 'linkify', 'ui.calendar', 'angularMoment', 'textAngular', 'hljs', 'md.data.table', 'ngFileUpload',
-            'app.main','angularFileUpload','angular.filter'
+            'app.main','ui-notification','angularFileUpload','angular.filter'
         ])
         .config(function ($httpProvider, $mdDateLocaleProvider) {
             $httpProvider.defaults.withCredentials = true;

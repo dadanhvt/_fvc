@@ -1,0 +1,65 @@
+<script type="text/ng-template" id="nodes_renderer.html">
+        <div  class="tree-node tree-node-content" layout="row">
+            <div ui-tree-handle layout="row" flex>
+                <span style="margin-top: 10px; margin-left: 10px;">{{node.title}}
+                    <span>({{node.posts_count.length}} posts)</span>
+                </span>
+                <span flex></span>
+            </div>
+            <md-select class="md-no-underline margin-0"
+                       placeholder="Status" ng-model="node.status">
+                <md-option value="1">Public</md-option>
+                <md-option value="2">See</md-option>
+                <md-option value="3">Ban</md-option>
+            </md-select>
+            </md-switch>
+            <md-menu>
+                <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <i class="zmdi zmdi-more-vert"></i>
+                    <md-tooltip>More</md-tooltip>
+                </md-button>
+                <md-menu-content width="2" class="padding-top-0 padding-bottom-0">
+                    <md-menu-item>
+                        <md-button  ng-click="editItem(this)"><i class="zmdi zmdi-edit"></i> Edit
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button  ng-click="newSubItem(this)"><i class="zmdi zmdi-plus"></i> Add
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-if="!((node.childs.length > 0) ||(node.posts_count.length>0))" >
+                        <md-button  ng-click="removeItem(this)"><i class="zmdi zmdi-close"></i> Delete
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+
+    <ol ui-tree-nodes="" ng-model="node.childs" ng-show="collapsed">
+        <li ng-repeat="node in node.childs" ui-tree-node ng-include="'nodes_renderer.html'">
+        </li>
+    </ol>
+</script>
+
+
+<md-toolbar layout="row">
+    <span class="padding-top-8 padding-left-10">Categories</span>
+    <span flex></span>
+    <md-button class="md-raised md-hue-1" ng-click="addNewCategory()">Add</md-button>
+    <md-button class="md-raised md-hue-1" ng-click="save()">Save</md-button>
+    <div id="user-list-go-bottom"></div>
+</md-toolbar>
+
+<md-button class="md-raised" ng-click="collapseAll()" ng-show="check">Show all</md-button>
+<md-button class="md-raised" ng-click="expandAll()" ng-hide="check">Show less</md-button>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <div ui-tree id="tree-root">
+            <ol ui-tree-nodes ng-model="data">
+                <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+            </ol>
+        </div>
+    </div>
+</div>

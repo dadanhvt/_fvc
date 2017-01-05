@@ -89,15 +89,17 @@
     <script src="../bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
     <script src="../bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
     <script src="../bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="../bower_components/chart.js/dist/Chart.js"></script>
+    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="../bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
     <script src="../bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
-    <script src="../bower_components/chart.js/dist/Chart.js"></script>
-    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="../bower_components/ng-ckeditor/ng-ckeditor.js"></script>
     <!-- endbower -->
 
     <!-- enqueue all translations for calendar (remove if you dont need multilanguage) -->
     <script src="../bower_components/fullcalendar/dist/locale-all.js"></script>
+    <script src="assets/js/ckeditor/ckeditor.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
@@ -132,6 +134,7 @@
     <script src="app/main/profile/about/about.controller.js"></script>
     <script src="app/main/forum/forum.module.js"></script>
     <script src="app/main/forum/threads/threads.controller.js"></script>
+    <script src="app/main/forum/threads/addpost.controller.js"></script>
     <script src="app/main/forum/posts/posts.controller.js"></script>
     <script src="app/main/index/index.module.js"></script>
     <script src="app/main/forum/layouts/forum.controller.js"></script>
@@ -155,6 +158,12 @@
     <script src="app/main/ads/facebook/run-ads.controller.js"></script>
     <script src="app/main/ads/facebook/add-ads-dialog.controller.js"></script>
     <script src="app/main/admin/admin.module.js"></script>
+    <script src="app/main/admin/config/viewcomments.controller.js"></script>
+    <script src="app/main/admin/config/list-posts.controller.js"></script>
+    <script src="app/main/admin/config/list-comments.controller.js"></script>
+    <script src="app/main/admin/config/config.controller.js"></script>
+    <script src="app/main/admin/config/categories.controller.js"></script>
+    <script src="app/main/admin/config/additem.controller.js"></script>
     <script src="app/main/admin/users/users.controller.js"></script>
     <script src="app/main/admin/users/users-list.controller.js"></script>
     <script src="app/main/admin/users/user-dialog.controller.js"></script>
@@ -162,7 +171,6 @@
     <script src="app/main/admin/users/experiences-detail.controller.js"></script>
     <script src="app/main/admin/users/educations-detail.controller.js"></script>
     <script src="app/main/admin/users/certifications-detail.controller.js"></script>
-    <script src="app/main/admin/config/config.controller.js"></script>
     <script src="app/phaojlar/filters/filters.module.js"></script>
     <script src="app/phaojlar/filters/plaintext.filter.js"></script>
     <script src="app/phaojlar/directives/directives.module.js"></script>

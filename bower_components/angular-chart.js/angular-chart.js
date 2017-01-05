@@ -10,11 +10,8 @@
     define(['angular', 'chart'], factory);
   } else {
     // Browser globals
-    if (typeof angular === 'undefined') {
-        throw new Error('AngularJS framework needs to be included, see https://angularjs.org/');
-    } else if (typeof Chart === 'undefined') {
+    if (typeof angular === 'undefined' || typeof Chart === 'undefined')
       throw new Error('Chart.js library needs to be included, see http://jtblin.github.io/angular-chart.js/');
-    }
     factory(angular, Chart);
   }
 }(function (angular, Chart) {
@@ -174,6 +171,7 @@
 
       scope.chartGetColor = getChartColorFn(scope);
       var data = getChartData(type, scope);
+
       // Destroy old chart if it exists to avoid ghost charts issue
       // https://github.com/jtblin/angular-chart.js/issues/187
       destroyChart(scope);
@@ -202,23 +200,14 @@
     }
 
     function getEventHandler (scope, action, triggerOnlyOnChange) {
-      var lastState = {
-        point: void 0,
-        points: void 0
-      };
+      var lastState = null;
       return function (evt) {
-        var atEvent = scope.chart.getElementAtEvent || scope.chart.getPointAtEvent;
-        var atEvents = scope.chart.getElementsAtEvent || scope.chart.getPointsAtEvent;
-        if (atEvents) {
-          var points = atEvents.call(scope.chart, evt);
-          var point = atEvent ? atEvent.call(scope.chart, evt)[0] : void 0;
-
-          if (triggerOnlyOnChange === false ||
-            (! angular.equals(lastState.points, points) && ! angular.equals(lastState.point, point))
-          ) {
-            lastState.point = point;
-            lastState.points = points;
-            scope[action](points, evt, point);
+        var atEvent = scope.chart.getElementsAtEvent || scope.chart.getPointsAtEvent;
+        if (atEvent) {
+          var activePoints = atEvent.call(scope.chart, evt);
+          if (triggerOnlyOnChange === false || angular.equals(lastState, activePoints) === false) {
+            lastState = activePoints;
+            scope[action](activePoints, evt);
           }
         }
       };
@@ -240,12 +229,8 @@
     }
 
     function convertColor (color) {
-      // Allows RGB and RGBA colors to be input as a string: e.g.: "rgb(159,204,0)", "rgba(159,204,0, 0.5)"
-      if (typeof color === 'string' && color[0] === 'r') return getColor(rgbStringToRgb(color));
-      // Allows hex colors to be input as a string.
-      if (typeof color === 'string' && color[0] === '#') return getColor(hexToRgb(color.substr(1)));
-      // Allows colors to be input as an object, bypassing getColor() entirely
       if (typeof color === 'object' && color !== null) return color;
+      if (typeof color === 'string' && color[0] === '#') return getColor(hexToRgb(color.substr(1)));
       return getRandomColor();
     }
 
@@ -255,15 +240,13 @@
     }
 
     function getColor (color) {
-      var alpha = color[3] || 1;
-      color = color.slice(0, 3);
       return {
         backgroundColor: rgba(color, 0.2),
-        pointBackgroundColor: rgba(color, alpha),
+        pointBackgroundColor: rgba(color, 1),
         pointHoverBackgroundColor: rgba(color, 0.8),
-        borderColor: rgba(color, alpha),
+        borderColor: rgba(color, 1),
         pointBorderColor: '#fff',
-        pointHoverBorderColor: rgba(color, alpha)
+        pointHoverBorderColor: rgba(color, 1)
       };
     }
 
@@ -284,13 +267,6 @@
         b = bigint & 255;
 
       return [r, g, b];
-    }
-
-    function rgbStringToRgb (color) {
-      var match = color.match(/^rgba?\(([\d,.]+)\)$/);
-      if (! match) throw new Error('Cannot parse rgb value');
-      color = match[1].split(',');
-      return color.map(Number);
     }
 
     function hasData (scope) {
