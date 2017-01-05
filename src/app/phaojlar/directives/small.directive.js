@@ -20,11 +20,9 @@
         };
         return directive;
         function link(scope, element) {
-            var nav = element;
-            var posTop = nav.position().top;
             $('#body-scroll').scroll(function () {
                 var y = $(this).scrollTop();
-                if (y > posTop) { $(element[0]).css({ display: 'none'}); }
+                if (y > 0) { $(element[0]).css({ display: 'none'}); }
                 else {$(element[0]).css({ display: 'flex'}); }
             });
         }

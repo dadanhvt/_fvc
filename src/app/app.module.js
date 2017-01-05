@@ -24,7 +24,7 @@
         .run(['$rootScope', '$state', 'Auth', '$q', 'User', '$mdToast', function ($rootScope, $state, Auth, $q, User, $mdToast) {
             $rootScope.countLoader = 0;
             $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
-                $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
+                $rootScope.countLoader = 0;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
                 if (error  == Auth.UNAUTHORIZED) {
                     $mdToast.show({
                         template: '<md-toast><span flex>Vui lòng đăng nhập!</span></md-toast>',

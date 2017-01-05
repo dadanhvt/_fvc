@@ -127,6 +127,7 @@
         function Poststt() {
             if (vm.postContent != '' || vm.imagesUpload.length > 0) {
                 var fd = new FormData();
+                if(vm.imagesUpload)
                 for (var x = 0; x < vm.imagesUpload.length; x++) {
                     fd.append("files[]", vm.imagesUpload[x]);
                 }
@@ -166,7 +167,7 @@
                     id: post.id,
                     contents: post.newCmt
                 };
-                apiService.postAPI(SERVER_ADDNEWCOMMENT, false, param, function (e) {
+                apiService.postAPI(SERVER_ADDNEWCOMMENT, true, param, function (e) {
                     if (e.success != 1) {
                         $mdToast.show({
                             template: '<md-toast><span flex>Cann\'t change like, please try again!</span></md-toast>',

@@ -7,7 +7,7 @@
     angular
         .module('app.main.profile')
         .controller('AboutController', AboutController);
-    function AboutController($mdConstant, Notification, $mdToast, apiService, $rootScope, $stateParams) {
+    function AboutController($mdConstant, $mdToast, apiService, $rootScope, $stateParams) {
         var vm = this;
         vm.checkdisable = true;
         vm.edit = edit;
@@ -29,7 +29,7 @@
                 }
                 vm.about = e.result;
                 if(vm.about.birth != "" && vm.about.birth != null){
-                    vm.about.birth = date2String(vm.about.birth);
+                    vm.about.birth = string2Date(vm.about.birth);
                 }else{
                     vm.about.birth = undefined;
                 }
