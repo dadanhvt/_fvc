@@ -7,13 +7,15 @@
             <md-button class="md-raised md-warn" ui-sref="phaojlar.default.signup">Register now</md-button>
         </div>
     </md-card>
-    <md-card class="margin-0 margin-bottom-10">
-        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+    <md-card ng-if="(!vm.posts.data.length)||vm.categories.childs.length"class="margin-0 margin-bottom-10">
+        <md-toolbar  layout-align="center" layout="row" class="md-toolbar-small toolbar-light" >
             <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
                 class="padding-left-10">{{vm.categories.title}}</span></span>
             <span flex></span>
+            <md-button ng-if="$root.user&&(vm.categories.status==1)" class="md-block margin-0" ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
+            <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new</md-button>
         </md-toolbar>
-        <div class="content padding-10" layout="column">
+        <!--<div class="content padding-10" layout="column">-->
             <div class="thread">
                 <div ng-repeat="child in vm.categories.childs" class="padding-left-10">
                     <div layout="column" class="padding-10">
@@ -30,7 +32,7 @@
                     <md-divider ng-if="!$last"></md-divider>
                 </div>
             </div>
-        </div>
+        <!--</div>-->
     </md-card>
     <md-card class="margin-0 margin-bottom-10" ng-hide="vm.posts.total==0">
         <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">

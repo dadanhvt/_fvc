@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f12c2b9-3f4f-49e0-a329-a6ef66787e93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js.tar.gz" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js.tar.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/app.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/index.html" afterPath="$PROJECT_DIR$/.tmp/serve/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/README.md" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/angular-chart.js" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/angular-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/package.json" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/chart.js/.gitignore" afterPath="$PROJECT_DIR$/bower_components/chart.js/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.bundle.js" afterPath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.js" afterPath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/node-sass" afterPath="$PROJECT_DIR$/node_modules/.bin/node-sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js" afterPath="$PROJECT_DIR$/src/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.scss" afterPath="$PROJECT_DIR$/src/app/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/admin.config.js" afterPath="$PROJECT_DIR$/src/app/main/admin/admin.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/config.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/config/config.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/config.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/config/config.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/users.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/users/users.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/users.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/users/users.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ads/facebook/add-ads-dialog.controller.js" afterPath="$PROJECT_DIR$/src/app/main/ads/facebook/add-ads-dialog.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js" afterPath="$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/_forum.scss" afterPath="$PROJECT_DIR$/src/app/main/forum/_forum.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/forum.config.js" afterPath="$PROJECT_DIR$/src/app/main/forum/forum.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/index/index.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/index/index.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/main.module.js" afterPath="$PROJECT_DIR$/src/app/main/main.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/profile/about/about.controller.js" afterPath="$PROJECT_DIR$/src/app/main/profile/about/about.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/phaojlar/components/menu/default-menu.tmpl.html" afterPath="$PROJECT_DIR$/src/app/phaojlar/components/menu/default-menu.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/constant.js" afterPath="$PROJECT_DIR$/src/app/utils/constant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/func.js" afterPath="$PROJECT_DIR$/src/app/utils/func.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js" afterPath="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html" />
     </list>
     <ignored path="source.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,7 +32,7 @@
       <file leaf-file-name="threads.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="333">
               <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding />
             </state>
@@ -90,21 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.tmpl.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="timeline.tmpl.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="34" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="65" selection-end-column="34" />
+            <state relative-caret-position="106">
+              <caret line="132" column="22" lean-forward="true" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.tmpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html">
+      <file leaf-file-name="timeline.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="71" lean-forward="false" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
+            <state relative-caret-position="170">
+              <caret line="130" column="47" lean-forward="true" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-post.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,8 +82,8 @@
       <file leaf-file-name="threads.tmpl.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1513">
-              <caret line="89" column="104" lean-forward="false" selection-start-line="89" selection-start-column="104" selection-end-line="89" selection-end-column="104" />
+            <state relative-caret-position="68">
+              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -150,25 +119,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts.tmpl.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="posts.tmpl.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="-1105">
               <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#md-toolbar#0;n#md-card#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -222,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/photos/open-image.tmpl.html" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/layouts/profile.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/certifications-detail.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/languages-detail.controller.js" />
@@ -233,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/app/main/admin/users/experiences-detail.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/educations-detail.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/layouts/updateAvatar.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js" />
         <option value="$PROJECT_DIR$/src/app/phaojlar/api.service.js" />
         <option value="$PROJECT_DIR$/src/app/main/messenger/messenger.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/messenger/messenger.stylesheet.scss" />
@@ -263,9 +220,11 @@
         <option value="$PROJECT_DIR$/src/app/utils/constant.js" />
         <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html" />
       </list>
     </option>
   </component>
@@ -298,6 +257,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -386,6 +346,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="forum" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -422,7 +438,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -693,33 +708,34 @@
       <workItem from="1483542336788" duration="407000" />
       <workItem from="1483542954750" duration="2344000" />
       <workItem from="1483631299534" duration="196000" />
+      <workItem from="1483632478637" duration="1585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="883447000" />
+    <option name="totallyTimeSpent" value="885032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1370" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22447447" sideWeight="0.4090909" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32478634" sideWeight="0.521021" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252818" sideWeight="0.48809522" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32478634" sideWeight="0.478979" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32478634" sideWeight="0.478979" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252818" sideWeight="0.48809522" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21300448" sideWeight="0.59090906" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26495728" sideWeight="0.49402985" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -762,13 +778,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/admin.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -958,13 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="122" column="17" lean-forward="false" selection-start-line="112" selection-start-column="16" selection-end-line="122" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1073,22 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="89" column="104" lean-forward="false" selection-start-line="89" selection-start-column="104" selection-end-line="89" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1105,14 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="34" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="65" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -1123,12 +1101,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="-1105">
           <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#span#0;n#md-toolbar#0;n#md-card#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="130" column="47" lean-forward="true" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="132" column="22" lean-forward="true" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
