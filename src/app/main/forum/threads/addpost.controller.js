@@ -37,7 +37,7 @@
                             hideDelay: 3000
                         });
                         return;
-                    }else $mdDialog.hide(e.result.id);
+                    }else $mdDialog.hide(e.result.alias);
                 });
             }
         }

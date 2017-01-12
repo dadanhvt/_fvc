@@ -8,14 +8,15 @@
         </div>
     </md-card>
     <md-card class="margin-0 margin-bottom-10">
-        <md-toolbar layout-align="center" layout="row" class="toolbar-light">
-            <span class="small-title padding-left-10" style="line-height: 10px;padding-top:13px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" layout="row">
-                <i class="zmdi zmdi-edit padding-right-10"></i>
+        <div layout="row" class="padding-10">
+            <a ng-href="#/profile/{{vm.post.author.id}}/about"><img ng-src="{{vm.server}}upload/avatar/{{vm.post.author.avatar}}" style="width: 60px; height: 60px;"></a>
+            <md-divider></md-divider>
+            <span class="small-title padding-left-10" style="line-height: 10px;padding-top:8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" layout="row">
                 <span layout="column">
-                    <span>{{vm.post.name}}</span><br>
-                    <span style="font-size: 11px;">Post by
-                        <a href="">{{vm.post.author.name}}</a>
-                        at {{vm.post.created_at}}
+                    <span style="font-size: 18px;">{{vm.post.name}}</span><br>
+                    <span style="font-size: 15px;">Post by
+                        <a ng-href="#/profile/{{vm.post.author.id}}/about">{{vm.post.author.name}}</a>
+                        at <span am-time-ago="vm.post.created_at"></span>
                     </span>
                 </span>
             </span>
@@ -36,29 +37,23 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
-            <span class="padding-right-10">#0</span>
-        </md-toolbar>
+        </div>
+        <md-divider></md-divider>
         <div class="content padding-10" layout="column">
             <div layout="column">
-                <div layout="row" layout-xs="column" layout-align-xs="center center">
-                    <div layout="column" class="padding-right-10"style="width: 140px;" layout-align="start center">
-                        <img ng-src="{{vm.server}}upload/avatar/{{vm.post.author.avatar}}" style="width: 80px; height: 80px;">
-                        <a class="padding-10" ng-href="#/profile/{{vm.post.author.id}}/about">{{vm.post.author.name}}</a>
-                    </div>
-                    <md-divider></md-divider>
                     <div flex layout="column">
-                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;">{{vm.post.contents}}</div>
+                        <div class="padding-10 forum-post-content" style="text-align: justify;" ng-bind-html="vm.post.contents"></div>
                     </div>
-                </div>
                 <md-divider></md-divider>
-                <div layout="row" style="height: 20px;">
-                    <span flex></span>
-                    <md-button  ng-if="$root.user"  class="md-icon-button margin-0" ng-click="vm.likePost()">
+                <div layout="row" layout-align="center center">
+                    <md-button ng-if="$root.user" class="md-icon-button margin-0" ng-click="vm.likePost()">
                         <i ng-class="{'zmdi-favorite-outline': vm.post.is_liked==false, 'zmdi-favorite': vm.post.is_liked==true}"
                            class="zmdi" ng-style="vm.post.is_liked==true && {color: 'tomato'} || {color: 'black'}"></i>
                         <md-tooltip>Like</md-tooltip>
                     </md-button>
-                    <span style="padding-top: 5px;padding-right: 10px;">{{vm.post.like_count>0?vm.post.like_count:0}} Like</span>
+                    <span>{{vm.post.like_count>0?vm.post.like_count:0}} Like</span>
+                    <span flex></span>
+                    <md-button class="md-primary" ng-click="vm.clickQuote(vm.post)">Trích dẫn</md-button>
                 </div>
             </div>
         </div>
@@ -100,22 +95,23 @@
                     </div>
                     <md-divider></md-divider>
                     <div flex layout="column">
-                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;">{{comment.contents}}</div>
+                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;" ng-bind-html="comment.contents"></div>
                     </div>
                 </div>
                 <md-divider></md-divider>
-                <div layout="row" style="height: 20px;">
-                    <span flex></span>
+                <div layout="row" layout-align="center center">
                     <md-button  ng-if="$root.user"  class="md-icon-button margin-0" ng-click="vm.likeComment(comment)">
                         <i ng-class="{'zmdi-favorite-outline': comment.is_liked.length==0, 'zmdi-favorite': comment.is_liked.length>0}"
                            class="zmdi" ng-style="comment.is_liked.length>0 && {color: 'tomato'} || {color: 'black'}"></i>
                     </md-button>
                     <span>{{comment.like_count.length>0?comment.like_count[0].count:0}} Like</span>
+                    <span flex></span>
+                    <md-button class="md-primary" ng-click="vm.clickQuote(comment)">Trích dẫn</md-button>
                 </div>
             </div>
         </div>
     </md-card>
-    <div flex layout="row" ng-if="vm.comments.total">
+    <div flex layout="row" ng-if="vm.comments.last_page>1">
         <span flex></span>
         <md-divider></md-divider>
         <span style="padding: 8px;">{{vm.comments.from}}-{{vm.comments.to}} of {{vm.comments.total}}</span>
@@ -139,10 +135,7 @@
     <md-card ng-if="$root.user&&(vm.post.status==1)" class="margin-0 margin-bottom-10">
         <div layout="column">
             <form name="InputPost">
-                <md-input-container md-no-float class="md-block phao-input-noerror">
-                            <textarea ng-model="vm.commentContent" rows="3" md-select-on-focus
-                                      placeholder="Write a comment..."></textarea>
-                </md-input-container>
+                <textarea ckeditor ng-model="vm.commentContent"></textarea>
             </form>
             <div layout="row">
                 <span flex></span>

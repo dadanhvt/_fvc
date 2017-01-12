@@ -58,6 +58,7 @@
             });
 
             $rootScope.$on('$stateChangeSuccess', function () {
+                $rootScope.changeUrl++;
                 $rootScope.countLoader = $rootScope.countLoader - 1;if($rootScope.countLoader == 0)$rootScope.isShowPageLoader = false;
             });
         }]);

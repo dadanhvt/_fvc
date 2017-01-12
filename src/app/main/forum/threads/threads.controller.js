@@ -20,7 +20,7 @@
         init();
         function init() {
             vm.query = {
-                limit: 5,
+                limit: 25,
                 page: 1
             };
             vm.aliasCategory = $stateParams.alias;

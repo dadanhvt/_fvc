@@ -313,6 +313,37 @@ md-grid-list.post-images md-grid-tile:hover md-grid-tile-footer{
 md-grid-list.post-images md-grid-tile-footer:hover{
     background: rgba(0, 0, 0, 0.8) !important;
 }
+.thread-list{
+    border: 1px solid rgb(226, 226, 226);
+    border-bottom: 0;
+    border-left: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+.thread-item{
+    border: 1px solid rgb(226, 226, 226);
+    border-right: 0;
+    border-top: 0;
+}
+.forum-post-content{
+    img, iframe, video{
+        max-width: 100% !important;
+    }
+}
+blockquote {
+    margin-bottom: 10px;
+    margin-top:10px;
+    margin-left: 20px;
+    font-style: italic;
+    padding-left: 20px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0;
+    padding-right: 8px;
+    border-left-width: 5px;
+}
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

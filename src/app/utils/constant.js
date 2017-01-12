@@ -1,8 +1,8 @@
 /**
  * Created by Tinti on 7/17/2016.
  */
-var SERVER_IP = "http://developapi.nghilon.vn/francovietcareer.com/";
-//var SERVER_IP = "http://192.168.1.15/franco/src/";
+// var SERVER_IP = "http://developapi.nghilon.vn/francovietcareer.com/";
+var SERVER_IP = "http://localhost/franco/src/";
 var SERVER = SERVER_IP + "api/";
 var SERVER_ASSETS = SERVER_IP + "assets/";
 //ADMIN
