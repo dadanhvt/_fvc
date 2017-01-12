@@ -10,9 +10,9 @@
     <md-card ng-if="(!vm.posts.data.length)||vm.categories.childs.length"class="margin-0 margin-bottom-10">
         <md-toolbar  layout-align="center" layout="row" class="md-toolbar-small toolbar-light" >
             <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
-                class="padding-left-10">{{vm.categories.title}}</span></span>
+                class="padding-left-10">Categories</span></span>
             <span flex></span>
-            <md-button ng-if="$root.user&&(vm.categories.status==1)" class="md-block margin-0" ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
+            <md-button ng-if="$root.user&&(vm.categories.status==1)&&!vm.posts.data.length" class="md-block margin-0" ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
             <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new</md-button>
         </md-toolbar>
         <!--<div class="content padding-10" layout="column">-->
@@ -36,8 +36,8 @@
     </md-card>
     <md-card class="margin-0 margin-bottom-10" ng-hide="vm.posts.total==0">
         <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
-            <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
-                class="padding-left-10">{{vm.categories.title}}</span></span>
+            <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-comment-text-alt"></i><span
+                class="padding-left-10">Post</span></span>
             <span flex></span>
             <md-button ng-if="$root.user&&(vm.categories.status==1)" class="md-block margin-0" ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
             <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new</md-button>

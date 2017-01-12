@@ -31,12 +31,12 @@
                 }
                 else
                 {
+                    console.log(e.result);
                     vm.categories = e.result;
                     vm.posts = e.result.posts;
                     vm.bracum =[];
                     var tmp = findItembyAlias($rootScope.categories, vm.aliasCategory);
                     vm.bracum.push(tmp);
-
                     while (tmp.parent_id)
                     {
                         tmp = findItem($rootScope.categories,tmp.parent_id);

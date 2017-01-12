@@ -15,6 +15,7 @@
         $scope.toggle = toggle;
         $scope.moveLastToTheBeginning = moveLastToTheBeginning;
         $scope.save = save;
+        $scope.updateStatus = updateStatus;
 
         init();
 
@@ -38,6 +39,7 @@
                 }
                 $scope.data = e.result;
             });
+
         }
 
         function newSubItem(scope) {
@@ -150,6 +152,11 @@
             $scope.check = true;
 
         };
+
+        function updateStatus(item) {
+            var status = item.status;
+            changStatus(item,status);
+        }
 
         function save() {
             var data = {
