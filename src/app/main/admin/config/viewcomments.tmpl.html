@@ -6,19 +6,19 @@
     <div layout="row" layout-xs="column">
         <div flex layout="row">
             <span flex></span>
-            <span style="padding: 8px;">Rows per page: </span>
-            <md-select ng-model="vm.query.limit" ng-change="vm.query.page=1;vm.getData()"
-                       class="md-no-underline margin-0">
-                <md-option value="5">5</md-option>
-                <md-option value="10">10</md-option>
-                <md-option value="15">15</md-option>
-                <md-option value="20">20</md-option>
-                <md-option value="30">30</md-option>
-                <md-option value="40">40</md-option>
-                <md-option value="50">50</md-option>
-            </md-select>
+            <!--<span style="padding: 8px;">Rows per page: </span>-->
+            <!--<md-select ng-model="vm.query.limit" ng-change="vm.query.page=1;vm.getData()"-->
+                       <!--class="md-no-underline margin-0">-->
+                <!--<md-option value="5">5</md-option>-->
+                <!--<md-option value="10">10</md-option>-->
+                <!--<md-option value="15">15</md-option>-->
+                <!--<md-option value="20">20</md-option>-->
+                <!--<md-option value="30">30</md-option>-->
+                <!--<md-option value="40">40</md-option>-->
+                <!--<md-option value="50">50</md-option>-->
+            <!--</md-select>-->
             <md-divider></md-divider>
-            <span style="padding: 8px;">{{vm.posts.from}}-{{vm.posts.to}} of {{vm.posts.total}}</span>
+            <span style="padding: 8px;">{{vm.comments.from}}-{{vm.comments.to}} of {{vm.comments.total}}</span>
             <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
                        ng-click="vm.query.page=1;vm.getData()">
                 <i class="zmdi zmdi-skip-previous"></i>
@@ -27,12 +27,13 @@
                        ng-click="vm.query.page=vm.query.page-1;vm.getData()">
                 <i class="zmdi zmdi-chevron-left"></i>
             </md-button>
-            <md-button ng-disabled="vm.query.page == vm.users.last_page" class="md-icon-button" aria-label="More"
+            <span style="padding: 8px;">{{vm.query.page}}</span>
+            <md-button ng-disabled="vm.query.page == vm.comments.last_page" class="md-icon-button" aria-label="More"
                        ng-click="vm.query.page=vm.query.page+1;vm.getData()">
                 <i class="zmdi zmdi-chevron-right"></i>
             </md-button>
-            <md-button ng-disabled="vm.query.page == vm.users.last_page" class="md-icon-button" aria-label="More"
-                       ng-click="vm.query.page=vm.users.last_page;vm.getData()">
+            <md-button ng-disabled="vm.query.page == vm.comments.last_page" class="md-icon-button" aria-label="More"
+                       ng-click="vm.query.page=vm.comments.last_page;vm.getData()">
                 <i class="zmdi zmdi-skip-next"></i>
             </md-button>
 
@@ -44,27 +45,27 @@
             <thead md-order="vm.query.order">
             <tr>
                 <th class="padding-right-10 padding-left-10" name="No."></th>
-                <th class="padding-right-10 padding-left-10" name="Content" order-by="Content" decend-first></th>
+                <th class="padding-right-10 padding-left-10" name="Content"></th>
                 <th class="padding-right-10 padding-left-10" name="Author"></th>
-                <th class="padding-right-10 padding-left-10" name="Date" order-by="Content"></th>
+                <th class="padding-right-10 padding-left-10" name="Date"></th>
                 <th class="padding-right-10 padding-left-10" name="Status"></th>
             </tr>
             </thead>
 
             <tbody>
-            <tr ng-repeat="item in vm.comments">
-                <td class="padding-right-10 padding-left-10">{{$index + 1}}</td>
+            <tr ng-repeat="comment in vm.comments.data">
+                <td class="padding-right-10 padding-left-10">{{(vm.query.page-1)*vm.query.limit + ($index+1)}}</td>
                 <td class="padding-right-10 padding-left-10">
-                    <span>{{item.content}}</span>
+                    <span>{{comment.name}}</span>
                 </td>
                 <td class="padding-right-10 padding-left-10">
-                    <span>{{item.author}}</span>
+                    <a href="#/profile/{{comment.author.id}}/about">{{comment.author.name}}</a>
                 </td>
                 <td class="padding-right-10 padding-left-0">
-                    <span>{{item.date}}</span>
+                    <span>{{comment.created_at}}</span>
                 </td>
                 <td class="padding-right-10 padding-left-0">
-                    <md-select ng-model="item.status" class="md-no-underline margin-0">
+                    <md-select ng-model="comment.status" class="md-no-underline margin-0" ng-change="vm.updateStatus(comment)">
                         <md-option value="1">Public</md-option>
                         <md-option value="0">Ban</md-option>
                     </md-select>
@@ -76,7 +77,7 @@
     <md-dialog-actions layout="row">
         <div layout="row">
             <span flex></span>
-            <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.close()">Close</md-button>
         </div>
     </md-dialog-actions>
 </md-dialog>

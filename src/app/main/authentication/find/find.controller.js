@@ -19,7 +19,7 @@
                 search: '',
                 searchBy: 'name',
                 role: '',
-                limit: LIMIT_USER_LIST,
+                //limit: LIMIT_USER_LIST,
                 page: 1
             };
             vm.searchBy = 'name';

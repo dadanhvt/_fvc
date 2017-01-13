@@ -5,25 +5,27 @@
         <!-- scrollable content -->
         <div layout="row" layout-xs="column">
             <div layout="row">
-                <span style="padding: 8px;">Search by: </span>
-                <md-select ng-model="vm.query.searchBy" ng-change="vm.query.page=1;vm.getData()"
-                           class="md-no-underline margin-0">
-                    <md-option value="title">Title</md-option>
-                    <md-option value="author">Author</md-option>
-                </md-select>
                 <span style="padding: 8px;">Category: </span>
-                <md-select ng-model="vm.query.role" ng-change="vm.query.page=1;vm.getData()"
+                <md-select ng-model="vm.query.folder_id" ng-change="vm.query.page=1;vm.getData()"
                            class="md-no-underline margin-0">
+                    <script type="text/ng-template" id="nodes_renderer.html">
+                        <md-option ng-value="node.id" style="margin-left:15px">{{node.title}}</md-option>
+                        <ul  ng-model="node.childs" style="list-style-type:none;padding-left: 15px">
+                            <li ng-repeat="node in node.childs"  ng-include="'nodes_renderer.html'"></li>
+                        </ul>
+                    </script>
+
+                    <div>
+                        <ul style="list-style-type:none;padding-left: 0px;margin-top: 10px;">
+                            <md-optgroup ng-repeat="node in vm.categories" label="{{node.title}}" style="padding:0px">
+                                <li ng-repeat="node in node.childs" ng-include="'nodes_renderer.html'"></li>
+                            </md-optgroup>
+                        </ul>
+                    </div>
                     <md-option ng-value="''">All</md-option>
-                    <md-option ng-value="'AD'">Admin</md-option>
-                    <md-option ng-value="'US'">candidate</md-option>
-                    <md-option ng-value="'HH'">Head Hunt</md-option>
-                    <md-option ng-value="'RE'">Recruiter</md-option>
-                    <md-option ng-value="'JP'">Job posting</md-option>
-                    <md-option ng-value="'BA'">Banned</md-option>
                 </md-select>
                 <md-input-container md-no-float class="md-block phao-input-noerror">
-                    <input name="email" type="text" ng-model="vm.query.search" placeholder="Search text"
+                    <input type="text" ng-model="vm.query.search" placeholder="Search text"
                            ng-change="vm.changeSearchText()">
                 </md-input-container>
             </div>
@@ -50,21 +52,15 @@
                            ng-click="vm.query.page=vm.query.page-1;vm.getData()">
                     <i class="zmdi zmdi-chevron-left"></i>
                 </md-button>
-                <md-button ng-disabled="vm.query.page == vm.users.last_page" class="md-icon-button" aria-label="More"
+                <span style="padding: 8px;">{{vm.query.page}}</span>
+                <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button" aria-label="More"
                            ng-click="vm.query.page=vm.query.page+1;vm.getData()">
                     <i class="zmdi zmdi-chevron-right"></i>
                 </md-button>
-                <md-button ng-disabled="vm.query.page == vm.users.last_page" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=vm.users.last_page;vm.getData()">
+                <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button" aria-label="More"
+                           ng-click="vm.query.page=vm.posts.last_page;vm.getData()">
                     <i class="zmdi zmdi-skip-next"></i>
                 </md-button>
-
-                <md-button class="md-block margin-0" ng-class="{'md-raised md-warn': vm.edited == true}"
-                           aria-label="More" ng-click="vm.saveUser()">
-                    <span>Save</span>
-                    <md-tooltip>Save</md-tooltip>
-                </md-button>
-
             </div>
         </div>
         <div flex style="overflow: auto !important;">
@@ -74,46 +70,50 @@
                         <thead md-order="vm.query.order" md-trigger="vm.onChangeFilter">
                         <tr>
                             <th class="padding-right-10 padding-left-10" name="No."></th>
-                            <th class="padding-right-10 padding-left-10" name="Title" order-by="Title" decend-first></th>
-                            <th class="padding-right-10 padding-left-10" name="Author" order-by="Author"></th>
+                            <th class="padding-right-10 padding-left-10" name="Title"></th>
+                            <th class="padding-right-10 padding-left-10" name="Author"></th>
                             <th class="padding-right-10 padding-left-10" name="Categories"></th>
                             <th class="padding-right-10 padding-left-10" name="Comments"></th>
-                            <th class="padding-right-10 padding-left-10" name="Like"></th>
+                            <th class="padding-right-10 padding-left-10" name="Views"></th>
                             <th class="padding-right-10 padding-left-10" name="Date"></th>
                             <th class="padding-right-10 padding-left-10" name="Status"></th>
                         </tr>
                         </thead>
                         <tbody flex>
-                        <tr ng-repeat="post in vm.posts" ng-class="{'user-item-edited': user.isEdit == true}">
+                        <tr ng-repeat="post in vm.posts.data" ng-class="{'user-item-edited': user.isEdit == true}">
                             <td class="padding-right-10 padding-left-10">{{(vm.query.page-1)*vm.query.limit +
                                 ($index+1)}}
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <a ng-href="{{post.link}}">{{post.title}}</a>
+                                <a ng-href="#">{{post.name}}</a>
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <span>{{post.author}}</span>
+                                <a href="#/profile/{{post.author.id}}/about">{{post.author.name}}</a>
                             </td>
                             <td class="padding-right-10 padding-left-10">
                                 <md-select class="md-no-underline margin-0"
-                                           placeholder="Categories" ng-model="vm.test"
-                                           style="width: 100px">
-                                    <!--<md-option ng-value="item.id" ng-repeat="item in user.profile.cities">-->
-                                        <!--{{item.name}}-->
-                                    <!--</md-option>-->
+                                           placeholder="Categories" ng-model="post.folder_id"
+                                           style="width: 100px" ng-change="vm.updateCategory(post)">
+                                    <div>
+                                        <ul style="list-style-type:none;padding-left: 0px;margin-top: 10px;">
+                                            <md-optgroup ng-repeat="node in vm.categories" label="{{node.title}}" style="padding:0px">
+                                                <li ng-repeat="node in node.childs" ng-include="'nodes_renderer.html'"></li>
+                                            </md-optgroup>
+                                        </ul>
+                                    </div>
                                 </md-select>
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <md-button  class="md-block" ng-click="vm.viewcomments()" >{{post.comments}}</md-button>
+                                <md-button  class="md-block" ng-click="vm.viewComments(post)" >{{post.comments}}</md-button>
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <span>{{post.likes}}</span>
+                                <span>{{post.views}}</span>
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <span>{{post.date}}</span>
+                                <span>{{post.created_at}}</span>
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <md-select ng-model="post.status" class="md-no-underline margin-0">
+                                <md-select ng-model="post.status" class="md-no-underline margin-0" ng-change="vm.updateStatus(post)">
                                     <md-option value="1">Public</md-option>
                                     <md-option value="0">Ban</md-option>
                                 </md-select>

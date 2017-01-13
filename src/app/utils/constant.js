@@ -45,6 +45,12 @@ var SERVER_GETFORUMCOMMENTS = SERVER + "getForumComments";
 var SERVER_POSTLIKEFORUMPOST = SERVER + "postLikeForumPost";
 var SERVER_POSTADDFORUMCOMMENT = SERVER + "postAddForumComment";
 var SERVER_POSTADDPOSTFORUM = SERVER + "postAddPostForum";
+var SERVER_AGETFORUMPOST = SERVER + "agetForumPost";
+var SERVER_ACHANGEPOSTCATEGORY = SERVER + "achangePostCategory";
+var SERVER_ACHANGEPOSTSTATUS = SERVER + "achangePostStatus";
+
+
+
 
 
 

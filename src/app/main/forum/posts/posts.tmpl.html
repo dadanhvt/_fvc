@@ -14,7 +14,7 @@
                 <span layout="column">
                     <span>{{vm.post.name}}</span><br>
                     <span style="font-size: 11px;">Post by
-                        <a href="">{{vm.post.author.name}}</a>
+                        <a href="#/profile/{{vm.post.author.id}}/about">{{vm.post.author.name}}</a>
                         at {{vm.post.created_at}}
                     </span>
                 </span>
@@ -47,11 +47,11 @@
                     </div>
                     <md-divider></md-divider>
                     <div flex layout="column">
-                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;">{{vm.post.contents}}</div>
+                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;" ng-bind-html="vm.post.contents"></div>
                     </div>
                 </div>
                 <md-divider></md-divider>
-                <div layout="row" style="height: 20px;">
+                <div layout="row" style="hgueight: 20px;">
                     <span flex></span>
                     <md-button  ng-if="$root.user"  class="md-icon-button margin-0" ng-click="vm.likePost()">
                         <i ng-class="{'zmdi-favorite-outline': vm.post.is_liked==false, 'zmdi-favorite': vm.post.is_liked==true}"
