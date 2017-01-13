@@ -7,7 +7,7 @@
 
     /* @ngInject */
 
-    function ForumPostController($state,$mdDialog,apiService,$stateParams,$mdToast,$rootScope) {
+    function ForumPostController($state,$window,apiService,$stateParams,$mdToast,$rootScope) {
         var vm = this;
 
         vm.hello = 'Xin Chào ! Nếu đây là chuyến thăm đầu tiên của bạn vào Diễn đàn , hãy chắc chắn kiểm tra quy cách ' +
@@ -18,19 +18,18 @@
         vm.likeComment = likeComment;
         vm.getComments = getComments;
         vm.addComment =addComment;
-        vm.server = SERVER_ASSETS;
-
+        vm.clickQuote = clickQuote;
         init();
         function init() {
-
+            vm.server = SERVER_ASSETS;
             vm.aliasCategory = $stateParams.alias;
             vm.idPost = $stateParams.idPost;
             vm.commentContent ='';
             vm.query = {
-                limit: 5,
+                limit: 15,
                 page: 1
             };
-            apiService.getAPI(SERVER_GETFORUMPOST + "?alias=" + vm.aliasCategory + "&id=" + vm.idPost+"$limit=5", true, function (e) {
+            apiService.getAPI(SERVER_GETFORUMPOST + "?alias=" + vm.aliasCategory + "&id=" + vm.idPost+"&limit=5", true, function (e) {
                 if (!(e.success == 1)) {
                     $state.go("phaojlar.default.forum.index");
                 }else{
@@ -51,6 +50,10 @@
             });
         }
 
+        function clickQuote(post) {
+            if (vm.commentContent == null)vm.commentContent="";
+            vm.commentContent = vm.commentContent + "<blockquote><p>"+post.author.name+" said: </p><br>"+post.contents+"</blockquote>";
+        }
 
         function likePost() {
             var param = {id: vm.post.id};
@@ -115,7 +118,7 @@
                     contents: vm.commentContent,
                     limit : vm.query.limit
                 };
-                apiService.postAPI(SERVER_POSTADDFORUMCOMMENT, false, param, function (e) {
+                apiService.postAPI(SERVER_POSTADDFORUMCOMMENT, true, param, function (e) {
                     if (e.success != 1) {
                         $mdToast.show({
                             template: '<md-toast><span flex>Cann\'t comments, please try again!</span></md-toast>',
@@ -124,7 +127,11 @@
                         });
                         return;
                     }
-                    $state.go("phaojlar.default.forum.posts",{alias:vm.aliasCategory, idPost:vm.idPost, page:e.result});
+                    if(vm.query.page != e.result){
+                        $state.go("phaojlar.default.forum.posts",{alias:vm.aliasCategory, idPost:vm.idPost, page:e.result});
+                    }else{
+                        $window.location.reload();
+                    }
                 });
             }
         }

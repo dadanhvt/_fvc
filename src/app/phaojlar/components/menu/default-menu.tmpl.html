@@ -2,33 +2,12 @@
     <md-content>
         <div class="" layout="row" layout-align="start center">
             <md-content layout="row" layout-padding>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media" layout>
-                        <img ng-src="assets/images/user/{{$root.user.role}}.png" alt="" width="60" height="68">
-                    </div>
-                </md-card-title-media>
                 <md-card-title-text flex layout="column">
                     <span class="md-headline">{{$root.user.name}}</span>
                     <span class="md-headline" style="font-size: 15px;color:tomato;text-decoration:inherit" translate="USER.ROLE.{{$root.user.role}}">USER.ROLE.{{$root.user.role}}</span>
                 </md-card-title-text>
             </md-content>
         </div>
-        <md-menu-item ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
-            <span>XU: {{$root.user.wallet}} VND</span>
-        </md-menu-item>
-        <md-divider></md-divider>
-        <md-menu-item>
-            <md-button href="#/auth/profile"><md-icon md-font-icon="zmdi zmdi-account" class="margin-right-0"></md-icon><span translate="MENU.PROFILE"></span></md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button href="#/receive/mail"><md-icon md-font-icon="zmdi zmdi-email" class="margin-right-0"></md-icon><span translate="MENU.MESSAGE"></span></md-button>
-        </md-menu-item>
-        <md-menu-item ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
-            <md-button href="#/auth/charge-money"><md-icon md-font-icon="zmdi zmdi-money" class="margin-right-0"></md-icon><span translate="MENU.CHARGE_MONEY"></span></md-button>
-        </md-menu-item>
-        <md-menu-item ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
-            <md-button href="#/auth/upgrate-account"><md-icon md-font-icon="zmdi zmdi-pin-account" class="margin-right-0"></md-icon><span translate="MENU.UPGRATE_ACCOUNT"></span></md-button>
-        </md-menu-item>
     </md-content>
 
     <md-toolbar class="md-theme-indigo">
@@ -51,45 +30,3 @@
             <md-button href="#/admin/forum/list-posts"><md-icon md-font-icon="zmdi zmdi-collection-image-o" class="margin-right-0"></md-icon><span>Posts</span></md-button>
         </md-menu-item>
     </md-content>
-
-
-    <md-toolbar class="md-theme-indigo" ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
-        <h1 class="md-toolbar-tools" translate="MENU.MKT_MANAGER"></h1>
-    </md-toolbar>
-    <md-content ng-if="$root.user.role != 'ADMIN' && $root.user.role != 'EMP'">
-        <md-menu-item>
-            <md-button href="#/web-analyst/keywork-ranking"><md-icon md-font-icon="zmdi zmdi-google" class="margin-right-0"></md-icon><span translate="MENU.KEYWORD_RANKING"></span></md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button href="#/google/run-ads"><md-icon md-font-icon="zmdi zmdi-google-plus-box" class="margin-right-0"></md-icon><span translate="MENU.RUN_GGADWORKS"></span></md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button href="#/facebook/run-ads"><md-icon md-font-icon="zmdi zmdi-facebook" class="margin-right-0"></md-icon><span translate="MENU.RUN_FBADS"></span></md-button>
-        </md-menu-item>
-    </md-content>
-    <md-toolbar class="md-theme-indigo" ng-if="$root.user.role == 'ADMIN'">
-        <h1 class="md-toolbar-tools">Quản lý</h1>
-    </md-toolbar>
-    <md-content ng-if="$root.user.role == 'ADMIN'">
-        <md-menu-item>
-            <md-button href="#/admin/users"><md-icon md-font-icon="zmdi zmdi-account" class="margin-right-0"></md-icon><span>Tài khoản</span></md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button href="#/admin/config"><md-icon md-font-icon="zmdi zmdi-settings" class="margin-right-0"></md-icon><span >Cấu hình</span></md-button>
-        </md-menu-item>
-    </md-content>
-    <md-toolbar class="md-theme-indigo" ng-if="$root.user.role == 'ADMIN' ||$root.user.role == 'EMP'">
-        <h1 class="md-toolbar-tools">Chức năng</h1>
-    </md-toolbar>
-    <md-content ng-if="$root.user.role == 'ADMIN'|| $root.user.role == 'EMP'">
-        <md-menu-item>
-            <md-button href="#/emp/write-report"><md-icon md-font-icon="zmdi zmdi-edit" class="margin-right-0"></md-icon><span>Viết báo cáo</span></md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button href="#/emp/gg-campaign-require"><md-icon md-font-icon="zmdi zmdi-google" class="margin-right-0"></md-icon><span>Chiến dịch google</span></md-button>
-        </md-menu-item>
-        <md-menu-item>
-            <md-button href="#/emp/fb-campaign-require"><md-icon md-font-icon="zmdi zmdi-facebook" class="margin-right-0"></md-icon><span>Chiến dịch facebook</span></md-button>
-        </md-menu-item>
-    </md-content>
-</div>

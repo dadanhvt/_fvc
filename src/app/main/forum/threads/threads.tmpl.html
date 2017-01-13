@@ -7,14 +7,23 @@
             <md-button class="md-raised md-warn" ui-sref="phaojlar.default.signup">Register now</md-button>
         </div>
     </md-card>
+<<<<<<< HEAD
     <md-card ng-if="(!vm.posts.data.length)||vm.categories.childs.length"class="margin-0 margin-bottom-10">
         <md-toolbar  layout-align="center" layout="row" class="md-toolbar-small toolbar-light" >
             <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span
                 class="padding-left-10">Categories</span></span>
+=======
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+            <a href="#/discussions/{{vm.categories.alias}}" class="padding-top-8 padding-left-10"><i
+                class="zmdi zmdi-folder-outline"></i><span
+                class="padding-left-10">{{vm.categories.title}}</span></a>
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
             <span flex></span>
             <md-button ng-if="$root.user&&(vm.categories.status==1)&&!vm.posts.data.length" class="md-block margin-0" ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post</md-button>
             <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user" class="md-block margin-0"><i class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new</md-button>
         </md-toolbar>
+<<<<<<< HEAD
         <!--<div class="content padding-10" layout="column">-->
             <div class="thread">
                 <div ng-repeat="child in vm.categories.childs" class="padding-left-10">
@@ -28,10 +37,29 @@
                             <span flex style="font-size: 15px">Newpost</span>
                             <span style="font-size: 15px">post by</span>
                         </div>
+=======
+        <div class="content padding-10" layout="column">
+            <div class="thread thread-list" ng-if="vm.categories.childs.length > 0" layout="row" layout-wrap>
+                <div ng-repeat="child in vm.categories.childs"
+                     ng-class="{'flex-50': ($index != vm.categories.childs.length || vm.categories.childs.length % 2 == 0), 'flex-100': ($index == vm.categories.childs.length-1 && vm.categories.childs.length % 2 != 0)}"
+                     flex="50" flex-xs="100" class="padding-10 thread-item">
+                    <div layout="column">
+                        <a href="#/discussions/{{child.alias}}" layout="row">
+                            <i class="zmdi zmdi-comment-alt" style="font-size: 40px;"></i>
+                            <div layout="column" class="padding-left-10">
+                                <span>{{child.title}}</span>
+                                <span><span
+                                    ng-if="child.posts_count.length>0">{{child.posts_count[0].count}} posts</span><span
+                                    ng-if="child.posts_count.length==0">0 posts</span></span>
+                            </div>
+                        </a>
+                        <span ng-if="child.newest == null">Chưa có bài viết nào</span>
+                        <span ng-if="child.newest != null"><span>Mơi nhất: </span><a ng-href="#/discussions/{{child.alias}}/{{child.newest.alias}}">{{child.newest.name}}</a></span>
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
                     </div>
-                    <md-divider ng-if="!$last"></md-divider>
                 </div>
             </div>
+<<<<<<< HEAD
         <!--</div>-->
     </md-card>
     <md-card class="margin-0 margin-bottom-10" ng-hide="vm.posts.total==0">
@@ -58,40 +86,77 @@
                             <span><a ng-href="#/discussions/{{vm.categories.alias}}/{{post.id}}">{{post.name}}</a></span><br>
                             <span style="font-size: 11px;">Post by <a ng-href="#/profile/{{post.author.id}}/about">{{post.author.name}}</a>
                                 at {{post.created_at}}
+=======
+            <div layout="column">
+                <div layout="row">
+                    <span flex></span>
+                    <md-button ng-if="$root.user&&(vm.categories.status==1)"
+                               class="md-raised md-warn margin-top-10 margin-bottom-10"
+                               ng-click="vm.addNewPost()"><i class="zmdi zmdi-edit margin-right-10"></i>New post
+                    </md-button>
+                    <md-button ng-click="$root.signinDialog(true)" ng-if="!$root.user&&(vm.categories.status==1)"
+                               class="md-raised md-warn margin-top-10 margin-bottom-10"><i
+                        class="zmdi zmdi-edit margin-right-10"></i>Sign-in to post new
+                    </md-button>
+                    <span class="margin-top-10 margin-bottom-10" ng-if="vm.categories.status!=1">Diễn đàn này đã khóa, không thể đăng bài</span>
+                </div>
+                <div layout="column" ng-if="vm.posts.data.length > 0">
+                    <md-data-table-container>
+                        <table md-data-table class="md-data-table" md-progress="vm.deferred">
+                            <thead md-order="vm.query.order" md-trigger="vm.onChangeFilter">
+                            <tr>
+                                <th name="Title" class="padding-left-10 padding-right-10"></th>
+                                <th class="padding-left-10 padding-right-10"></th>
+                                <th name="Last comment" class="padding-left-10 padding-right-10"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="post in vm.posts.data">
+                                <td class="padding-left-10 padding-right-10">
+                                    <span><a style="font-size: 18px;"
+                                             ng-href="#/discussions/{{vm.categories.alias}}/{{post.alias}}">{{post.name}}</a></span><br>
+                                    <span style="font-size: 13px;">Post by <a
+                                        ng-href="#/profile/{{post.author.id}}/about">{{post.author.name}}</a>
+                                at <span am-time-ago="post.created_at"></span>
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
                             </span>
-                        </td>
-                        <td>
-                            <span>Commmennts: 15 </span><br>
-                            <span style="font-size: 11px;">Seen: 20 </span>
-                        </td>
-                        <td>
-                            <span>Phaojlar</span><br>
-                            <span style="font-size: 11px;">4/2/2016</span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </md-data-table-container>
-            <div flex layout="row">
-                <span flex></span>
-                <md-divider></md-divider>
-                <span style="padding: 8px;">{{vm.posts.from}}-{{vm.posts.to}} of {{vm.posts.total}}</span>
-                <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=1;vm.getData()">
-                    <i class="zmdi zmdi-skip-previous"></i>
-                </md-button>
-                <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=vm.query.page-1;vm.getData()">
-                    <i class="zmdi zmdi-chevron-left"></i>
-                </md-button>
-                <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button" aria-label="More"
-                           ng-click="vm.query.page=vm.query.page+1;vm.getData()">
-                    <i class="zmdi zmdi-chevron-right"></i>
-                </md-button>
-                <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button" aria-label="More"
-                           ui-sref="phaojlar.default.forum.threads({alias:vm.aliasCategory, page:vm.posts.last_page})">
-                    <i class="zmdi zmdi-skip-next"></i>
-                </md-button>
+                                </td>
+                                <td class="padding-left-10 padding-right-10">
+                                    <span>Comment: {{post.comments}}</span><br>
+                                    <span>Views: {{post.views}}</span>
+                                </td>
+                                <td class="padding-left-10 padding-right-10">
+                                    <span><a ng-href="#/profile/{{post.last_comment.author.id}}/about">{{post.last_comment.author.name}}</a></span><br>
+                                    <span style="font-size: 15px;" am-time-ago="post.last_comment.created_at"></span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-data-table-container>
+                    <div flex layout="row" ng-if="vm.posts.last_page > 1">
+                        <span flex></span>
+                        <md-divider></md-divider>
+                        <span style="padding: 8px;">{{vm.posts.from}}-{{vm.posts.to}} of {{vm.posts.total}}</span>
+                        <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
+                                   ng-click="vm.query.page=1;vm.getData()">
+                            <i class="zmdi zmdi-skip-previous"></i>
+                        </md-button>
+                        <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
+                                   ng-click="vm.query.page=vm.query.page-1;vm.getData()">
+                            <i class="zmdi zmdi-chevron-left"></i>
+                        </md-button>
+                        <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button"
+                                   aria-label="More"
+                                   ng-click="vm.query.page=vm.query.page+1;vm.getData()">
+                            <i class="zmdi zmdi-chevron-right"></i>
+                        </md-button>
+                        <md-button ng-disabled="vm.query.page == vm.posts.last_page" class="md-icon-button"
+                                   aria-label="More"
+                                   ui-sref="phaojlar.default.forum.threads({alias:vm.aliasCategory, page:vm.posts.last_page})">
+                            <i class="zmdi zmdi-skip-next"></i>
+                        </md-button>
+                    </div>
+                </div>
             </div>
         </div>
     </md-card>

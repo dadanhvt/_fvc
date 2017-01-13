@@ -1,6 +1,7 @@
 <div class="content">
     <md-card class="margin-0 margin-bottom-10" ng-repeat="category in vm.categories" ng-if="category.childs_node.length">
         <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+<<<<<<< HEAD
             <span class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline"></i><span class="padding-left-10">{{category.title}}</span></span>
             <span flex></span>
         </md-toolbar>
@@ -16,9 +17,43 @@
                         <span flex style="font-size: 15px">Newpost</span>
                         <span style="font-size: 15px">post by</span>
                     </div>
+=======
+            <a href="#/discussions/{{category.alias}}" class="padding-top-8 padding-left-10"><i class="zmdi zmdi-comment-text-alt" style="color:black"></i><span class="padding-left-10">{{category.title}}</span></a>
+            <span flex></span>
+        </md-toolbar>
+        <div class="content padding-10" ng-if="category.childs_node.length>0">
+            <div class="thread thread-list" layout="row" layout-wrap>
+            <div ng-repeat="child in category.childs_node"
+                 ng-class="{'flex-50': ($index != category.childs_node.length || category.childs_node.length % 2 == 0), 'flex-100': ($index == category.childs_node.length-1 && category.childs_node.length % 2 != 0)}"
+                 flex="50" flex-xs="100" class="padding-10 thread-item">
+                <div layout="column">
+                    <a href="#/discussions/{{child.alias}}" layout="row">
+                        <i class="zmdi zmdi-comment-alt" style="font-size: 40px;"></i>
+                        <div layout="column" class="padding-left-10">
+                            <span>{{child.title}}</span>
+                            <span><span ng-if="child.posts_count.length>0">{{child.posts_count[0].count}} posts</span><span ng-if="child.posts_count.length==0">0 posts</span></span>
+                        </div>
+                    </a>
+                    <span ng-if="child.newest == null">Chưa có bài viết nào</span>
+                    <span ng-if="child.newest != null"><span>Mơi nhất: </span><a  ng-href="#/discussions/{{child.alias}}/{{child.newest.alias}}">{{child.newest.name}}</a></span>
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
                 </div>
-                <md-divider ng-if="!$last"></md-divider>
             </div>
+                </div>
+            <!--<div ng-repeat="child in category.childs_node" class="padding-left-10">-->
+                <!--<div layout="column" class="padding-10">-->
+                    <!--<div layout="row">-->
+                        <!--<a href="#/discussions/{{child.alias}}"><i class="zmdi zmdi-folder-outline"></i><span class="padding-left-10">{{child.title}}</span></a>-->
+                        <!--<span flex></span>-->
+                        <!--<span>Views</span>-->
+                    <!--</div>-->
+                    <!--<div layout="row">-->
+                        <!--<span flex style="font-size: 15px">Newpost</span>-->
+                        <!--<span style="font-size: 15px">post by</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<md-divider ng-if="!$last"></md-divider>-->
+            <!--</div>-->
         </div>
     </md-card>
 </div>

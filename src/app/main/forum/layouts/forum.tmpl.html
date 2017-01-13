@@ -42,35 +42,20 @@
             </div>
         </div>
         <span flex></span>
-        <md-menu>
-            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                <i class="zmdi zmdi-widgets"></i>
-                <md-tooltip>Form map</md-tooltip>
-            </md-button>
-            <md-menu-content style="padding: 0px;width: 300px; max-height: 50%;">
-                <md-toolbar layout-align="center center" layout="row" class="toolbar-light" style="height: 30px">Form map</md-toolbar>
-                <script type="text/ng-template" id="nodes_renderer.html">
-                    <a ng-href="#/discussions/{{node.alias}}">{{node.title}}</a>
-                    <ul  ng-model="node.childs" ng-show="true" style="list-style-type:none;padding-left: 20px">
-                        <li ng-repeat="node in node.childs_node"  ng-include="'nodes_renderer.html'"></li>
-                    </ul>
-                </script>
-
-                <div class="row">
-                    <ul  ng-model="vm.data" style="list-style-type:none;padding-left: 20px;margin-top: 10px; margin-bottom: 10px;">
-                        <li ng-repeat="node in vm.data" ng-include="'nodes_renderer.html'"></li>
-                    </ul>
-                </div>
-            </md-menu-content>
-        </md-menu>
+        <md-button class="md-icon-button" ng-click="vm.openForumMap()">
+            <i class="zmdi zmdi-widgets"></i>
+            <md-tooltip>Form map</md-tooltip>
+        </md-button>
     </md-toolbar>
 
-    <div layout="row" layout-xs="column" style="background: rgba(255,255,255,0.4);" class="padding-right-10 padding-left-10 padding-top-10">
+    <div layout="row" layout-xs="column" style="background: rgba(255,255,255,0.4);"
+         class="padding-right-10 padding-left-10 padding-top-10">
         <div ui-view flex></div>
         <div class="forum-right margin-left-10 margin-bottom-10" flex-xs="100" style="width: 250px;" layout="column">
             <md-card class="margin-0 margin-bottom-10" layout-xs="column">
                 <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light"><span
-                    class="padding-top-8"><a ng-href="#/profile/{{$root.user.id}}/about">{{$root.user.name}}</a></span></md-toolbar>
+                    class="padding-top-8"><a ng-href="#/profile/{{$root.user.id}}/about">{{$root.user.name}}</a></span>
+                </md-toolbar>
                 <div layout="column" class="padding-10">
                     <span>Số bài viết: 10000</span>
                     <span>Số lượt thích: 10000</span>
@@ -81,9 +66,58 @@
                 <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light"><span
                     class="padding-top-8">Fraco-Viet career</span></md-toolbar>
                 <div layout="column" class="padding-10">
+                    <!--<div fb-fanpage page-href="{{$root.changeUrl}}"></div>-->
                 </div>
             </md-card>
         </div>
     </div>
+    <md-toolbar layout-align="center" layout="row"
+                class="md-toolbar-small toolbar-light margin-top-10 margin-bottom-10">
+        <div class="breadcrumb">
+            <div hide-xs layout="row">
+                <span class="crust">
+                    <md-button class="md-icon-button margin-0" ng-href="#/discussions">
+                        <i class="zmdi zmdi-home"></i>
+                        <md-tooltip>Home</md-tooltip>
+                    </md-button>
+                    <span class="arrow"><span></span></span>
+                </span>
+                <div ng-repeat="item in $root.bracum">
+                    <span layout="row">
+                        <md-button class="md-block margin-0 breadcrumb-button" href="#/discussions/{{item.alias}}">
+                            <span>{{item.title}}</span>
+                        </md-button>
+                        <md-divider></md-divider>
+                    </span>
+                </div>
+            </div>
+            <div hide show-xs>
+                <span class="crust">
+                    <md-button class="md-icon-button margin-0" ng-href="#/discussions">
+                        <i class="zmdi zmdi-home"></i>
+                        <md-tooltip>Home</md-tooltip>
+                    </md-button>
+                    <span class="arrow"><span></span></span>
+                </span>
+                <md-menu>
+                    <md-button class="md-block margin-0 breadcrumb-button" ng-click="$mdOpenMenu($event)">
+                        <span>Breadcrumb</span>
+                    </md-button>
+                    <md-menu-content width="2" class="padding-top-0 padding-bottom-0">
+                        <md-menu-item ng-repeat="item in $root.bracum">
+                            <md-button class="md-block margin-0 breadcrumb-button" href="#/discussions/{{item.alias}}">
+                                <span>{{item.title}}</span>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.openForumMap()">
+            <i class="zmdi zmdi-widgets"></i>
+            <md-tooltip>Form map</md-tooltip>
+        </md-button>
+    </md-toolbar>
 </div>
 

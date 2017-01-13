@@ -33,6 +33,22 @@
     <![endif]-->
     <div ng-show="$root.isShowPageLoader" style="position: absolute;left: 0;right: 0;top: 0;bottom: 0;background-color: #ffffff;background-color: rgba(255, 255, 255, 0.6);z-index: 999;"><img src="assets/images/page-loader.gif" style="position: fixed;top: 50%;left: 50%;"></div>
     <div class="body-view" ui-view></div>
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1154271301336492',
+                xfbml: true,
+                version: 'v2.8'
+            });
+        };
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=1154271301336492";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -136,8 +152,8 @@
     <script src="app/main/forum/threads/threads.controller.js"></script>
     <script src="app/main/forum/threads/addpost.controller.js"></script>
     <script src="app/main/forum/posts/posts.controller.js"></script>
-    <script src="app/main/index/index.module.js"></script>
     <script src="app/main/forum/layouts/forum.controller.js"></script>
+    <script src="app/main/forum/layouts/forum-map.controller.js"></script>
     <script src="app/main/forum/index/index.controller.js"></script>
     <script src="app/main/employee/employee.module.js"></script>
     <script src="app/main/employee/write-report/report.controller.js"></script>
@@ -177,12 +193,14 @@
     <script src="app/phaojlar/directives/small.directive.js"></script>
     <script src="app/phaojlar/directives/slide.directive.js"></script>
     <script src="app/phaojlar/directives/pwmatch.directive.js"></script>
+    <script src="app/phaojlar/directives/fb.directive.js"></script>
     <script src="app/main/web-analyst/web-analyst.config.js"></script>
     <script src="app/main/receive/receive.config.js"></script>
     <script src="app/main/profile/profile.config.js"></script>
     <script src="app/main/messenger/messenger.module.js"></script>
     <script src="app/main/messenger/messenger.controller.js"></script>
     <script src="app/main/messenger/messenger.config.js"></script>
+    <script src="app/main/index/index.module.js"></script>
     <script src="app/main/index/index.controller.js"></script>
     <script src="app/main/index/index.config.js"></script>
     <script src="app/main/forum/forum.config.js"></script>
