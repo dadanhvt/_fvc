@@ -4,7 +4,7 @@
         <div layout="row">
             <div layout="column">
                 <h1 class="margin-0"><span class="whatyoudo" style="font-size: 30px;">WHAT <span style="color: tomato;">YOU</span> DO</span></h1>
-                <h1 class="margin-0"><span class="notomorrow" style="text-decoration: line-through;font-size: 25px;">NOT TOMORROW</span></h1>
+                <h1 class="margin-0"><span class="n otomorrow" style="text-decoration: line-through;font-size: 25px;">NOT TOMORROW</span></h1>
             </div>
             <span class="today" style="font-size: 70px;color: tomato">TODAY</span>
         </div>
@@ -19,15 +19,21 @@
                         <center style="padding:5px;color:#efecca;"><i class="zmdi zmdi-camera"></i><span style="color:#efecca;font-size: 10px">  Profile picture</span></center>
                     </div>
                     <img src="{{$root.currentUser.avatar}}" style="width: 144px; height: 144px;">
+                </md-card>
+                <div class="avatar-info" flex-xs style="margin: 10px;text-align: center;">
+                    <a ng-href="#/profile/{{$root.profileUser}}/about">{{$root.currentUser.name}}</a>
                     <div class="avatar" style="text-align: center">
                         <span>1562</span>
-                        <span>Total Connections</span>
+                        <span>Follow</span>
+                        <div class="relation" ng-if="($root.user.role=='RE')&& ($root.user.role=='JP ')">
+                            <md-button class="md-raised" ng-if="($root.currentUser.role1=='RE')&&($root.currentUser.relate=='1')" ng-click="vm.changRelation()">Follow</md-button>
+                            <md-button class="md-raised md-warn" ng-if="($root.currentUser.role1=='RE')&&($root.currentUser.relate=='0')" ng-click="vm.changRelation()">unFollow</md-button>
+                            <!--<md-button ng-if="($root.currentUser.role1!='RE')&&($root.currentUser.relate=='0')">Add</md-button>-->
+                            <!--<md-button ng-if="($root.currentUser.role1!='RE')&&($root.currentUser.relate=='1')">Friend</md-button>-->
+                            <!--<md-button ng-if="($root.currentUser.role1!='RE')&&($root.currentUser.relate=='3')">Request</md-button>-->
+
+                        </div>
                     </div>
-                </md-card>
-                <div class="avatar-info" flex-xs style="margin: 10px">
-                    <p>Name :{{$root.currentUser.name}}</p>
-                    <p>Graphic Desgin</p>
-                    <a href="#/profile/3/about" ng-if="$root.user.id ==  $root.profileUser">Improve your profile</a>
                 </div>
             </div>
             <div hide show-xs>
@@ -40,7 +46,7 @@
                     </div>
                     <div class="avatar" style="text-align: center">
                         <span>1562</span>
-                        <span>Total Connections</span>
+                        <span>Follow</span>
                     </div>
                 </md-card>
             </div>
@@ -48,8 +54,10 @@
                 <md-tabs md-selected="vm.currentNavItem" aria-label="menu-nav-bar" style="background: white;">
                     <md-tab ng-click="vm.goAbout()" label="About"></md-tab>
                     <md-tab ng-click="vm.goTimeline()" label="Timeline" ></md-tab>
-                    <md-tab ng-click="vm.goPhotos()" label="Photos"></md-tab>
-                    <md-tab ng-click="vm.goConnection()" label="Connection" ></md-tab>
+                    <md-tab ng-if="$root.currentUser.role1!='RE'" ng-click="vm.goPhotos()" label="Photos"></md-tab>
+                    <md-tab ng-if="$root.currentUser.role1=='RE'" ng-click="vm.goJobs()" label="Jobs"></md-tab>
+                    <md-tab ng-if="$root.currentUser.role1!='RE'" ng-click="vm.goConnection()" label="Connection" ></md-tab>
+                    <md-tab ng-if="$root.currentUser.role1=='RE'" ng-click="vm.goConnection()" label="Follow" ></md-tab>
                 </md-tabs>
                 <div class="ext-content padding-10" style="background: rgba(255,255,255,0.4);" ui-view></div>
             </div>

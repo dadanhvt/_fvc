@@ -13,17 +13,10 @@
             <md-divider></md-divider>
             <span class="small-title padding-left-10" style="line-height: 10px;padding-top:8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" layout="row">
                 <span layout="column">
-<<<<<<< HEAD
-                    <span>{{vm.post.name}}</span><br>
-                    <span style="font-size: 11px;">Post by
-                        <a href="#/profile/{{vm.post.author.id}}/about">{{vm.post.author.name}}</a>
-                        at {{vm.post.created_at}}
-=======
                     <span style="font-size: 18px;">{{vm.post.name}}</span><br>
                     <span style="font-size: 15px;">Post by
                         <a ng-href="#/profile/{{vm.post.author.id}}/about">{{vm.post.author.name}}</a>
                         at <span am-time-ago="vm.post.created_at"></span>
->>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
                     </span>
                 </span>
             </span>
@@ -49,21 +42,11 @@
         <div class="content padding-10" layout="column">
             <div layout="column">
                     <div flex layout="column">
-<<<<<<< HEAD
-                        <div class="padding-left-10 padding-bottom-10" style="text-align: justify;" ng-bind-html="vm.post.contents"></div>
-=======
                         <div class="padding-10 forum-post-content" style="text-align: justify;" ng-bind-html="vm.post.contents"></div>
->>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
                     </div>
                 <md-divider></md-divider>
-<<<<<<< HEAD
-                <div layout="row" style="hgueight: 20px;">
-                    <span flex></span>
-                    <md-button  ng-if="$root.user"  class="md-icon-button margin-0" ng-click="vm.likePost()">
-=======
                 <div layout="row" layout-align="center center">
                     <md-button ng-if="$root.user" class="md-icon-button margin-0" ng-click="vm.likePost()">
->>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
                         <i ng-class="{'zmdi-favorite-outline': vm.post.is_liked==false, 'zmdi-favorite': vm.post.is_liked==true}"
                            class="zmdi" ng-style="vm.post.is_liked==true && {color: 'tomato'} || {color: 'black'}"></i>
                         <md-tooltip>Like</md-tooltip>

@@ -9,10 +9,10 @@
         .controller('ViewCommmentsController', ViewCommmentsController);
 
     /* @ngInject */
-    function ViewCommmentsController($mdDialog,idPost,apiService) {
+    function ViewCommmentsController($mdDialog,idPost,apiService,$mdToast) {
         var vm = this;
 
-        vm.getData = getData;
+        vm.getComments = getComments;
         vm.updateStatus=updateStatus;
         vm.close = close;
 
@@ -23,10 +23,10 @@
                 page : 1,
                 limit : 10
             };
-            getData();
+            getComments();
         }
-        function getData() {
-            apiService.getAPI(SERVER_AGETFORUMPOST+"?page="+vm.query.page+"&limit="+vm.query.limit, true, function (e) {
+        function getComments() {
+            apiService.getAPI(SERVER_GETFORUMCOMMENTS+"?id="+idPost+"&page="+vm.query.page+"&limit="+vm.query.limit, true, function (e) {
                 if (e.success != 1) {
                     $mdDialog.show(
                         $mdDialog.alert()
@@ -54,12 +54,13 @@
                     });
                     return;
                 }
+                console.log(e);
                 $mdToast.show({
                     template: '<md-toast><span flex>Updated!</span></md-toast>',
                     position: 'bottom right',
                     hideDelay: 3000
                 });
-                getData();
+                getComments();
             });
         }
         function close() {

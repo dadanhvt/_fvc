@@ -19,6 +19,7 @@
         vm.getComments = getComments;
         vm.addComment =addComment;
         vm.clickQuote = clickQuote;
+
         init();
         function init() {
             vm.server = SERVER_ASSETS;

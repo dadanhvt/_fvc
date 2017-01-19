@@ -6,34 +6,23 @@
     <div layout="row" layout-xs="column">
         <div flex layout="row">
             <span flex></span>
-            <!--<span style="padding: 8px;">Rows per page: </span>-->
-            <!--<md-select ng-model="vm.query.limit" ng-change="vm.query.page=1;vm.getData()"-->
-                       <!--class="md-no-underline margin-0">-->
-                <!--<md-option value="5">5</md-option>-->
-                <!--<md-option value="10">10</md-option>-->
-                <!--<md-option value="15">15</md-option>-->
-                <!--<md-option value="20">20</md-option>-->
-                <!--<md-option value="30">30</md-option>-->
-                <!--<md-option value="40">40</md-option>-->
-                <!--<md-option value="50">50</md-option>-->
-            <!--</md-select>-->
             <md-divider></md-divider>
             <span style="padding: 8px;">{{vm.comments.from}}-{{vm.comments.to}} of {{vm.comments.total}}</span>
             <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
-                       ng-click="vm.query.page=1;vm.getData()">
+                       ng-click="vm.query.page=1;vm.getComments()">
                 <i class="zmdi zmdi-skip-previous"></i>
             </md-button>
             <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
-                       ng-click="vm.query.page=vm.query.page-1;vm.getData()">
+                       ng-click="vm.query.page=vm.query.page-1;vm.getComments()">
                 <i class="zmdi zmdi-chevron-left"></i>
             </md-button>
             <span style="padding: 8px;">{{vm.query.page}}</span>
             <md-button ng-disabled="vm.query.page == vm.comments.last_page" class="md-icon-button" aria-label="More"
-                       ng-click="vm.query.page=vm.query.page+1;vm.getData()">
+                       ng-click="vm.query.page=vm.query.page+1;vm.getComments()">
                 <i class="zmdi zmdi-chevron-right"></i>
             </md-button>
             <md-button ng-disabled="vm.query.page == vm.comments.last_page" class="md-icon-button" aria-label="More"
-                       ng-click="vm.query.page=vm.comments.last_page;vm.getData()">
+                       ng-click="vm.query.page=vm.comments.last_page;vm.getComments()">
                 <i class="zmdi zmdi-skip-next"></i>
             </md-button>
 
@@ -56,7 +45,7 @@
             <tr ng-repeat="comment in vm.comments.data">
                 <td class="padding-right-10 padding-left-10">{{(vm.query.page-1)*vm.query.limit + ($index+1)}}</td>
                 <td class="padding-right-10 padding-left-10">
-                    <span>{{comment.name}}</span>
+                    <span ng-bind-html="comment.contents"></span>
                 </td>
                 <td class="padding-right-10 padding-left-10">
                     <a href="#/profile/{{comment.author.id}}/about">{{comment.author.name}}</a>
@@ -67,7 +56,7 @@
                 <td class="padding-right-10 padding-left-0">
                     <md-select ng-model="comment.status" class="md-no-underline margin-0" ng-change="vm.updateStatus(comment)">
                         <md-option value="1">Public</md-option>
-                        <md-option value="0">Ban</md-option>
+                        <md-option value="3">Ban</md-option>
                     </md-select>
                 </td>
             </tr>

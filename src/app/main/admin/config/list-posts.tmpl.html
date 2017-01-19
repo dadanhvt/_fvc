@@ -85,7 +85,7 @@
                                 ($index+1)}}
                             </td>
                             <td class="padding-right-10 padding-left-10">
-                                <a ng-href="#">{{post.name}}</a>
+                                <a ng-href="#/discussions/{{post.folder.alias}}/{{post.alias}}">{{post.name}}</a>
                             </td>
                             <td class="padding-right-10 padding-left-10">
                                 <a href="#/profile/{{post.author.id}}/about">{{post.author.name}}</a>
@@ -115,7 +115,8 @@
                             <td class="padding-right-10 padding-left-10">
                                 <md-select ng-model="post.status" class="md-no-underline margin-0" ng-change="vm.updateStatus(post)">
                                     <md-option value="1">Public</md-option>
-                                    <md-option value="0">Ban</md-option>
+                                    <md-option value="2">See</md-option>
+                                    <md-option value="3">Ban</md-option>
                                 </md-select>
                             </td>
                         </tr>

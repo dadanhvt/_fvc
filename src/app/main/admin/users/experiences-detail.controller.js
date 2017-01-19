@@ -16,34 +16,37 @@
         vm.deleteExperience = deleteExperience;
         vm.companyChange = companyChange;
         vm.companyTextChange = companyTextChange;
-        vm.month=['01','02','03','04','05','06','07','08','09','10','11','12'];
-        vm.year =[];
         init();
         function init() {
-            for(i=1990;i<2051;i++) vm.year.push(i.toString());
             vm.isEdited = false;
             vm.experiences = data;
+
             angular.forEach(vm.experiences, function (value, key) {
-                if (value.work_from != null)
+                if (value.work_from != null||value.work_from != "")
                 {
                     var date = value.work_from.split("-");
                     value.work_from_month = date[1];
                     value.work_from_year = date[0];
+                    value.work_from="";
                 }else{
                     value.work_from_month = "";
                     value.work_from_year = "";
+                    value.work_from="";
                 }
-                if (value.work_to != null)
+                if (value.work_to != null||value.work_to != "")
                 {
                     var date1 = value.work_to.split("-");
                     value.work_to_month = date1[1];
                     value.work_to_year = date1[0];
+                    value.work_to="";
                 }else{
                     value.work_to_month = "";
                     value.work_to_year = "";
+                    value.work_to="";
                 }
                 value.currently = value.currently == 1;
             });
+
             var tmp = {
                 company_name: '',
                 location: '',
@@ -84,22 +87,31 @@
 
         function save() {
             vm.experiences.splice(vm.experiences.length - 1, 1);
-            var data = [];
-            data.experiences = vm.experiences.filter(function (edu) {
-                return edu.company_name.trim() != '';
-            });
-            data.experiences = data.experiences.map(function(item){
-                return {
-                    company_name: item.company_name,
-                    location: item.location,
-                    title: item.title,
-                    desc: item.desc,
-                    work_from: item.work_from_year+'-'+item.work_from_month,
-                    work_to: item.work_to_year+'-'+item.work_to_month,
-                    currently: item.currently
+            var experiences=[];
+            for(var i=0;i<vm.experiences.length;i++)
+                if(vm.experiences[i].company_name!=="")
+                {
+                    if(vm.experiences[i].work_from_year==undefined) vm.experiences[i].work_from_year='0000';
+                    if(vm.experiences[i].work_from_month==undefined) vm.experiences[i].work_from_month='00';
+                    if(vm.experiences[i].work_to_year==undefined) vm.experiences[i].work_to_year='0000';
+                    if(vm.experiences[i].work_to_month==undefined) vm.experiences[i].work_to_month='00';
+                    var tmp={
+                        company_name :vm.experiences[i].company_name,
+                        currently : vm.experiences[i].currently,
+                        desc : vm.experiences[i].desc,
+                        id : vm.experiences[i].id,
+                        location : vm.experiences[i].location,
+                        title : vm.experiences[i].title,
+                        user_id : vm.experiences[i].user_id,
+                        work_from : vm.experiences[i].work_from_year+'-'+vm.experiences[i].work_from_month,
+                        work_to : vm.experiences[i].work_to_year+'-'+vm.experiences[i].work_to_month
+                    };
+                    experiences.push(tmp);
                 }
-            });
-            data.isEdited = vm.isEdited;
+                var data={
+                    experiences : experiences,
+                    isEdited :vm.isEdited
+                };
             $mdDialog.hide(data);
         }
 
@@ -111,6 +123,10 @@
                     location: '',
                     title: '',
                     desc: '',
+                    work_from_year:'',
+                    work_to_year:'',
+                    work_to_month :'',
+                    work_from_month:'',
                     work_from: '',
                     work_to: '',
                     currently: 0

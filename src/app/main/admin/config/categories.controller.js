@@ -155,7 +155,7 @@
 
         function updateStatus(item) {
             var status = item.status;
-            changStatus(item,status);
+            if(status==3) changStatus(item,status);
         }
 
         function save() {

@@ -1,0 +1,82 @@
+<md-dialog class="mobile-fullwidth-dialog" flex style="min-width: 100%;min-height: 100%;">
+    <md-toolbar class="md-toolbar-small toolbar-light">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>New Job</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancel()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-divider></md-divider>
+
+    <md-dialog-content class="md-dialog-content">
+        <table layout-padding style="width: 100%">
+            <tr>
+                <td class="padding-right-20">Title: </td>
+                <td>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
+                        <input type="text" placeholder="Title" ng-model="vm.job.title">
+                    </md-input-container>
+                </td>
+            </tr>
+            <tr>
+                <td>Adrress: </td>
+                <td layout="row"><md-select style="width: 100px"
+                                            placeholder="Country"
+                                            ng-change="vm.changCity();"
+                                            ng-model="vm.job.country_code"
+                                            class="md-no-underline margin-0">
+                    <md-option ng-repeat="item in vm.countries" ng-value="item.code">{{item.name}}
+                    </md-option>
+                </md-select>
+                    <md-select class="md-no-underline margin-0"
+                               placeholder="City" ng-model="vm.job.city"
+                               style="width: 100px">
+                        <md-option ng-value="item.id" ng-repeat="item in vm.cities">
+                            {{item.name}}
+                        </md-option>
+                    </md-select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Salary : </td>
+                <td layout="row" layout-padding>
+                    <span>$</span>
+                    <md-input-container md-no-float class="md-block phao-input-noerror">
+                        <input type="text" placeholder="Min" ng-model="vm.job.min_salary" ng-disabled="vm.job.competitive">
+                    </md-input-container>
+                    <span>-</span>
+                    <md-input-container md-no-float class="md-block phao-input-noerror">
+                        <input type="text" placeholder="Max" ng-model="vm.job.max_salary" ng-disabled="vm.job.competitive">
+                    </md-input-container>
+                    <md-checkbox class="md-primary" ng-model="vm.job.competitive" aria-label="Competitive" ng-init="vm.job.competitive=0">Competitive</md-checkbox>
+                </td>
+            </tr>
+            <tr>
+                <td>End Date : </td>
+                <td>
+                    <md-datepicker ng-model="vm.job.end_date">
+                    </md-datepicker>
+                    <md-checkbox class="md-primary" ng-model="vm.job.hide" style="padding-left: 20px;" aria-label="Hide Post" ng-init="vm.job.hide=false">Hide Post</md-checkbox>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Content</td>
+                <td>
+                    <textarea ckeditor ng-model="vm.job.contents"></textarea>
+                </td>
+            </tr>
+        </table>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.save()" class="md-primary" aria-label="save" >Save</md-button>
+    </md-dialog-actions>
+
+</md-dialog>

@@ -31,7 +31,6 @@
                 }
                 else
                 {
-                    console.log(e.result);
                     vm.categories = e.result;
                     vm.posts = e.result.posts;
                     vm.bracum =[];

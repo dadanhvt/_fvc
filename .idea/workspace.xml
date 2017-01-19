@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f12c2b9-3f4f-49e0-a329-a6ef66787e93" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/main/admin/config/list-comments.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/main/admin/config/list-comments.tmpl.html" afterPath="" />
-=======
-<<<<<<< HEAD
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/app.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/app.css" />
-=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js.tar.gz" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js.tar.gz" />
->>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/index.html" afterPath="$PROJECT_DIR$/.tmp/serve/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js" afterPath="$PROJECT_DIR$/src/app/app.module.js" />
@@ -24,12 +15,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/phaojlar/api.service.js" afterPath="$PROJECT_DIR$/src/app/phaojlar/api.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/constant.js" afterPath="$PROJECT_DIR$/src/app/utils/constant.js" />
-<<<<<<< HEAD
-=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/func.js" afterPath="$PROJECT_DIR$/src/app/utils/func.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
->>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
->>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
     </list>
     <ignored path="source.iws" />
     <ignored path=".idea/workspace.xml" />

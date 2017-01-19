@@ -49,7 +49,6 @@
         }
 
         function viewComments(post) {
-            console.log(post);
             $mdDialog.show({
                 controller: 'ViewCommmentsController',
                 templateUrl: 'app/main/admin/config/viewcomments.tmpl.html',
