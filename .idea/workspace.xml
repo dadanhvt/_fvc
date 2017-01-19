@@ -2,57 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f12c2b9-3f4f-49e0-a329-a6ef66787e93" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/app.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/app.css" />
-=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js.tar.gz" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js.tar.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/app.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/index.html" afterPath="$PROJECT_DIR$/.tmp/serve/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/README.md" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/angular-chart.js" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/angular-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/dist/angular-chart.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-chart.js/package.json" afterPath="$PROJECT_DIR$/bower_components/angular-chart.js/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/chart.js/.gitignore" afterPath="$PROJECT_DIR$/bower_components/chart.js/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.bundle.js" afterPath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.js" afterPath="$PROJECT_DIR$/bower_components/chart.js/dist/Chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/node-sass" afterPath="$PROJECT_DIR$/node_modules/.bin/node-sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js" afterPath="$PROJECT_DIR$/src/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.scss" afterPath="$PROJECT_DIR$/src/app/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/admin.config.js" afterPath="$PROJECT_DIR$/src/app/main/admin/admin.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/config.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/config/config.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/config.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/config/config.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/users/user-dialog.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/users.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/users/users.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/users/users.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/users/users.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/ads/facebook/add-ads-dialog.controller.js" afterPath="$PROJECT_DIR$/src/app/main/ads/facebook/add-ads-dialog.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/list-posts.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/config/list-posts.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/viewcomments.controller.js" afterPath="$PROJECT_DIR$/src/app/main/admin/config/viewcomments.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/admin/config/viewcomments.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/admin/config/viewcomments.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js" afterPath="$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/_forum.scss" afterPath="$PROJECT_DIR$/src/app/main/forum/_forum.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/forum.config.js" afterPath="$PROJECT_DIR$/src/app/main/forum/forum.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/index/index.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/index/index.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/authentication/find/find.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/authentication/find/find.tmpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" afterPath="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" afterPath="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/main.module.js" afterPath="$PROJECT_DIR$/src/app/main/main.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/profile/about/about.controller.js" afterPath="$PROJECT_DIR$/src/app/main/profile/about/about.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/phaojlar/components/menu/default-menu.tmpl.html" afterPath="$PROJECT_DIR$/src/app/phaojlar/components/menu/default-menu.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/phaojlar/api.service.js" afterPath="$PROJECT_DIR$/src/app/phaojlar/api.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/constant.js" afterPath="$PROJECT_DIR$/src/app/utils/constant.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/utils/func.js" afterPath="$PROJECT_DIR$/src/app/utils/func.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
->>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
     </list>
     <ignored path="source.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,6 +38,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+      <file leaf-file-name="forum.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1054">
+              <caret line="62" column="22" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="62" selection-end-column="22" />
+=======
       <file leaf-file-name="threads.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,14 +70,22 @@
             <state relative-caret-position="1258">
               <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.tmpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html">
+      <file leaf-file-name="posts.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="272">
+              <caret line="16" column="99" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="99" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#md-card#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+=======
 <<<<<<< HEAD
             <state relative-caret-position="-901">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -116,21 +94,7 @@
               <caret line="65" column="34" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="65" selection-end-column="34" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tmpl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-            <state relative-caret-position="17">
-              <caret line="1" column="71" lean-forward="false" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
->>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
-              <folding />
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
             </state>
           </provider>
         </entry>
@@ -139,20 +103,49 @@
         <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+            <state relative-caret-position="986">
+              <caret line="58" column="113" lean-forward="false" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="113" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+            <state relative-caret-position="17">
+              <caret line="1" column="71" lean-forward="false" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
+>>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.module.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/app.module.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="-4">
+              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+=======
+<<<<<<< HEAD
             <state relative-caret-position="68">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
 =======
             <state relative-caret-position="1513">
               <caret line="89" column="104" lean-forward="false" selection-start-line="89" selection-start-column="104" selection-end-line="89" selection-end-column="104" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addpost.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/addpost.controller.js">
+      <file leaf-file-name="list-posts.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-posts.controller.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1819">
+              <caret line="107" column="9" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="107" selection-end-column="9" />
+=======
 <<<<<<< HEAD
             <state relative-caret-position="799">
               <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
@@ -160,14 +153,19 @@
             <state relative-caret-position="663">
               <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js">
+      <file leaf-file-name="users-list.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="2074">
+              <caret line="122" column="9" lean-forward="false" selection-start-line="114" selection-start-column="7" selection-end-line="122" selection-end-column="9" />
+=======
 <<<<<<< HEAD
             <state relative-caret-position="918">
               <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
@@ -175,14 +173,27 @@
             <state relative-caret-position="816">
               <caret line="48" column="84" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="84" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forum.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js">
+      <file leaf-file-name="list-posts.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1530">
+              <caret line="90" column="101" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="101" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#div#0;n#md-select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-optgroup#0;n#ul#0;n#div#0;n#md-select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#3;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#md-select#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#md-table-container#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#md-optgroup#0;n#ul#0;n#div#0;n#md-select#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#md-table-container#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+=======
 <<<<<<< HEAD
             <state relative-caret-position="5168">
               <caret line="304" column="1" lean-forward="false" selection-start-line="304" selection-start-column="1" selection-end-line="304" selection-end-column="1" />
@@ -191,12 +202,13 @@
               <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
               <folding />
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts.tmpl.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html">
+      <file leaf-file-name="viewcomments.tmpl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/viewcomments.tmpl.html">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
             <state relative-caret-position="510">
@@ -204,19 +216,32 @@
               <folding />
 =======
             <state relative-caret-position="17">
-              <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+              <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#md-toolbar#0;n#md-card#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
               </folding>
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.controller.js">
+      <file leaf-file-name="api.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/phaojlar/api.service.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1258">
+              <caret line="74" column="80" lean-forward="false" selection-start-line="74" selection-start-column="80" selection-end-line="74" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewcomments.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/viewcomments.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+=======
 <<<<<<< HEAD
             <state relative-caret-position="663">
               <caret line="39" column="65" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="83" />
@@ -224,6 +249,7 @@
             <state relative-caret-position="272">
               <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
               <folding />
             </state>
           </provider>
@@ -258,11 +284,12 @@
       <find>md-menu-bar</find>
       <find>.breadcrumb .crust</find>
       <find>50%</find>
-      <find>cons</find>
       <find>text</find>
       <find>vm.query.page</find>
-      <find>conso</find>
       <find>page</find>
+      <find>conso</find>
+      <find>time</find>
+      <find>cons</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -271,14 +298,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/main/index/index.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/photos/open-image.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/photos/photos.tmpl.html" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/photos/photos.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/photos/open-image.tmpl.html" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/layouts/profile.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/certifications-detail.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/languages-detail.controller.js" />
@@ -289,39 +311,44 @@
         <option value="$PROJECT_DIR$/src/app/main/admin/users/experiences-detail.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/educations-detail.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/layouts/updateAvatar.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/phaojlar/api.service.js" />
         <option value="$PROJECT_DIR$/src/app/main/messenger/messenger.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/messenger/messenger.stylesheet.scss" />
         <option value="$PROJECT_DIR$/src/app/main/admin/config/categories.scss" />
-        <option value="$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/main.module.js" />
         <option value="$PROJECT_DIR$/src/app/main/ads/facebook/add-ads-dialog.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/admin/config/additem.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/admin/config/additem.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/admin/config/categories.tmpl.html" />
-        <option value="$PROJECT_DIR$/src/app/main/admin/config/categories.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/profile/about/about.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/utils/func.js" />
         <option value="$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/forum/index/index.controller.js" />
         <option value="$PROJECT_DIR$/src/app/app.scss" />
         <option value="$PROJECT_DIR$/src/app/main/forum/_forum.scss" />
         <option value="$PROJECT_DIR$/src/app/main/forum/forum.config.js" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/src/app/app.module.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/main/forum/threads/addpost.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/forum/threads/addpost.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/utils/constant.js" />
-        <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" />
         <option value="$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/utils/func.js" />
+        <option value="$PROJECT_DIR$/src/app/main/admin/config/categories.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/admin/config/categories.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/authentication/find/find.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/utils/constant.js" />
+        <option value="$PROJECT_DIR$/src/app/phaojlar/api.service.js" />
+        <option value="$PROJECT_DIR$/src/app/app.module.js" />
         <option value="$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/admin/config/list-posts.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html" />
+        <option value="$PROJECT_DIR$/src/app/main/admin/config/viewcomments.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/admin/config/viewcomments.tmpl.html" />
       </list>
     </option>
   </component>
@@ -354,6 +381,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -504,6 +533,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="phaojlar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -565,10 +616,154 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -844,20 +1039,32 @@
       <workItem from="1483542336788" duration="407000" />
       <workItem from="1483542954750" duration="2344000" />
       <workItem from="1483631299534" duration="196000" />
+<<<<<<< HEAD
+      <workItem from="1483632478637" duration="6835000" />
+      <workItem from="1484185963475" duration="3270000" />
+      <workItem from="1484199165664" duration="2329000" />
+      <workItem from="1484228603597" duration="13871000" />
+      <workItem from="1484275153364" duration="1164000" />
+=======
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+    <option name="totallyTimeSpent" value="910916000" />
+=======
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="755684000" />
 =======
     <option name="totallyTimeSpent" value="883447000" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1370" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22372372" sideWeight="0.4090909" order="0" side_tool="false" content_ui="combo" />
@@ -869,10 +1076,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32478634" sideWeight="0.478979" order="9" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3880342" sideWeight="0.48208955" order="9" side_tool="false" content_ui="tabs" />
 =======
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32478634" sideWeight="0.478979" order="9" side_tool="false" content_ui="tabs" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -926,7 +1137,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/admin.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/forum.module.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="-893">
@@ -938,6 +1149,12 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+=======
     <entry file="file://$PROJECT_DIR$/bower_components/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -970,11 +1187,16 @@
 =======
           <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/api.service.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/addpost.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="663">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="34" />
@@ -982,11 +1204,16 @@
         <state relative-caret-position="1562">
           <caret line="107" column="16" lean-forward="false" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/additem.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/edit-post.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="493">
           <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="34" selection-end-column="38" />
@@ -994,11 +1221,16 @@
         <state relative-caret-position="102">
           <caret line="15" column="84" lean-forward="false" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="84" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/categories.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="170">
+          <caret line="130" column="47" lean-forward="true" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="153">
           <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
@@ -1006,11 +1238,16 @@
         <state relative-caret-position="663">
           <caret line="39" column="15" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="39" selection-end-column="15" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/additem.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="680">
+          <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="133">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
@@ -1018,18 +1255,23 @@
         <state relative-caret-position="782">
           <caret line="46" column="17" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/authentication/authentication.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1139">
+          <caret line="67" column="28" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/about/about.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/authentication/find/find.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="187">
+          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="272">
           <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
@@ -1037,10 +1279,11 @@
         <state relative-caret-position="217">
           <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="47" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-comments.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/authentication/find/find.scss">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="204">
@@ -1052,8 +1295,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.stylesheet.scss">
+    <entry file="file://$PROJECT_DIR$/src/app/main/authentication/find/find.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="357">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="515">
           <caret line="69" column="5" lean-forward="false" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
@@ -1061,10 +1308,11 @@
         <state relative-caret-position="-94">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/about/about.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/categories.scss">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="166">
@@ -1076,7 +1324,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/layouts/updateAvatar.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/config.controller.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="306">
@@ -1088,8 +1336,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/layouts/profile.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="64">
+          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="17">
           <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="43" />
@@ -1097,11 +1349,16 @@
         <state relative-caret-position="-102">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/config.route.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/about/about.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="104">
+          <caret line="368" column="64" lean-forward="false" selection-start-line="368" selection-start-column="60" selection-end-line="368" selection-end-column="64" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
@@ -1109,11 +1366,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/config.route.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="104">
+          <caret line="67" column="88" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="88" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="680">
           <caret line="40" column="15" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="40" selection-end-column="15" />
@@ -1121,11 +1383,16 @@
         <state relative-caret-position="2329">
           <caret line="137" column="38" lean-forward="false" selection-start-line="137" selection-start-column="38" selection-end-line="137" selection-end-column="38" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/admin.config.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="51">
+          <caret line="3" column="92" lean-forward="false" selection-start-line="3" selection-start-column="92" selection-end-line="3" selection-end-column="92" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="1037">
           <caret line="61" column="88" lean-forward="false" selection-start-line="61" selection-start-column="88" selection-end-line="61" selection-end-column="88" />
@@ -1133,11 +1400,16 @@
         <state relative-caret-position="1139">
           <caret line="67" column="59" lean-forward="false" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/messenger/messenger.config.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="136">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="45" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="306">
           <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
@@ -1145,11 +1417,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/categories.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="425">
+          <caret line="40" column="15" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="40" selection-end-column="15" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="355">
           <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="37" />
@@ -1157,11 +1434,16 @@
         <state relative-caret-position="221">
           <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/messenger/messenger.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/utils/func.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2339">
+          <caret line="156" column="46" lean-forward="false" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="362">
           <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="31" />
@@ -1169,11 +1451,16 @@
         <state relative-caret-position="340">
           <caret line="47" column="53" lean-forward="true" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/certifications-detail.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/utils/constant.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="197">
+          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="28" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="221">
           <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
@@ -1181,11 +1468,16 @@
         <state relative-caret-position="358">
           <caret line="40" column="222" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="222" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/categories.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/users-list.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="102">
+          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="60" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="754">
           <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
@@ -1193,11 +1485,16 @@
         <state relative-caret-position="155">
           <caret line="58" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.module.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="340">
           <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
@@ -1205,22 +1502,31 @@
         <state relative-caret-position="1207">
           <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="35" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/users.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.config.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-585">
+=======
 <<<<<<< HEAD
         <state relative-caret-position="-1020">
 =======
         <state relative-caret-position="0">
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/common.rnc">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/forum.config.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="333">
+          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="48" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="255">
           <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
@@ -1228,11 +1534,16 @@
         <state relative-caret-position="122">
           <caret line="192" column="18" lean-forward="false" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="4">
+          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="527">
           <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="40" selection-end-column="28" />
@@ -1240,11 +1551,16 @@
         <state relative-caret-position="203">
           <caret line="314" column="1" lean-forward="false" selection-start-line="314" selection-start-column="1" selection-end-line="314" selection-end-column="1" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/_forum.scss">
+    <entry file="file://$PROJECT_DIR$/src/app/config.translate.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="187">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
@@ -1252,11 +1568,16 @@
         <state relative-caret-position="115">
           <caret line="178" column="22" lean-forward="false" selection-start-line="178" selection-start-column="19" selection-end-line="178" selection-end-column="22" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/layouts/default/default-layout.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="187">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1264,11 +1585,16 @@
         <state relative-caret-position="302">
           <caret line="122" column="17" lean-forward="false" selection-start-line="112" selection-start-column="16" selection-end-line="122" selection-end-column="17" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
+    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="203">
+          <caret line="314" column="1" lean-forward="false" selection-start-line="314" selection-start-column="1" selection-end-line="314" selection-end-column="1" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="272">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="23" selection-end-column="26" />
@@ -1276,11 +1602,16 @@
         <state relative-caret-position="290">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/config.route.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="901">
           <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
@@ -1288,11 +1619,16 @@
         <state relative-caret-position="95">
           <caret line="6" column="144" lean-forward="false" selection-start-line="6" selection-start-column="144" selection-end-line="6" selection-end-column="144" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="221">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="4607">
           <caret line="271" column="33" lean-forward="false" selection-start-line="271" selection-start-column="17" selection-end-line="271" selection-end-column="33" />
@@ -1300,11 +1636,16 @@
         <state relative-caret-position="222">
           <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/certifications-detail.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/config.theme.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="748">
           <caret line="44" column="55" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="44" selection-end-column="55" />
@@ -1312,11 +1653,16 @@
         <state relative-caret-position="187">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/utils/func.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/phaojlar.module.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="142">
           <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
@@ -1324,11 +1670,16 @@
         <state relative-caret-position="282">
           <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/phaojlar.run.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="316">
           <caret line="157" column="50" lean-forward="false" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
@@ -1336,11 +1687,16 @@
         <state relative-caret-position="231">
           <caret line="268" column="15" lean-forward="true" selection-start-line="262" selection-start-column="14" selection-end-line="268" selection-end-column="15" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/addpost.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/phaojlar.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="625">
           <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="42" />
@@ -1348,11 +1704,16 @@
         <state relative-caret-position="561">
           <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/users-list.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/user.factory.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-177">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="204">
           <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
@@ -1360,23 +1721,32 @@
         <state relative-caret-position="952">
           <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="83" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.config.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/userService.factory.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-687">
+=======
 <<<<<<< HEAD
         <state relative-caret-position="506">
           <caret line="80" column="55" lean-forward="false" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="55" />
 =======
         <state relative-caret-position="0">
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/utils/constant.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/Auth.factory.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="506">
           <caret line="40" column="222" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="222" />
@@ -1384,11 +1754,16 @@
         <state relative-caret-position="731">
           <caret line="43" column="58" lean-forward="false" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/forum.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/config.route.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2125">
+          <caret line="137" column="38" lean-forward="false" selection-start-line="137" selection-start-column="38" selection-end-line="137" selection-end-column="38" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="243">
           <caret line="36" column="66" lean-forward="false" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
@@ -1396,11 +1771,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/forum.config.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/categories.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1105">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="413">
           <caret line="103" column="9" lean-forward="false" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
@@ -1408,11 +1789,16 @@
         <state relative-caret-position="680">
           <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="48" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1054">
+          <caret line="62" column="22" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="62" selection-end-column="22" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="663">
           <caret line="39" column="65" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="83" />
@@ -1420,12 +1806,19 @@
         <state relative-caret-position="272">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/index/index.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-comments.tmpl.html" />
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-comments.controller.js" />
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/users/users-list.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2074">
+          <caret line="122" column="9" lean-forward="false" selection-start-line="114" selection-start-column="7" selection-end-line="122" selection-end-column="9" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="289">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
@@ -1433,12 +1826,17 @@
         <state relative-caret-position="17">
           <caret line="1" column="71" lean-forward="false" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/addpost.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="986">
+          <caret line="58" column="113" lean-forward="false" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="113" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="5168">
           <caret line="304" column="1" lean-forward="false" selection-start-line="304" selection-start-column="1" selection-end-line="304" selection-end-column="1" />
@@ -1446,12 +1844,20 @@
         <state relative-caret-position="663">
           <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="272">
+          <caret line="16" column="99" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="99" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#md-card#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
 <<<<<<< HEAD
         <state relative-caret-position="510">
           <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="38" />
@@ -1460,11 +1866,16 @@
           <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
           <folding />
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/threads/threads.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-posts.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1819">
+          <caret line="107" column="9" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="107" selection-end-column="9" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
@@ -1472,12 +1883,25 @@
         <state relative-caret-position="1513">
           <caret line="89" column="104" lean-forward="false" selection-start-line="89" selection-start-column="104" selection-end-line="89" selection-end-column="104" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/list-posts.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1530">
+          <caret line="90" column="101" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="101" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#md-select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-optgroup#0;n#ul#0;n#div#0;n#md-select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#md-select#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#md-table-container#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-optgroup#0;n#ul#0;n#div#0;n#md-select#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#md-table-container#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+=======
 <<<<<<< HEAD
         <state relative-caret-position="918">
           <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
@@ -1486,11 +1910,19 @@
           <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
           <folding />
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/layouts/forum.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/viewcomments.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="17">
+          <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#md-dialog#0;n#!!top" expanded="true" />
+          </folding>
+=======
 <<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1499,11 +1931,16 @@
           <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
           <folding />
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/timeline/timeline.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/admin/config/viewcomments.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="714">
+          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="799">
           <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
@@ -1511,12 +1948,17 @@
         <state relative-caret-position="1105">
           <caret line="65" column="34" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="65" selection-end-column="34" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/phaojlar/api.service.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1258">
+          <caret line="74" column="80" lean-forward="false" selection-start-line="74" selection-start-column="80" selection-end-line="74" selection-end-column="80" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="391">
           <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
@@ -1524,12 +1966,18 @@
         <state relative-caret-position="816">
           <caret line="48" column="84" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="84" />
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/forum/posts/posts.tmpl.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-4">
+          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+          <folding />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="-901">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -1542,6 +1990,7 @@
             <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
 >>>>>>> 1230a472c60d8b5a3bd41e321839c05b90ac5d80
+>>>>>>> 790dab8ca44f8ed7f584615b910df888a7fe3b0a
         </state>
       </provider>
     </entry>

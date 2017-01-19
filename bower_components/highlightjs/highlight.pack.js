@@ -3266,7 +3266,7 @@ hljs.registerLanguage('cos', function cos (hljs) {
 
   var COS_KEYWORDS =
     'property parameter class classmethod clientmethod extends as break ' +
-    'catch close continue do d|0 else elseif for goto halt hang h|0 if job ' +
+    'catch close continue do d|0 else elseif for goto halt hang h|0 if jobs ' +
     'j|0 kill k|0 lock l|0 merge new open quit q|0 read r|0 return set s|0 ' +
     'tcommit throw trollback try tstart use view while write w|0 xecute x|0 ' +
     'zkill znspace zn ztrap zwrite zw zzdump zzwrite print zbreak zinsert ' +
@@ -3811,7 +3811,7 @@ hljs.registerLanguage('csp', function(hljs) {
     keywords: {
       keyword: 'base-uri child-src connect-src default-src font-src form-action' +
         ' frame-ancestors frame-src img-src media-src object-src plugin-types' +
-        ' report-uri sandbox script-src style-src', 
+        ' report-uri sandbox script-src style-src',
     },
     contains: [
     {
@@ -5487,7 +5487,7 @@ hljs.registerLanguage('excel', function(hljs) {
     },
     contains: [
       {
-        /* matches a beginning equal sign found in Excel formula examples */ 
+        /* matches a beginning equal sign found in Excel formula examples */
         begin: /^=/,
         end: /[^=]/, returnEnd: true, illegal: /=/, /* only allow single equal sign at front of line */
         relevance: 10
@@ -10957,7 +10957,7 @@ hljs.registerLanguage('powershell', function(hljs) {
   var PS_HELPTAGS = {
     className: 'doctag',
     variants: [
-      /* no paramater help tags */ 
+      /* no paramater help tags */
       { begin: /\.(synopsis|description|example|inputs|outputs|notes|link|component|role|functionality)/ },
       /* one parameter help tags */
       { begin: /\.(parameter|forwardhelptargetname|forwardhelpcategory|remotehelprunspace|externalhelp)\s+\S+/ }

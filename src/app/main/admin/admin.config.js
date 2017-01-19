@@ -5,7 +5,7 @@
     'use strict';
 
     angular
-        .module('app.main.ads')
+        .module('app.main.admin')
         .config(moduleConfig);
 
     /* @ngInject */

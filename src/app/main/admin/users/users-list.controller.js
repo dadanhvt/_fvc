@@ -9,7 +9,7 @@
         .controller('UsersList', UsersList);
 
     /* @ngInject */
-    function UsersList($mdDialog, $mdToast, apiService, $location, $anchorScroll, $http, Upload, countries, $q, $timeout, industries, languages) {
+    function UsersList($mdDialog, $mdToast, apiService, $location, $anchorScroll, $http, Upload, industries, languages) {
         var vm = this;
         vm.deleteUser = deleteUser;
         vm.detailLanguage = detailLanguage;
@@ -22,9 +22,7 @@
         vm.changeSearchText = changeSearchText;
         vm.users = [];
         vm.usersDelete = [];
-        function sortNationalities(a) {
 
-        }
         vm.uploadCV = uploadCV;
         vm.onChangeFilter = onChangeFilter;
         vm.citySearch = citySearch;

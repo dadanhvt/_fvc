@@ -17670,7 +17670,7 @@ function SelectDirective($mdSelect, $mdUtil, $mdConstant, $mdTheming, $mdAria, $
         deregisterWatcher = scope.$watch(function() {
           return parser(scope);
         }, function(multiple, prevVal) {
-          if (multiple === undefined && prevVal === undefined) return; // assume compiler did a good job
+          if (multiple === undefined && prevVal === undefined) return; // assume compiler did a good jobs
           if (multiple) {
             element.attr('multiple', 'multiple');
           } else {

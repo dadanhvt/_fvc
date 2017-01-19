@@ -1,6 +1,6 @@
 /*!
  * angular-translate - v2.12.1 - 2016-09-15
- * 
+ *
  * Copyright (c) 2016 The angular-translate team, Pascal Precht; Licensed MIT
  */
 (function (root, factory) {
@@ -913,7 +913,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
    * trying to 'use' a language which isn't provided, it'll throw an error.
    *
    * You actually don't have to use this method since `$translateProvider#preferredLanguage`
-   * does the job too.
+   * does the jobs too.
    *
    * @param {string} langKey A language key.
    */
@@ -2804,7 +2804,7 @@ function $translateDefaultInterpolation ($interpolate, $translateSanitization) {
       // numbers are safe
       interpolatedText = '' + value;
     } else if (angular.isString(value)) {
-      // strings must be interpolated (that's the job here)
+      // strings must be interpolated (that's the jobs here)
       interpolatedText = $interpolate(value)(interpolationParams);
       interpolatedText = $translateSanitization.sanitize(interpolatedText, 'text', undefined, context);
     } else {
@@ -2826,9 +2826,9 @@ angular.module('pascalprecht.translate')
 /**
  * @ngdoc directive
  * @name pascalprecht.translate.directive:translate
- * @requires $interpolate, 
- * @requires $compile, 
- * @requires $parse, 
+ * @requires $interpolate,
+ * @requires $compile,
+ * @requires $parse,
  * @requires $rootScope
  * @restrict AE
  *

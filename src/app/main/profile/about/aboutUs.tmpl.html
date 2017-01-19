@@ -1,0 +1,85 @@
+<md-dialog class="mobile-fullwidth-dialog" flex style="min-width: 100%;min-height: 100%;">
+    <md-toolbar class="md-toolbar-small toolbar-light">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>About Us</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancel()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-divider></md-divider>
+
+    <md-dialog-content class="md-dialog-content">
+        <table layout-padding style="width: 100%">
+            <tr>
+                <td class="padding-right-20">Company :</td>
+                <td>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
+                        <input type="text" placeholder="Full Name" ng-model="vm.about.name">
+                    </md-input-container>
+                </td>
+            </tr>
+            <tr>
+                <td>Adrress : </td>
+                <td layout="row"><md-select style="width: 100px"
+                               placeholder="Country"
+                               ng-change="vm.changCity();"
+                               ng-model="vm.about.profile.country_code"
+                               class="md-no-underline margin-0">
+                    <md-option ng-repeat="item in vm.countries" ng-value="item.code">{{item.name}}
+                    </md-option>
+                </md-select>
+                <md-select class="md-no-underline margin-0"
+                           placeholder="City" ng-model="vm.about.profile.city"
+                           style="width: 100px">
+                    <md-option ng-value="item.id" ng-repeat="item in vm.cities">
+                        {{item.name}}
+                    </md-option>
+                </md-select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone : </td>
+                <td>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
+                        <input type="text" placeholder="Phone Number" ng-model="vm.about.profile.phone">
+                    </md-input-container>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email : </td>
+                <td>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
+                        <input type="text" placeholder="Email Address" ng-model="vm.about.email">
+                    </md-input-container>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Short Description : </td>
+                <td>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
+                        <input type="text" placeholder="Headline" ng-model="vm.about.headline">
+                    </md-input-container>
+                </td>
+            </tr>
+            <tr>
+                <td>About us</td>
+                <td>
+                    <textarea ckeditor ng-model="vm.about.profile.summary"></textarea>
+                </td>
+            </tr>
+        </table>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.save()" class="md-primary" aria-label="save" >Save</md-button>
+    </md-dialog-actions>
+</md-dialog>

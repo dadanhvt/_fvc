@@ -2607,46 +2607,6 @@ md-dialog.compose-dialog {
   md-dialog.compose-dialog {
     width: 90%; } }
 
-#mail .sidenav .navigation-simple .filter-active {
-  background: #e6e2af !important; }
-
-#mail .sidenav .header .logo .logo-icon {
-  margin: 0 16px 0 0; }
-
-#mail .sidenav .header .logo .logo-text {
-  font-size: 24px; }
-
-#mail .sidenav .header .account {
-  width: 100%; }
-  #mail .sidenav .header .account .account-selection {
-    margin: 0;
-    padding: 0; }
-    #mail .sidenav .header .account .account-selection .md-select-label {
-      width: 100%; }
-    #mail .sidenav .header .account .account-selection .md-select-value {
-      padding-left: 0; }
-
-#mail .sidenav .content {
-  padding: 24px 0; }
-  #mail .sidenav .content .compose-button {
-    padding: 0 24px 24px 24px; }
-    #mail .sidenav .content .compose-button .md-button {
-      width: 100%;
-      margin: 0; }
-
-#mail .sidenav.md-locked-open .header {
-  color: #FFFFFF; }
-  #mail .sidenav.md-locked-open .header .logo {
-    padding-top: 27px; }
-    #mail .sidenav.md-locked-open .header .logo .logo-icon md-icon {
-      color: #FFFFFF; }
-
-#mail .sidenav:not(.md-locked-open) .header {
-  height: 150px;
-  min-height: 150px;
-  max-height: 150px;
-  padding-top: 24px; }
-
 #mail .mail-list-pane .mail-list-item {
   position: relative;
   padding: 16px;
@@ -2750,3 +2710,43 @@ md-dialog.compose-dialog {
           height: 30px;
           line-height: 30px;
           min-height: 30px; }
+
+#mail .sidenav .navigation-simple .filter-active {
+  background: #e6e2af !important; }
+
+#mail .sidenav .header .logo .logo-icon {
+  margin: 0 16px 0 0; }
+
+#mail .sidenav .header .logo .logo-text {
+  font-size: 24px; }
+
+#mail .sidenav .header .account {
+  width: 100%; }
+  #mail .sidenav .header .account .account-selection {
+    margin: 0;
+    padding: 0; }
+    #mail .sidenav .header .account .account-selection .md-select-label {
+      width: 100%; }
+    #mail .sidenav .header .account .account-selection .md-select-value {
+      padding-left: 0; }
+
+#mail .sidenav .content {
+  padding: 24px 0; }
+  #mail .sidenav .content .compose-button {
+    padding: 0 24px 24px 24px; }
+    #mail .sidenav .content .compose-button .md-button {
+      width: 100%;
+      margin: 0; }
+
+#mail .sidenav.md-locked-open .header {
+  color: #FFFFFF; }
+  #mail .sidenav.md-locked-open .header .logo {
+    padding-top: 27px; }
+    #mail .sidenav.md-locked-open .header .logo .logo-icon md-icon {
+      color: #FFFFFF; }
+
+#mail .sidenav:not(.md-locked-open) .header {
+  height: 150px;
+  min-height: 150px;
+  max-height: 150px;
+  padding-top: 24px; }

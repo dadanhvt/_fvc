@@ -151,3 +151,13 @@ function findItem(object,item) {
         if(result!=undefined) return result;
     }
 }
+
+function changStatus(item,status) {
+    if(item.childs.length){
+        for(var i=0;i< item.childs.length;i++)
+        {
+            item.childs[i].status = status;
+            if(item.childs[i].childs.length) changStatus(item.childs[i],status);
+        }
+    }
+}

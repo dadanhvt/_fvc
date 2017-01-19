@@ -27,7 +27,7 @@ var _ = require('../lodash.js'),
 var accessKey = env.SAUCE_ACCESS_KEY,
     username = env.SAUCE_USERNAME;
 
-/** Used as the default maximum number of times to retry a job and tunnel. */
+/** Used as the default maximum number of times to retry a jobs and tunnel. */
 var maxJobRetries = 3,
     maxTunnelRetries = 3;
 
@@ -55,7 +55,7 @@ var push = Array.prototype.push;
 /** Used to detect error messages. */
 var reError = /(?:\be|E)rror\b/;
 
-/** Used to detect valid job ids. */
+/** Used to detect valid jobs ids. */
 var reJobId = /^[a-z0-9]{32}$/;
 
 /** Used to display the wait throbber. */
@@ -239,11 +239,11 @@ function getOption(name, defaultValue) {
 }
 
 /**
- * Checks if `value` is a job ID.
+ * Checks if `value` is a jobs ID.
  *
  * @private
  * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a job ID, else `false`.
+ * @returns {boolean} Returns `true` if `value` is a jobs ID, else `false`.
  */
 function isJobId(value) {
   return reJobId.test(value);
@@ -378,7 +378,7 @@ function onJobStart(error, res, body) {
         statusStr = _.isFinite(statusCode) ? statusCode : na;
 
     logInline();
-    console.error('Failed to start job; status: %s, body: %s', statusStr, bodyStr);
+    console.error('Failed to start jobs; status: %s, body: %s', statusStr, bodyStr);
     if (error) {
       console.error(error);
     }
@@ -517,7 +517,7 @@ function onTunnelStart(success) {
  * The Job constructor.
  *
  * @private
- * @param {Object} [properties] The properties to initialize a job with.
+ * @param {Object} [properties] The properties to initialize a jobs with.
  */
 function Job(properties) {
   EventEmitter.call(this);
@@ -534,11 +534,11 @@ function Job(properties) {
 util.inherits(Job, EventEmitter);
 
 /**
- * Removes the job.
+ * Removes the jobs.
  *
  * @memberOf Job
- * @param {Function} callback The function called once the job is removed.
- * @param {Object} Returns the job instance.
+ * @param {Function} callback The function called once the jobs is removed.
+ * @param {Object} Returns the jobs instance.
  */
 Job.prototype.remove = function(callback) {
   this.once('remove', _.iteratee(callback));
@@ -559,11 +559,11 @@ Job.prototype.remove = function(callback) {
 };
 
 /**
- * Resets the job.
+ * Resets the jobs.
  *
  * @memberOf Job
- * @param {Function} callback The function called once the job is reset.
- * @param {Object} Returns the job instance.
+ * @param {Function} callback The function called once the jobs is reset.
+ * @param {Object} Returns the jobs instance.
  */
 Job.prototype.reset = function(callback) {
   this.once('reset', _.iteratee(callback));
@@ -575,11 +575,11 @@ Job.prototype.reset = function(callback) {
 };
 
 /**
- * Restarts the job.
+ * Restarts the jobs.
  *
  * @memberOf Job
- * @param {Function} callback The function called once the job is restarted.
- * @param {Object} Returns the job instance.
+ * @param {Function} callback The function called once the jobs is restarted.
+ * @param {Object} Returns the jobs instance.
  */
 Job.prototype.restart = function(callback) {
   this.once('restart', _.iteratee(callback));
@@ -600,11 +600,11 @@ Job.prototype.restart = function(callback) {
 };
 
 /**
- * Starts the job.
+ * Starts the jobs.
  *
  * @memberOf Job
- * @param {Function} callback The function called once the job is started.
- * @param {Object} Returns the job instance.
+ * @param {Function} callback The function called once the jobs is started.
+ * @param {Object} Returns the jobs instance.
  */
 Job.prototype.start = function(callback) {
   this.once('start', _.iteratee(callback));
@@ -621,11 +621,11 @@ Job.prototype.start = function(callback) {
 };
 
 /**
- * Checks the status of a job.
+ * Checks the status of a jobs.
  *
  * @memberOf Job
  * @param {Function} callback The function called once the status is resolved.
- * @param {Object} Returns the job instance.
+ * @param {Object} Returns the jobs instance.
  */
 Job.prototype.status = function(callback) {
   this.once('status', _.iteratee(callback));
@@ -643,11 +643,11 @@ Job.prototype.status = function(callback) {
 };
 
 /**
- * Stops the job.
+ * Stops the jobs.
  *
  * @memberOf Job
- * @param {Function} callback The function called once the job is stopped.
- * @param {Object} Returns the job instance.
+ * @param {Function} callback The function called once the jobs is stopped.
+ * @param {Object} Returns the jobs instance.
  */
 Job.prototype.stop = function(callback) {
   this.once('stop', _.iteratee(callback));

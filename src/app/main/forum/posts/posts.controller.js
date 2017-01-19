@@ -19,6 +19,7 @@
         vm.getComments = getComments;
         vm.addComment =addComment;
         vm.clickQuote = clickQuote;
+
         init();
         function init() {
             vm.server = SERVER_ASSETS;
@@ -37,7 +38,6 @@
                     vm.bracum =[];
                     var tmp = findItembyAlias($rootScope.categories, vm.aliasCategory);
                     vm.bracum.push(tmp);
-
                     while (tmp.parent_id)
                     {
                         tmp = findItem($rootScope.categories,tmp.parent_id);
