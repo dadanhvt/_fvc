@@ -1,0 +1,48 @@
+<md-dialog flex="60" flex-xs="100">
+    <md-toolbar class="md-toolbar-small toolbar-light">
+        <div class="md-toolbar-tools">
+            <span>Compose mail</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content ms-scroll class="padding-20">
+        <form name="newPost" novalidate>
+            <md-input-container class="md-block margin-0" md-no-float>
+                <input ng-model="vm.form.subject" name="subject" required placeholder="Subject">
+                <div ng-messages="newPost.subject.$error">
+                    <div ng-message when="required">
+                        <span translate>Vui lòng nhập tiêu đề mail</span>
+                    </div>
+                </div>
+            </md-input-container>
+            <md-autocomplete class="margin-0" md-no-float flex required
+                             md-input-name="autocompleteField"
+                             md-no-cache="true"
+                             md-selected-item="vm.selectedUser"
+                             md-search-text="vm.searchText"
+                             md-items="item in vm.querySearch(vm.searchText)"
+                             md-item-text="item.name"
+                             md-require-match
+                             md-floating-label="To user">
+                <md-item-template>
+                    <span md-highlight-text="vm.searchText">{{item.name}}</span>
+                </md-item-template>
+                <div ng-messages="newPost.autocompleteField.$error" ng-if="newPost.autocompleteField.$touched">
+                    <div ng-message="required">please enter cc user.</div>
+                    <div ng-message="md-require-match">Please select an existing user.</div>
+                </div>
+            </md-autocomplete>
+            <textarea ckeditor ng-model="vm.form.contents"></textarea>
+        </form>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <span flex></span>
+        <md-button  ng-click="vm.sendMail()" class="md-primary"
+                   ng-disabled="newPost.$invalid"
+                   translate="MAIL.SEND"></md-button>
+    </md-dialog-actions>
+</md-dialog>

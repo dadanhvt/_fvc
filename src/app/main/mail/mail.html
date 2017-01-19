@@ -1,0 +1,150 @@
+<div id="mail" class="page-layout carded left-sidenav" layout="row">
+    <!-- SIDENAV -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
+                ng-include="'app/main/mail/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / SIDENAV -->
+    <!-- CENTER -->
+    <div class="center" flex style="background-color: white;" >
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+            <!-- CONTENT TOOLBAR -->
+            <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+                <!-- CONTENT HEADER -->
+                <md-button class="md-block margin-0" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
+                           aria-label="Toggle Sidenav" translate translate-attr-aria-label="MAIL.TOGGLE_SIDENAV">
+                    <span>menu</span>
+                </md-button>
+
+                <md-button class="md-icon-button margin-0 margin-left-10 mail-back-button" ng-if="vm.activeMailPaneIndex === 1"
+                           ng-click="vm.closeReadPane()"
+                           aria-label="Back"
+                           translate translate-attr-aria-label="MAIL.BACK">
+                    <i class="zmdi zmdi-arrow-left"></i>
+                </md-button>
+                <span flex></span>
+                <span ng-if="vm.inbox.data.length>0" style="padding: 8px;">{{vm.inbox.from}}-{{vm.inbox.to}} of {{vm.inbox.total}}</span>
+                <md-button ng-if="vm.inbox.data.length>0" ng-disabled="vm.inbox.current_page == 1" class="md-icon-button" aria-label="More"
+                           ng-click="vm.query.page=vm.query.page-1;vm.getData()">
+                    <i class="zmdi zmdi-chevron-left"></i>
+                </md-button>
+                <md-button ng-if="vm.inbox.data.length>0" ng-disabled="vm.query.page == vm.inbox.last_page" class="md-icon-button"
+                           aria-label="More"
+                           ng-click="vm.query.page=vm.query.page+1;vm.getData()">
+                    <i class="zmdi zmdi-chevron-right"></i>
+                </md-button>
+            </md-toolbar>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT WRAPPER -->
+            <div class="padding-20" flex layout="row" ng-if="vm.inbox.data.length==0">
+                <h2>No mail fault</h2>
+            </div>
+            <div class="content-wrapper" flex layout="row" ng-if="vm.inbox.data.length>0">
+                <div id="mail-left-list" ng-class="{'mail-left-active':vm.activeMailPaneIndex == 1}" layout="column" flex="50" flex-xs="100" class="mail-list-pane">
+                    <div style="position: relative;cursor: pointer;" class="mail-list-item {{mail.unread}}"
+                         ng-repeat="mail in vm.inbox.data"
+                         md-ink-ripple
+                         ng-click="vm.selectMail(mail)"
+                         ng-class="{'selected': vm.selectedMail === mail}">
+
+                        <div layout="row" layout-align="start center">
+                            <div class="info" flex layout="column">
+                                <div class="name" layout="row" layout-align="start center">
+                                    <img class="avatar" alt="{{mail.sender.name}}"
+                                         ng-src="{{vm.assets}}/upload/avatar/{{mail.sender.avatar}}"/>
+                                    <span class="text-truncate margin-left-10">{{mail.sender.name}}</span>
+                                </div>
+
+                                <div class="subject text-truncate" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                    {{mail.subject}}
+                                </div>
+
+                                <div class="message" style="    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;">
+                                    {{mail.contents |plaintext| limitTo:90}}{{mail.contents.length > 90 ? '...' : ''}}
+                                    <!--{{mail.message | htmlToPlaintext | limitTo:90}}{{mail.message.length > 90 ? '...' : ''}}-->
+                                </div>
+                            </div>
+                            <div layout="column" layout-align="space-between end">
+                                <span class="time" am-time-ago="mail.created_at" style="font-size: 15px;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mail-right-content" ng-show="vm.selectedMail" ng-class="{'mail-response-active':vm.activeMailPaneIndex == 1,'mail-response-not-active':vm.activeMailPaneIndex == 0}" layout="column" flex class="mail-read-pane padding-10">
+                    <!-- MAIL CONTENT -->
+                    <div class="mail-header">
+                        <div class="subject" flex>{{vm.selectedMail.subject}}</div>
+                    </div>
+
+                    <div class="mail-content">
+                        <div class="info" layout="row" layout-align="space-between start">
+
+                            <div layout="column" layout-align="start start" flex>
+                                <div flex layout="row" layout-align="start start" style="width: 100%;">
+                                    <a target="_blank" ng-href="#/profile/{{vm.selectedMail.sender.id}}/about">
+                                        <img style="width: 50px;height: 50px;" ng-if="vm.selectedMail.sender.avatar" alt="{{vm.selectedMail.sender.name}}"
+                                             ng-src="{{vm.assets}}/upload/avatar/{{vm.selectedMail.sender.avatar}}" class="avatar"/>
+                                    </a>
+
+                                    <div layout="column" layout-align="start start">
+                                        <a class="name" target="_blank" ng-href="#/profile/{{vm.selectedMail.sender.id}}/about">
+                                            {{vm.selectedMail.sender.name}}
+                                        </a>
+
+                                        <div class="to" layout="row" layout-align="start center">
+                                            <span class="title" translate="MAIL.DETAILS.DATE">Date:</span>
+                                            <div>{{vm.selectedMail.created_at}}</div>
+                                        </div>
+                                    </div>
+                                    <span flex></span>
+                                    <md-button class="md-icon-button margin-0"
+                                               ng-click="vm.replyDialog(vm.selectedMail.sender)"
+                                               aria-label="replyDialog" ng-if="$root.user.id != vm.selectedMail.sender.id">
+                                        <i class="zmdi zmdi-mail-reply"></i>
+                                    </md-button>
+                                </div>
+
+                                <a class="toggle-details md-accent-color" ng-hide="vm.selectedMailShowDetails"
+                                   ng-click="vm.selectedMailShowDetails = !vm.selectedMailShowDetails"
+                                   translate="MAIL.SHOW_DETAILS">
+                                    Show Details
+                                </a>
+                                <a class="toggle-details md-accent-color" ng-show="vm.selectedMailShowDetails"
+                                   ng-click="vm.selectedMailShowDetails = !vm.selectedMailShowDetails"
+                                   translate="MAIL.HIDE_DETAILS">
+                                    Hide Details
+                                </a>
+
+                                <div ng-show="vm.selectedMailShowDetails" class="details" layout="row"
+                                     layout-align="start start">
+                                    <div layout="column">
+                                        <span class="title" translate="MAIL.DETAILS.FROM">From:</span>
+                                        <span class="title" translate="MAIL.DETAILS.TO">To:</span>
+                                    </div>
+
+                                    <div layout="column">
+                                        <a class="detail" target="_blank" ng-href="#/profile/{{vm.selectedMail.sender.id}}/about">{{vm.selectedMail.sender.name}}</a>
+                                        <a class="detail" ng-repeat="c in vm.selectedMail.receivers" target="_blank" ng-href="#/profile/{{c.id}}/about">{{c.name}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ng-bind-html="vm.selectedMail.contents"></div>
+
+                    </div>
+                    <!-- / MAIL CONTENT -->
+                </div>
+                <!-- / CONTENT WRAPPER -->
+
+            </div>
+            <!-- / CONTENT CARD -->
+
+        </div>
+        <!-- / CENTER -->
+
+    </div>

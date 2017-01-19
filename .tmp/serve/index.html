@@ -5,7 +5,7 @@
     <title>FrancoViet</title>
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-      <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
     <link rel="icon" type="image/png" href="icon.png" /><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <!-- bower:css -->
@@ -120,6 +120,8 @@
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
     <!-- inject:js -->
+    <script src="app/main/mail/mail.module.js"></script>
+    <script src="app/main/mail/dialogs/compose/compose-dialog.controller.js"></script>
     <script src="app/phaojlar/layouts/layouts.module.js"></script>
     <script src="app/phaojlar/layouts/default/default-menu.controller.js"></script>
     <script src="app/phaojlar/layouts/default/default-layout.controller.js"></script>
@@ -198,9 +200,7 @@
     <script src="app/main/web-analyst/web-analyst.config.js"></script>
     <script src="app/main/receive/receive.config.js"></script>
     <script src="app/main/profile/profile.config.js"></script>
-    <script src="app/main/messenger/messenger.module.js"></script>
-    <script src="app/main/messenger/messenger.controller.js"></script>
-    <script src="app/main/messenger/messenger.config.js"></script>
+    <script src="app/main/mail/mail.controller.js"></script>
     <script src="app/main/index/index.module.js"></script>
     <script src="app/main/index/index.controller.js"></script>
     <script src="app/main/index/index.config.js"></script>

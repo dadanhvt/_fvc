@@ -2,7 +2,7 @@
  * Created by Tinti on 7/17/2016.
  */
 // var SERVER_IP = "http://developapi.nghilon.vn/francovietcareer.com/";
-var SERVER_IP = "http://localhost/franco/src/";
+var SERVER_IP = "http://192.168.1.11/franco/src/";
 var SERVER = SERVER_IP + "api/";
 var SERVER_ASSETS = SERVER_IP + "assets/";
 //ADMIN
@@ -45,6 +45,11 @@ var SERVER_GETFORUMCOMMENTS = SERVER + "getForumComments";
 var SERVER_POSTLIKEFORUMPOST = SERVER + "postLikeForumPost";
 var SERVER_POSTADDFORUMCOMMENT = SERVER + "postAddForumComment";
 var SERVER_POSTADDPOSTFORUM = SERVER + "postAddPostForum";
+var SERVER_GETMORECOMMENTSPOST = SERVER + "getMoreCommentsPost";
+var SERVER_GETMAILS = SERVER + "getMails";
+var SERVER_POSTNEWMAIL = SERVER + "postNewMail";
+var SERVER_READMAIL = SERVER + "readMail";
+var SERVER_GETSUGGESTMAILUSERS = SERVER + "getSuggestMailUsers";
 
 
 

@@ -7,7 +7,7 @@
 
     /* @ngInject */
 
-    function ForumPostController($state,$window,apiService,$stateParams,$mdToast,$rootScope) {
+    function ForumPostController($state,$window,apiService,$stateParams,$mdToast,$rootScope, $location, $anchorScroll) {
         var vm = this;
 
         vm.hello = 'Xin Chào ! Nếu đây là chuyến thăm đầu tiên của bạn vào Diễn đàn , hãy chắc chắn kiểm tra quy cách ' +
@@ -54,6 +54,8 @@
         function clickQuote(post) {
             if (vm.commentContent == null)vm.commentContent="";
             vm.commentContent = vm.commentContent + "<blockquote><p>"+post.author.name+" said: </p><br>"+post.contents+"</blockquote>";
+            $location.hash('post-comment-area');
+            $anchorScroll();
         }
 
         function likePost() {
@@ -128,6 +130,7 @@
                         });
                         return;
                     }
+                    vm.commentContent = '';
                     if(vm.query.page != e.result){
                         $state.go("phaojlar.default.forum.posts",{alias:vm.aliasCategory, idPost:vm.idPost, page:e.result});
                     }else{
@@ -138,7 +141,3 @@
         }
     }
 })();
-
-/**
- * Created by Tri NH on 10/17/2016.
- */
