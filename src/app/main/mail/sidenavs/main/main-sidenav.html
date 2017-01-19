@@ -1,0 +1,37 @@
+<!-- SIDENAV CONTENT -->
+<md-content ms-scroll class="content padding-10" flex>
+
+    <div class="compose-button">
+        <md-button class="md-raised md-warn" aria-label="compose"
+                   ng-click="vm.composeDialog($event)" translate="MAIL.COMPOSE">COMPOSE
+        </md-button>
+    </div>
+
+    <div class="navigation-simple" layout="column">
+        <md-button ng-class="{'filter-active': vm.query.filter == 'all'}" aria-label="all" ng-click="vm.chooseFilter('all')">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-inbox" class="s16"></md-icon>
+                <span class="title">All</span>
+            </div>
+        </md-button>
+        <md-button ng-class="{'filter-active': vm.query.filter == 'unread'}" aria-label="unreal" ng-click="vm.chooseFilter('unread')">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-inbox" class="s16"></md-icon>
+                <span class="title">Unreal</span>
+            </div>
+        </md-button>
+        <md-button ng-class="{'filter-active': vm.query.filter == 'read'}" aria-label="read" ng-click="vm.chooseFilter('read')">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-inbox" class="s16"></md-icon>
+                <span class="title">Read</span>
+            </div>
+        </md-button>
+        <md-button ng-class="{'filter-active': vm.query.filter == 'sent'}" aria-label="sent" ng-click="vm.chooseFilter('sent')">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-inbox" class="s16"></md-icon>
+                <span class="title">Sent</span>
+            </div>
+        </md-button>
+    </div>
+</md-content>
+<!-- / SIDENAV CONTENT -->

@@ -1,7 +1,7 @@
 <div class="content">
     <md-card class="margin-0 margin-bottom-10" ng-repeat="category in vm.categories" ng-if="category.childs_node.length">
         <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
-            <a href="#/discussions/{{category.alias}}" class="padding-top-8 padding-left-10"><i class="zmdi zmdi-comment-text-alt" style="color:black"></i><span class="padding-left-10">{{category.title}}</span></a>
+            <a href="#/discussions/{{category.alias}}" class="padding-top-8 padding-left-10"><i class="zmdi zmdi-folder-outline" style="color:black"></i><span class="padding-left-10">{{category.title}}</span></a>
             <span flex></span>
         </md-toolbar>
         <div class="content padding-10" ng-if="category.childs_node.length>0">
@@ -11,7 +11,7 @@
                  flex="50" flex-xs="100" class="padding-10 thread-item">
                 <div layout="column">
                     <a href="#/discussions/{{child.alias}}" layout="row">
-                        <i class="zmdi zmdi-comment-alt" style="font-size: 40px;"></i>
+                        <i class="zmdi zmdi-folder-outline" style="font-size: 40px;"></i>
                         <div layout="column" class="padding-left-10">
                             <span>{{child.title}}</span>
                             <span><span ng-if="child.posts_count.length>0">{{child.posts_count[0].count}} posts</span><span ng-if="child.posts_count.length==0">0 posts</span></span>

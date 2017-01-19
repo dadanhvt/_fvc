@@ -34,8 +34,8 @@
             </md-toolbar>
         </md-input-container>
     </md-card>
-    <p ng-if="vm.posts.length == 0">Not have activitive yet!</p>
-    <div ng-repeat="post in vm.posts">
+    <p ng-if="vm.posts.data.length == 0">Not have activitive yet!</p>
+    <div ng-repeat="post in vm.posts.data">
         <md-card class="user-post margin-0 margin-bottom-10">
             <md-card-header style=" background: #e6e2af!important;" class="padding-10">
                 <md-card-avatar>
@@ -88,13 +88,13 @@
                     <i class="zmdi zmdi-comment-outline"></i>
                     <md-tooltip>Comment</md-tooltip>
                 </md-button>
-                <span>{{post.comment_count.length>0?post.comment_count[0].count:0}}</span>
+                <span>{{post.comments.total}}</span>
             </div>
             <md-divider></md-divider>
-            <md-button flex>Load more 5 comment</md-button>
+            <md-button ng-click="vm.getMoreCmt(post)" flex ng-if="post.comments.data.length < post.comments.total">Load more {{post.comments.total-post.comments.data.length}} comment</md-button>
             <md-divider></md-divider>
             <div class="timeline-comment">
-                <div ng-repeat="comment in post.comments">
+                <div ng-repeat="comment in post.comments.data">
                     <div>
                         <md-card-header style="padding: 5px 10px;">
                             <md-card-avatar>
@@ -146,4 +146,5 @@
             </div>
         </md-card>
     </div>
+    <md-button style="margin: 0;width: 100%;" ng-click="vm.getMorePosts()" flex ng-if="vm.posts.data.length < vm.posts.total">Load more</md-button>
 </div>

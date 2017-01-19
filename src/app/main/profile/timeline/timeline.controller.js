@@ -16,23 +16,44 @@
         vm.editClick = editClick;
         vm.deleterImage = deleterImage;
         vm.openImage = openImage;
+        vm.getMoreCmt = getMoreCmt;
+        vm.getMorePosts = getMorePosts;
         init();
 
         function init() {
+            vm.cmtlimit =5;
+            vm.query = {
+                limit: 15,
+                page: 1
+            };
             vm.postContent = '';
             vm.serverAssets = SERVER_ASSETS;
-            apiService.getAPI(SERVER_GETPOSTS + "?id=" + $rootScope.profileUser, true, function (e) {
+            apiService.getAPI(SERVER_GETPOSTS + "?id=" + $rootScope.profileUser + "&cmtlimit="+ vm.cmtlimit + "&limit="+ vm.query.limit+"&page="+vm.query.page, true, function (e) {
                 if (!(e.success == 1)) {
                     $state.go('phaojlar.default.profile.timeline', {userId: $rootScope.user.id});
                     return;
                 }
                 vm.posts = e.result;
             });
-            vm.testtext = "asd The titles of Washed Out's breakthrough song and the first single from Paracosm share the two The titles of Washed Out's breakthrough song and the first single from Paracosm share the twoThe titles of Washed Out's breakthrough song and the first single from Paracosm share the two"
-            vm.limit = -2;
-            vm.checkshow = true;
         }
-
+        function getMorePosts() {
+            vm.query.page = vm.query.page+1;
+            apiService.getAPI(SERVER_GETPOSTS + "?id=" + $rootScope.profileUser + "&cmtlimit="+ vm.cmtlimit + "&limit="+ vm.query.limit+"&page="+vm.query.page, true, function (e) {
+                if (!(e.success == 1)) {
+                    return;
+                }
+                vm.posts.data = vm.posts.data.concat(e.result.data);
+            });
+        }
+        function getMoreCmt(post) {
+            post.comments.current_page = post.comments.current_page+1;
+            apiService.getAPI(SERVER_GETMORECOMMENTSPOST + "?id=" + post.id + "&cmtlimit="+ vm.cmtlimit+ "&page="+ post.comments.current_page, true, function (e) {
+                if (!(e.success == 1)) {
+                    return;
+                }
+                post.comments.data = e.result.data.concat(post.comments.data);
+            });
+        }
         function openImage(images, index) {
             var tmp_images = [];
             for (var i = 0; i < images.length; i++) {
@@ -74,7 +95,7 @@
 
             $mdDialog.show(confirm).then(function () {
                 var param = {
-                    id: posts[index].id
+                    id: posts.data[index].id
                 };
                 apiService.postAPI(SERVER_DELETEPOST, true, param, function (e) {
                     if (e.success != 1) {
@@ -90,7 +111,8 @@
                         position: 'bottom right',
                         hideDelay: 3000
                     });
-                    posts.splice(index, 1);
+                    posts.total = posts.total - 1;
+                    posts.data.splice(index, 1);
                 });
             }, function () {
                 return;
@@ -169,16 +191,16 @@
                     id: post.id,
                     contents: post.newCmt
                 };
-                apiService.postAPI(SERVER_ADDNEWCOMMENT, false, param, function (e) {
+                apiService.postAPI(SERVER_ADDNEWCOMMENT, true, param, function (e) {
                     if (e.success != 1) {
                         $mdToast.show({
-                            template: '<md-toast><span flex>Cann\'t change like, please try again!</span></md-toast>',
+                            template: '<md-toast><span flex>Cann\'t comment, please try again!</span></md-toast>',
                             position: 'bottom right',
                             hideDelay: 3000
                         });
                         return;
                     }
-                    post.comments.push(e.result);
+                    post.comments.data.push(e.result);
                     post.newCmt = '';
                 });
             }

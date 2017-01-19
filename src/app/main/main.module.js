@@ -12,7 +12,7 @@
             'app.main.employee',
             'app.main.profile',
             'app.main.forum',
-            'app.main.job',
-            'app.main.messenger'
+            'app.main.mail',
+            'app.main.job'
             ]);
 })();
