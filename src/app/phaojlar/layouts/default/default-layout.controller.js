@@ -65,6 +65,7 @@
                     hideDelay: 3000
                 });
                 $rootScope.user = e.user;
+                $rootScope.user.role1= getRole($rootScope.user.role);
                 $rootScope.user.avatar = getAvatar($rootScope.user.avatar);
                 if (isPopup == true) {
                     $mdDialog.cancel();

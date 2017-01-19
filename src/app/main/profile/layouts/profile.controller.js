@@ -13,6 +13,7 @@
         vm.goAbout=goAbout;
         vm.goTimeline=goTimeline;
         vm.goPhotos=goPhotos;
+        vm.goJobs = goJobs;
         vm.goConnection=goConnection;
         vm.getAvatar = getAvatar;
 
@@ -32,17 +33,22 @@
                     return;
                 }
                 $rootScope.currentUser = e.result;
+                console.log(e.result);
+                console.log($rootScope);
+                $rootScope.currentUser.role1=getRole($rootScope.currentUser.role);
                 $rootScope.currentUser.avatar = getAvatar($rootScope.currentUser.avatar);
             });
 
             if ($state.current.name == 'phaojlar.default.profile') {
                 vm.currentNavItem = 0;
-                goAbout();
             }
             else if ($state.current.name == 'phaojlar.default.profile.timeline') {
                 vm.currentNavItem = 1;
             }
             else if ($state.current.name == 'phaojlar.default.profile.photos') {
+                vm.currentNavItem = 2;
+            }
+            else if ($state.current.name == 'phaojlar.default.profile.jobs') {
                 vm.currentNavItem = 2;
             }
             else if ($state.current.name == 'phaojlar.default.profile.connection') {
@@ -63,6 +69,9 @@
         function goPhotos() {
             $state.go('phaojlar.default.profile.photos');
         }
+        function goJobs() {
+            $state.go('phaojlar.default.profile.jobs');
+        }
         function goConnection() {
             $state.go('phaojlar.default.profile.connection');
         }
@@ -72,7 +81,7 @@
                 controllerAs: 'vm',
                 templateUrl: 'app/main/profile/layouts/updateAvatar.tmpl.html',
                 clickOutsideToClose: true,
-                focusOnOpen: false,
+                focusOnOpen: false
             }).then(function(new_url){
                 $rootScope.user.avatar = getAvatar(new_url);
                 $rootScope.currentUser.avatar = getAvatar(new_url);

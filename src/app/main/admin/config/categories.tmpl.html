@@ -2,12 +2,12 @@
         <div  class="tree-node tree-node-content" layout="row">
             <div ui-tree-handle layout="row" flex>
                 <span style="margin-top: 10px; margin-left: 10px;">{{node.title}}
-                    <span>({{node.posts_count.length}} posts)</span>
+                    <span ng-if="node.posts_count[0].count">({{node.posts_count[0].count}} posts)</span>
                 </span>
                 <span flex></span>
             </div>
             <md-select class="md-no-underline margin-0"
-                       placeholder="Status" ng-model="node.status">
+                       placeholder="Status" ng-model="node.status" ng-change="updateStatus(node)">
                 <md-option value="1">Public</md-option>
                 <md-option value="2">See</md-option>
                 <md-option value="3">Ban</md-option>

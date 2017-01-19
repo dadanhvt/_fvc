@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <div layout="row">
+        <span flex></span>
+        <md-button class="md-block margin-0" ng-click="vm.newJob()" ng-if="$root.user.id ==  $root.profileUser">New</md-button>
+    </div>
+    <md-content>
+        <ul style="padding: 10px">
+            <div class="job" ng-repeat="job in vm.jobs.data">
+                <li layout="row" style="padding: 10px; padding-right: 0px;" ng-if="(job.status!='3')|| ($root.user.id ==  $root.profileUser)">
+                    <img ng-src="{{vm.server}}{{job.user.avatar}}" style="width: 100px; height: 100px;">
+                    <div class="title" layout="column"  style="padding-left: 20px;" flex>
+                        <a ng-href="#/job/{{job.id}}" style="font-size: x-large">{{job.title}}</a>
+                        <a ng-href="#">{{job.user.name}}</a>
+                        <span style="font-size: small;">Posted : {{job.created_at}}</span>
+                        <span ng-if="job.status=='2'" style="color: rgb(255,87,34);">Expired</span>
+                        <span ng-if="(job.status=='3')&&($root.user.id ==  $root.profileUser)" style="color: rgb(255,87,34);">Hide</span>
+                    </div>
+                    <span flex="15" style="padding-top: 10px">{{job.city_f.name}}</span>
+                    <span flex="15" style="padding-top: 10px">${{job.min_salary}}-${{job.max_salary}}</span>
+                    <md-button ng-if="$root.user.id ==  $root.profileUser" class="md-icon-button" ng-click="vm.editJob(job.id,$index)">
+                        <i class="zmdi zmdi-edit"></i>
+                        <md-tooltip>Edit</md-tooltip>
+                    </md-button>
+                </li>
+                <md-divider></md-divider>
+            </div>
+            <div class="control">
+                <div flex layout="row">
+                    <span flex></span>
+                    <span style="padding: 8px;">{{vm.jobs.from}}-{{vm.jobs.to}} of {{vm.jobs.total}}</span>
+                    <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
+                               ng-click="vm.query.page=1;vm.getData()">
+                        <i class="zmdi zmdi-skip-previous"></i>
+                    </md-button>
+                    <md-button ng-disabled="vm.query.page == 1" class="md-icon-button" aria-label="More"
+                               ng-click="vm.query.page=vm.query.page-1;vm.getData()">
+                        <i class="zmdi zmdi-chevron-left"></i>
+                    </md-button>
+                    <span style="padding-top: 10px;">{{vm.query.page}}</span>
+                    <md-button ng-disabled="vm.query.page == vm.jobs.last_page" class="md-icon-button" aria-label="More"
+                               ng-click="vm.query.page=vm.query.page+1;vm.getData()">
+                        <i class="zmdi zmdi-chevron-right"></i>
+                    </md-button>
+                    <md-button ng-disabled="vm.query.page == vm.jobs.last_page" class="md-icon-button" aria-label="More"
+                               ng-click="vm.query.page=vm.jobs.last_page;vm.getData()">
+                        <i class="zmdi zmdi-skip-next"></i>
+                    </md-button>
+
+                </div>
+            </div>
+        </ul>
+    </md-content>
+</div>

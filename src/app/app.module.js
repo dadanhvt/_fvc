@@ -51,6 +51,7 @@
                 User.updateProfile().profile(continueNavigation);
                 function continueNavigation (userProfile) {
                     $rootScope.user = userProfile.user || undefined;
+                    if($rootScope.user!=undefined) $rootScope.user.role1 = getRole($rootScope.user.role);
                     $rootScope.skipSomeAsync = true;
                     $state.go(toState.name, toParams);
                     $rootScope.skipSomeAsync = false;

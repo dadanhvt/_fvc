@@ -127,8 +127,11 @@
         function Poststt() {
             if (vm.postContent != '' || vm.imagesUpload.length > 0) {
                 var fd = new FormData();
-                for (var x = 0; x < vm.imagesUpload.length; x++) {
-                    fd.append("files[]", vm.imagesUpload[x]);
+                console.log(vm.imagesUpload);
+                if(vm.imagesUpload!=undefined){
+                    for (var x = 0; x < vm.imagesUpload.length; x++) {
+                        fd.append("files[]", vm.imagesUpload[x]);
+                    }
                 }
                 fd.append('contents', vm.postContent);
                 $rootScope.countLoader = $rootScope.countLoader + 1;if($rootScope.countLoader == 1)$rootScope.isShowPageLoader = true;

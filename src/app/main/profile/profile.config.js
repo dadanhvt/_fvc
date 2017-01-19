@@ -36,7 +36,12 @@
                 templateUrl: 'app/main/profile/photos/photos.tmpl.html',
                 controller: 'PhotosController',
                 controllerAs: 'vm'
-
+            })
+            .state('phaojlar.default.profile.jobs', {
+                url: '/jobs',
+                templateUrl: 'app/main/profile/jobs/jobs.tmpl.html',
+                controller: 'JobsController',
+                controllerAs: 'vm'
             })
             .state('phaojlar.default.profile.connection', {
                 url: '/connection',

@@ -1,0 +1,53 @@
+<div layout="column" class="width-size-responsive">
+    <div layout="row" layout-xs="column" style="background: rgba(255,255,255,0.4);"
+         class="padding-right-10 padding-left-10 padding-top-10">
+        <md-card style="padding: 30px;" flex>
+            <div class="company" layout="row">
+                <img ng-src="{{vm.server}}{{vm.job.user.avatar}}" style="width: 150px; height: 150px; padding: 10px;padding-bottom: 20px;">
+                <div class="title" layout="column"  style="padding-left: 20px; padding-top: 8px;" flex>
+                    <span style="font-size: x-large">{{vm.job.title}}</span>
+                    <div layout="row" >
+                        <a ng-href="#/profile/{{vm.job.user.id}}/about">{{vm.job.user.name}}</a>
+                        <span>, {{vm.job.city_f.name}} - {{vm.job.country_f.name}}</span>
+                    </div>
+                    <span>Salary : ${{vm.job.min_salary}}-${{vm.job.max_salary}}</span>
+                    <span>Posted : {{vm.job.created_at}}</span>
+                    <div layout="row">
+                        <md-button class="md-raised md-warn" style="margin-left: 0px;margin-top: 10px;">APPLY NOW</md-button>
+                    </div>
+                </div>
+            </div>
+            <md-divider></md-divider>
+            <div class="content" style="padding: 20px;"  ng-bind-html="vm.job.contents"></div>
+        </md-card>
+        <div class="margin-left-10"  flex="25" flex-xs="100" layout="column" style="margin-top: 8px;">
+            <md-card class="margin-0 margin-bottom-10">
+                <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light"><span
+                    class="padding-top-8">Suggest</span>
+                </md-toolbar>
+                <div layout="column" class="padding-10">
+                    <div class="company" layout="row">
+                        <img src="{{$root.currentUser.avatar}}" style="width: 50px; height: 50px; padding: 10px;padding-bottom: 20px;">
+                        <div class="title" layout="column"  style="padding-left: 10px; padding-top: 8px;" flex>
+                            <a ng-href="#">Tuyen nhan vien design</a>
+                            <span>
+                                <i class="zmdi zmdi-pin zmdi-hc-fw"></i>
+                                Ha Noi - Viet Nam
+                            </span>
+                            <span>$1000</span>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div class="company" layout="row">
+                        <img src="{{$root.currentUser.avatar}}" style="width: 50px; height: 50px; padding: 10px;padding-bottom: 20px;">
+                        <div class="title" layout="column"  style="padding-left: 10px; padding-top: 8px;" flex>
+                            <a ng-href="#">Tuyen nhan vien design</a>
+                            <span><i class="zmdi zmdi-pin zmdi-hc-fw"></i>Ha Noi - Viet Nam</span>
+                            <span>$1000</span>
+                        </div>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+    </div>
+</div>

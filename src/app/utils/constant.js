@@ -2,7 +2,7 @@
  * Created by Tinti on 7/17/2016.
  */
 // var SERVER_IP = "http://developapi.nghilon.vn/francovietcareer.com/";
-var SERVER_IP = "http://localhost/franco/src/";
+var SERVER_IP = "http://192.168.1.11/franco/src/";
 var SERVER = SERVER_IP + "api/";
 var SERVER_ASSETS = SERVER_IP + "assets/";
 //ADMIN
@@ -45,6 +45,22 @@ var SERVER_GETFORUMCOMMENTS = SERVER + "getForumComments";
 var SERVER_POSTLIKEFORUMPOST = SERVER + "postLikeForumPost";
 var SERVER_POSTADDFORUMCOMMENT = SERVER + "postAddForumComment";
 var SERVER_POSTADDPOSTFORUM = SERVER + "postAddPostForum";
+var SERVER_AGETFORUMPOST = SERVER + "agetForumPost";
+var SERVER_ACHANGEPOSTCATEGORY = SERVER + "achangePostCategory";
+var SERVER_ACHANGEPOSTSTATUS = SERVER + "achangePostStatus";
+var SERVER_PROFILEEDITLANGUAGES = SERVER + "profileEditLanguages";
+var SERVER_PROFILEEDITEDUCATIONS = SERVER + "profileEditEducations";
+var SERVER_PROFILEEDITEXPERIENCES = SERVER + "profileEditExperiences";
+var SERVER_PROFILEEDITCERTIFICATIONS = SERVER + "profileEditCertifications";
+var SERVER_PROFILEEDITSUMMARY = SERVER + "profileEditSummary";
+var SERVER_EDITPROFILECONTACT = SERVER + "editProfileContact";
+var SERVER_EDITABOUTRE = SERVER + "editAboutRe";
+var SERVER_ADDNEWJOB = SERVER + "addNewJob";
+var SERVER_GETJOBSBYUSERID = SERVER + "getJobsByUserId";
+var SERVER_GETJOBBYID = SERVER + "getJobById";
+var SERVER_EDITJOB = SERVER + "editJob";
+var SERVER_CHANGERELATION = SERVER + "changeRelation";
+
 
 
 

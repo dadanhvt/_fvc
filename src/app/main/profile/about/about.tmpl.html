@@ -1,7 +1,8 @@
-<div class="wrapper">
+<div ng-if="$root.currentUser.role1!='RE'" class="wrapper">
     <!-- Box Basic Information -->
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id ==  $root.profileUser">
-        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
+    <!--ng-if="$root.user.id ==  $root.profileUser"-->
+    <md-card class="margin-0 margin-bottom-10" >
+        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light" ng-if="$root.user.id ==  $root.profileUser">
             <span class="padding-top-8 padding-left-10">Basic Information</span>
             <span flex></span>
             <md-button class="md-icon-button" ng-hide="vm.editInfo" ng-click="vm.edit('Info')">
@@ -16,7 +17,7 @@
                     <i class="zmdi zmdi-check"></i>
                     <md-tooltip>Save</md-tooltip>
                 </md-button>
-                <md-button class="md-icon-button" ng-click="vm.cancer('Info')">
+                <md-button class="md-icon-button" ng-disabled="vm.changeInfo" ng-click="vm.cancer('Info')">
                     <i class="zmdi zmdi-close"></i>
                     <md-tooltip>Cancel</md-tooltip>
                 </md-button>
@@ -25,18 +26,19 @@
         <div class="content">
             <table layout-padding>
                 <tr>
-                    <td class="padding-right-20">Full Name </td>
+                    <td class="padding-right-20">Full Name</td>
                     <td>
                         <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="Full Name" ng-model="vm.about.name" ng-change="vm.DisableCancer()"
+                            <input type="text" placeholder="Full Name" ng-model="vm.about.name"
+                                   ng-change="vm.DisableCancer('Info')"
                                    ng-disabled="!vm.editInfo">
                         </md-input-container>
                     </td>
                 </tr>
                 <tr>
-                    <td class="padding-right-20">Gender </td>
+                    <td class="padding-right-20">Gender</td>
                     <td>
-                        <md-radio-group layout="row" ng-model="vm.about.gender" ng-change="vm.DisableCancer()"
+                        <md-radio-group layout="row" ng-model="vm.about.gender" ng-change="vm.DisableCancer('Info')"
                                         ng-disabled="!vm.editInfo">
                             <md-radio-button class="md-primary" value="1">Male</md-radio-button>
                             <md-radio-button class="md-primary" value="0">FeMale</md-radio-button>
@@ -44,17 +46,30 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="padding-right-20">Birthday </td>
+                    <td class="padding-right-20">Birthday</td>
                     <td>
-                        <md-datepicker ng-model="vm.about.birth" ng-change="vm.DisableCancer()" ng-disabled="!vm.editInfo">
+                        <md-datepicker ng-model="vm.about.birth" ng-change="vm.DisableCancer('Info')"
+                                       ng-disabled="!vm.editInfo">
                         </md-datepicker>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="padding-right-20">Job Position</td>
+                    <td>
+                        <md-select class="md-no-underline margin-0" ng-model="vm.about.profile.job_position"
+                                   placeholder="Job Position" ng-change="vm.DisableCancer('Info')"
+                                   ng-disabled="!vm.editInfo">
+                            <md-option ng-repeat="item in vm.job_functions" ng-value="item.value">{{item.jf}}
+                            </md-option>
+                        </md-select>
                     </td>
                 </tr>
                 <tr>
                     <td class="padding-right-20">Headline</td>
                     <td>
                         <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="Headline" ng-model="vm.about.headline" ng-change="vm.DisableCancer()"
+                            <input type="text" placeholder="Headline" ng-model="vm.about.headline"
+                                   ng-change="vm.DisableCancer('Info')"
                                    ng-disabled="!vm.editInfo">
                         </md-input-container>
                     </td>
@@ -62,11 +77,12 @@
                 <tr>
                     <td class="padding-right-20">Contries</td>
                     <td>
-                        <md-select ng-disabled="!vm.editInfo" ng-model="vm.about.profile.country_code" style="width: 100px"
+                        <md-select ng-disabled="!vm.editInfo" style="width: 100px"
                                    placeholder="Country"
-                                   ng-change="vm.about.profile.cities=null"
+                                   ng-change="vm.changCity();vm.DisableCancer('Info')"
+                                   ng-model="vm.about.profile.country_code"
                                    class="md-no-underline margin-0">
-                            <md-option ng-repeat="item in vm.about.profile.countries" ng-value="item.code">{{item.name}}
+                            <md-option ng-repeat="item in vm.countries" ng-value="item.code">{{item.name}}
                             </md-option>
                         </md-select>
                     </td>
@@ -76,8 +92,9 @@
                     <td>
                         <md-select class="md-no-underline margin-0" ng-disabled="!vm.editInfo"
                                    placeholder="City" ng-model="vm.about.profile.city"
-                                   md-on-open="vm.citySearch()" style="width: 100px">
-                            <md-option ng-value="item.id" ng-repeat="item in vm.about.profile.cities">
+                                   ng-change="vm.DisableCancer('Info')"
+                                   style="width: 100px">
+                            <md-option ng-value="item.id" ng-repeat="item in vm.cities">
                                 {{item.name}}
                             </md-option>
                         </md-select>
@@ -87,45 +104,9 @@
         </div>
     </md-card>
 
-    <!--duclt -->
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id !=  $root.profileUser">
-        <md-toolbar layout-align="center" layout="row" class="md-toolbar-small toolbar-light">
-            <span class="padding-top-8 padding-left-10">Basic Information</span>
-            <span flex></span>
-            <!-- Button Save and Cancer -->
-        </md-toolbar>
-        <table layout-padding>
-            <tr>
-                <td class="padding-right-20">Full Name </td>
-                <td>{{vm.about.name}}</td>
-            </tr>
-            <tr>
-                <td class="padding-right-20">Gender </td>
-                <td>
-                    <div layout="row">
-                        <div class="md-primary" ng-if="vm.about.gender == 1">Male</div>
-                        <div class="md-primary" ng-if="vm.about.gender != 1">FeMale</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="padding-right-20">Birthday</td>
-                <td>{{vm.about.birth| date}}</td>
-            </tr>
-            <tr>
-                <td class="padding-right-20">Contries</td>
-                <td>{{vm.about.profile.country_f.name}}</td>
-            </tr>
-            <tr>
-                <td class="padding-right-20">City</td>
-                <td>{{vm.about.profile.city_f.name}}</td>
-            </tr>
-        </table>
-    </md-card>
-
     <!-- Box Contact Information -->
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id ==  $root.profileUser">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
+    <md-card class="margin-0 margin-bottom-10" >
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
             <span class="padding-top-8 padding-left-10">Contact Information</span>
             <span flex></span>
             <md-button class="md-icon-button" ng-hide="vm.editContact" ng-click="vm.edit('Contact')">
@@ -140,7 +121,7 @@
                     <i class="zmdi zmdi-check"></i>
                     <md-tooltip>Save</md-tooltip>
                 </md-button>
-                <md-button class="md-icon-button" ng-click="vm.cancer('Contact')">
+                <md-button class="md-icon-button" ng-disabled="vm.changeContact" ng-click="vm.cancer('Contact')">
                     <i class="zmdi zmdi-close"></i>
                     <md-tooltip>Cancel</md-tooltip>
                 </md-button>
@@ -152,419 +133,257 @@
                 <span>Mobile Phone</span>
                 <md-input-container md-no-float class="md-block phao-input-noerror" flex>
                     <input type="text" placeholder="Phone Number" ng-model="vm.about.profile.phone"
-                           ng-change="vm.DisableCancer()" ng-disabled="!vm.editContact">
+                           ng-change="vm.DisableCancer('Contact')" ng-disabled="!vm.editContact">
                 </md-input-container>
             </div>
 
             <div class="row" layout="row" layout-padding>
                 <span>Email Address</span>
                 <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                    <input type="text" placeholder="Email Address" ng-model="vm.about.user_name"
-                           ng-change="vm.DisableCancer()" ng-disabled="!vm.editContact">
-                </md-input-container>
-            </div>
-
-            <div class="row" layout="row" layout-padding>
-                <span>Facebook</span>
-                <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                    <input type="text" placeholder="Facebook" ng-model="vm.Facebook" ng-change="vm.DisableCancer()"
-                           ng-disabled="!vm.editContact">
+                    <input type="text" placeholder="Email Address" ng-model="vm.about.email"
+                           ng-change="vm.DisableCancer('Contact')" ng-disabled="!vm.editContact">
                 </md-input-container>
             </div>
         </div>
     </md-card>
 
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id !=  $root.profileUser">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
-            <span class="padding-top-8 padding-left-10">Contact Information</span>
-            <span flex></span>
-        </md-toolbar>
-        <table class="content" layout-padding>
-            <tr>
-                <td>Mobile Phone</td>
-                <td> : {{vm.about.profile.phone}}</td>
-            </tr>
-            <tr>
-                <td>Email Address</td>
-                <td> : {{vm.about.user_name}}</td>
-            </tr>
-            <tr>
-                <td>Facebook</td>
-                <td></td>
-            </tr>
-        </table>
-    </md-card>
     <!-- Box Summary -->
-    <md-card class="margin-0 margin-bottom-10">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
+    <md-card class="margin-0 margin-bottom-10" >
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
             <span class="padding-top-8 padding-left-10">Summary</span>
             <span flex></span>
-            <md-button class="md-icon-button" ng-hide="vm.editSummary" ng-click="vm.edit('Summary')" ng-if="$root.user.id ==  $root.profileUser">
+            <md-button class="md-icon-button" ng-hide="vm.editSummary" ng-click="vm.edit('Summary');v">
                 <i class="zmdi zmdi-edit"></i>
                 <md-tooltip>Edit</md-tooltip>
             </md-button>
             <!-- Button Save and Cancer -->
             <section layout="row" layout-wrap ng-show="vm.editSummary">
                 <span flex></span>
-                <md-button class="md-raised md-primary" ng-click="vm.save('Summary')">Save</md-button>
-                <md-button ng-click="vm.cancer('Summary')" ng-disabled="vm.Change">Cancer</md-button>
+                <md-button class="md-icon-button" ng-click="vm.save('Summary')">
+                    <i class="zmdi zmdi-check"></i>
+                    <md-tooltip>Save</md-tooltip>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="vm.changeSummary" ng-click="vm.cancer('Summary')">
+                    <i class="zmdi zmdi-close"></i>
+                    <md-tooltip>Cancel</md-tooltip>
+                </md-button>
             </section>
         </md-toolbar>
         <div class="content">
             <div class="row" layout="row" layout-padding>
                 <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                    <p ng-hide="vm.editSummary">{{vm.Summary}}</p>
-                    <!--<input type="text"  placeholder="You text here" ng-model="vm.Summary"  ng-show="vm.editSummary" ng-change="vm.DisableCancer()" ng-disabled="!vm.editSummary" >-->
-                    <textarea rows="2" md-select-on-focus ng-model="vm.Summary" ng-show="vm.editSummary"
-                              ng-change="vm.DisableCancer()" ng-hide="!vm.editSummary"
-                              placeholder="You text here"></textarea>
+                <textarea rows="2" md-select-on-focus ng-model="vm.about.profile.summary"
+                          ng-change="vm.DisableCancer('Summary')" ng-disabled="!vm.editSummary"
+                          placeholder="Not have Summary"></textarea>
                 </md-input-container>
             </div>
         </div>
     </md-card>
 
-
+    <!--Languages-->
+    <md-card class="margin-0 margin-bottom-10" >
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
+            <span class="padding-top-8 padding-left-10">Languages</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.edit('Languages');">
+                <i class="zmdi zmdi-edit"></i>
+                <md-tooltip>Edit</md-tooltip>
+            </md-button>
+        </md-toolbar>
+        <div class="content">
+            <table ng-if="vm.about.languages[0].id" class="content" layout-padding
+                   style="width: 100%;text-align: center; ">
+                <tr>
+                    <th>No.</th>
+                    <th>Language</th>
+                    <th>Proficiency</th>
+                    <th>Certificate</th>
+                </tr>
+                <tr ng-repeat="i in vm.about.languages">
+                    <td><span>{{$index+1}}</span></td>
+                    <td><span>{{i.db_language.name}}</span></td>
+                    <td><span>{{i.proficiency}}</span></td>
+                    <td><span>{{i.certificate}}</span></td>
+                </tr>
+            </table>
+            <span ng-if="!vm.about.languages[0].id">Not have Language</span>
+        </div>
+    </md-card>
 
     <!-- Education -->
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id ==  $root.profileUser">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
+    <md-card class="margin-0 margin-bottom-10" >
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
             <span class="padding-top-8 padding-left-10">Education</span>
             <span flex></span>
-            <md-button class="md-icon-button" ng-hide="vm.editEducation" ng-click="vm.edit('Education');v">
+            <md-button class="md-icon-button" ng-click="vm.edit('Education');v">
                 <i class="zmdi zmdi-edit"></i>
                 <md-tooltip>Edit</md-tooltip>
             </md-button>
-            <!-- Button Save and Cancer -->
-            <section layout="row" layout-wrap ng-show="vm.editEducation">
-                <span flex></span>
-                <!--<md-button class="md-icon-button" ng-click="vm.addEducation()">-->
-                    <!--<i class="zmdi zmdi-plus"></i>-->
-                    <!--<md-tooltip>Add</md-tooltip>-->
-                <!--</md-button>-->
-                <md-button class="md-icon-button" ng-click="vm.save('Education')">
-                    <i class="zmdi zmdi-check"></i>
-                    <md-tooltip>Save</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" ng-click="vm.cancer('Education')">
-                    <i class="zmdi zmdi-close"></i>
-                    <md-tooltip>Cancel</md-tooltip>
-                </md-button>
-            </section>
         </md-toolbar>
         <div class="content">
-            <table class="content" layout-padding style="width: 100%;text-align: left; ">
+            <table ng-if="vm.about.educations[0].id" class="content" layout-padding
+                   style="width: 100%;text-align: center; ">
                 <tr>
+                    <th>No.</th>
                     <th>School</th>
+                    <th>From</th>
+                    <th>To</th>
                     <th>Grade</th>
-                    <th>Dates Attended</th>
-                    <th>Field of Study</th>
+                    <th>Degree</th>
+                    <th>Field</th>
                 </tr>
                 <tr ng-repeat="i in vm.about.educations">
-                    <td>
-                        <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="School" ng-model="i.school_name" ng-change="vm.DisableCancer();vm.addEducation($index)"
-                                   ng-disabled="!vm.editEducation">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                        <input type="text" placeholder="Grade" ng-model="i.grade" ng-change="vm.DisableCancer()"
-                        ng-disabled="!vm.editEducation">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container  md-no-float class="md-block phao-input-noerror">
-                        <input placeholder="Dates Attended" ng-model="i.study_from" ng-change="vm.DisableCancer()"
-                        ng-disabled="!vm.editEducation">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container layout="row" md-no-float class="md-block phao-input-noerror">
-                        <input type="text" placeholder="Field of Study" ng-model="i.feild" ng-change="vm.DisableCancer()"
-                        ng-disabled="!vm.editEducation">
-                        </md-input-container>
-                    </td>
-                    <td ng-if="vm.editEducation == true">
-                        <md-button class="md-icon-button" ng-click="vm.cancer('Education')">
-                            <i class="zmdi zmdi-delete"></i>
-                            <md-tooltip>Delete</md-tooltip>
-                        </md-button>
-                    </td>
+                    <td><span>{{$index+1}}</span></td>
+                    <td><span>{{i.school_name}}</span></td>
+                    <td><span>{{i.study_from}}</span></td>
+                    <td><span>{{i.study_to}}</span></td>
+                    <td><span>{{i.grade}}</span></td>
+                    <td><span>{{i.degree}}</span></td>
+                    <td><span>{{i.feild}}</span></td>
                 </tr>
             </table>
+            <span ng-if="!vm.about.educations[0].id">Not have Educations</span>
         </div>
     </md-card>
 
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id !=  $root.profileUser" ng-hide="vm.about.educations.length == 0">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
-            <span class="padding-top-8 padding-left-10">Education</span>
-        </md-toolbar>
-        <table class="content" layout-padding style="width: 100%;text-align: left; ">
-            <tr>
-                <th>School</th>
-                <th>Grade</th>
-                <th>Dates Attended</th>
-                <th>Field of Study</th>
-            </tr>
-            <tr ng-repeat="i in vm.about.educations">
-                <td>{{i.school_name}}</td>
-                <td>{{i.grade}}</td>
-                <td>{{i.study_from}}</td>
-                <td>{{i.feild}}</td>
-            </tr>
-        </table>
-    </md-card>
     <!-- Experience -->
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id ==  $root.profileUser">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
             <span class="padding-top-8 padding-left-10">Experience</span>
             <span flex></span>
-            <md-button class="md-icon-button" ng-hide="vm.editExperience" ng-click="vm.edit('Experience')">
+            <md-button class="md-icon-button" ng-click="vm.edit('Experience')">
                 <i class="zmdi zmdi-edit"></i>
                 <md-tooltip>Edit</md-tooltip>
             </md-button>
-
-            <!-- Button Save and Cancer -->
-            <section layout="row" layout-wrap ng-show="vm.editExperience">
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="vm.save('Experience')">
-                    <i class="zmdi zmdi-check"></i>
-                    <md-tooltip>Save</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" ng-click="vm.cancer('Experience')">
-                    <i class="zmdi zmdi-close"></i>
-                    <md-tooltip>Cancel</md-tooltip>
-                </md-button>
-            </section>
         </md-toolbar>
         <div class="content">
-            <table  class="content" layout-padding style="width: 100%;text-align: left; ">
+            <table ng-if="vm.about.experiences.length" class="content" layout-padding
+                   style="width: 100%;text-align: center; ">
                 <tr>
+                    <th>No.1</th>
                     <th>Company</th>
-                    <th>Title</th>
                     <th>Location</th>
-                    <th>Time pretiod</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Decription</th>
                 </tr>
                 <tr ng-repeat="i in vm.about.experiences">
+                    <td><span>{{$index+1}}</span></td>
+                    <td><span>{{i.company_name}}</span></td>
+                    <td><span>{{i.location}}</span></td>
+                    <td><span>{{i.work_from}}</span></td>
                     <td>
-                        <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="Your Company" ng-model="i.company_name" ng-change="vm.DisableCancer();vm.addExperience($index)"
-                                   ng-disabled="!vm.editExperience">
-                        </md-input-container>
+                        <span ng-if="i.currently=='0'">{{i.work_to}}</span>
+                        <span ng-if="!(i.currently=='0')">Now</span>
                     </td>
-                    <td>
-                        <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="Title" ng-model="i.title" ng-change="vm.DisableCancer()"
-                                   ng-disabled="!vm.editExperience">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="Location" ng-model="i.location" ng-change="vm.DisableCancer()"
-                                   ng-disabled="!vm.editExperience">
-                        </md-input-container>
-                    </td>
-                    <td>
-                        <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                            <input type="text" placeholder="Time Period" ng-model="i.work_from" ng-change="vm.DisableCancer()"
-                                   ng-disabled="!vm.editExperience">
-                        </md-input-container>
-                    </td>
-                    <td ng-if="vm.editExperience == true">
-                        <md-button class="md-icon-button" ng-click="vm.cancer('Education')">
-                            <i class="zmdi zmdi-delete"></i>
-                            <md-tooltip>Delete</md-tooltip>
-                        </md-button>
-                    </td>
+                    <td><span>{{i.desc}}</span></td>
                 </tr>
-                <!--<tr>-->
-                    <!--<td>-->
-                        <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                            <!--<input type="text" placeholder="Your Company" ng-model="company_name" ng-change="vm.DisableCancer()"-->
-                                   <!--ng-disabled="!vm.editExperience">-->
-                        <!--</md-input-container>-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                            <!--<input type="text" placeholder="Title" ng-model="title" ng-change="vm.DisableCancer()"-->
-                                   <!--ng-disabled="!vm.editExperience">-->
-                        <!--</md-input-container>-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                            <!--<input type="text" placeholder="Location" ng-model="location" ng-change="vm.DisableCancer()"-->
-                                   <!--ng-disabled="!vm.editExperience">-->
-                        <!--</md-input-container>-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                            <!--<input type="text" placeholder="Time pretiod" ng-model="work_from" ng-change="vm.DisableCancer()"-->
-                                   <!--ng-disabled="!vm.editExperience">-->
-                        <!--</md-input-container>-->
-                    <!--</td>-->
-                <!--</tr>-->
             </table>
-</div>
-    </md-card>
-
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id !=  $root.profileUser" ng-hide="vm.about.experiences.length == 0">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
-            <span class="padding-top-8 padding-left-10">Experience</span>
-        </md-toolbar>
-        <table layout-padding class="content" style="width: 100%;text-align: left">
-            <tr>
-                <th>Company</th>
-                <th>Title</th>
-                <th>Location</th>
-                <th>Time Period</th>
-            </tr>
-            <tr ng-repeat="i in vm.about.experiences">
-                <td>{{i.company_name}}</td>
-                <td>{{i.title}}</td>
-                <td>{{i.location}}</td>
-                <td>{{i.work_from}}</td>
-            </tr>
-        </table>
-    </md-card>
-    <!-- Box Skill -->
-    <md-card class="margin-0 margin-bottom-10">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
-            <span class="padding-top-8 padding-left-10">Skill</span>
-            <span flex></span>
-            <md-button class="md-icon-button" ng-hide="vm.editSkill" ng-click="vm.edit('Skill')" ng-if="$root.user.id ==  $root.profileUser">
-                <i class="zmdi zmdi-edit"></i>
-                <md-tooltip>Edit</md-tooltip>
-            </md-button>
-
-            <!-- Button Save and Cancer -->
-            <section layout="row" layout-wrap ng-show="vm.editSkill">
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="vm.save('Skill')">
-                    <i class="zmdi zmdi-check"></i>
-                    <md-tooltip>Save</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" ng-click="vm.cancer('Skill')">
-                    <i class="zmdi zmdi-close"></i>
-                    <md-tooltip>Cancel</md-tooltip>
-                </md-button>
-            </section>
-        </md-toolbar>
-        <div class="content">
-            <md-content class="md-padding" layout-padding>
-                <span>What are your areas of expertise?</span>
-                <md-chips
-                    ng-model="vm.tags"
-                    md-separator-keys="vm.keys"
-                    placeholder="Enter your skill"
-                    secondary-placeholder="Your Skill"
-                    readonly="!vm.editSkill"
-                >
-                    <!--md-chip-remove="!vm.editSkill"-->
-                </md-chips>
-            </md-content>
+            <span ng-if="!vm.about.experiences.length">Not have Experience</span>
         </div>
     </md-card>
-    <!-- Box Certifications -->
-    <md-card class="margin-0 margin-bottom-0" ng-if="$root.user.id !=  $root.profileUser" ng-hide="vm.about.certification == null">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
-            <span class="padding-top-8 padding-left-10">Certifications</span>
-        </md-toolbar>
-        <table class="content" layout-padding style="width: 100%;text-align: left">
-            <tr>
-                <th>Certification Name</th>
-                <th>Certification Authority</th>
-                <th>Dates</th>
-                <th>License Number</th>
-            </tr>
-            <tr ng-repeat="i in vm.about.certifications">
-                <td>{{i.name}}</td>
-                <td>{{i.authority}}</td>
-                <td>{{i.date_from}}</td>
-                <td>{{i.unexpire}}</td>
-            </tr>
-        </table>
-    </md-card>
 
-    <md-card class="margin-0 margin-bottom-10" ng-if="$root.user.id ==  $root.profileUser">
-        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row">
+    <!-- Box Certifications -->
+    <md-card class="margin-0 margin-bottom-10" >
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
             <span class="padding-top-8 padding-left-10">Certifications</span>
             <span flex></span>
-            <md-button class="md-icon-button" ng-hide="vm.editCertifications" ng-click="vm.edit('Certifications')">
+            <md-button class="md-icon-button" ng-click="vm.edit('Certifications')">
                 <i class="zmdi zmdi-edit"></i>
                 <md-tooltip>Edit</md-tooltip>
             </md-button>
-
-            <section layout="row" layout-wrap ng-show="vm.editCertifications">
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="vm.save('Certifications')">
-                    <i class="zmdi zmdi-check"></i>
-                    <md-tooltip>Save</md-tooltip>
-                </md-button>
-                <md-button class="md-icon-button" ng-click="vm.cancer('Certifications')">
-                    <i class="zmdi zmdi-close"></i>
-                    <md-tooltip>Cancel</md-tooltip>
-                </md-button>
-            </section>
         </md-toolbar>
-        <table class="content" layout-padding style="width: 100%;text-align: left">
+        <table ng-if="vm.about.certifications[0].id" class="content" layout-padding
+               style="width: 100%;text-align: center">
             <tr>
-                <th>Certification Name</th>
-                <th>Certification Authority</th>
-                <th>Dates</th>
-                <th>License Number</th>
+                <th>No.</th>
+                <th>Certification</th>
+                <th>Authority</th>
+                <th>From</th>
+                <th>To</th>
             </tr>
-            <tr ng-repeat="i in vm.about.certifications">
+            <tr ng-repeat="certification in vm.about.certifications">
+                <td><span>{{$index+1}}</span></td>
+                <td><span>{{certification.name}}</span></td>
+                <td><span>{{certification.authority}}</span></td>
+                <td><span>{{certification.date_from}}</span></td>
                 <td>
-                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                        <input type="text" placeholder="Your Company" ng-model="i.name" ng-change="vm.DisableCancer();vm.addCertification($index)"
-                               ng-disabled="!vm.editCertifications">
-                    </md-input-container>
+                    <span ng-if="(certification.unexpire=='0')">{{certification.date_to}}</span>
+                    <span ng-if="!(certification.unexpire=='0')">Unexpire</span>
                 </td>
-                <td>
-                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                        <input type="text" placeholder="Title" ng-model="i.authority" ng-change="vm.DisableCancer()"
-                               ng-disabled="!vm.editCertifications">
-                    </md-input-container>
-                </td>
-                <td>
-                    <md-input-container layout="row" md-no-float class="md-block phao-input-noerror">
-                        <md-datepicker ng-model="i.date_from" ng-disabled="!vm.editCertifications"></md-datepicker>
-                    </md-input-container>
-                </td>
-                <td>
-                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
-                        <input type="text" placeholder="Time Period" ng-model="i.work_from" ng-change="vm.DisableCancer()"
-                               ng-disabled="!vm.editCertifications">
-                    </md-input-container>
-                </td>
-                <td ng-if="vm.editCertifications == true">
-                    <md-button class="md-icon-button" ng-click="deletearray()">
-                        <i class="zmdi zmdi-delete"></i>
-                        <md-tooltip>Delete</md-tooltip>
-                    </md-button>
-                </td>
-                <!--<td>-->
-                    <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                        <!--<input type="text" placeholder="Certification Name" ng-model="i.name"-->
-                               <!--ng-change="vm.DisableCancer();vm.addCertification($index)" ng-disabled="!vm.editCertifications">-->
-                    <!--</md-input-container>-->
-                <!--</td>-->
-                <!--<td>-->
-                    <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                        <!--<input type="text" placeholder="Certification Authority" ng-model="i.authority"-->
-                               <!--ng-change="vm.DisableCancer()" ng-disabled="!vm.editCertifications">-->
-                    <!--</md-input-container>-->
-                <!--</td>-->
-                <!--<td>-->
-
-                <!--</td>-->
-                <!--<td>-->
-                    <!--<md-input-container md-no-float class="md-block phao-input-noerror" flex>-->
-                        <!--<input type="text" placeholder="License Number" ng-model="vm.LicenseNumber"-->
-                               <!--ng-change="vm.DisableCancer()" ng-disabled="!vm.editCertifications">-->
-                    <!--</md-input-container>-->
-                <!--</td>-->
             </tr>
         </table>
+        <span ng-if="!vm.about.certifications[0].id">Not have Certification</span>
+    </md-card>
+</div>
+
+<div ng-if="$root.currentUser.role1=='RE'" class="wrapper">
+    <!-- About us -->
+    <md-card class="margin-0 margin-bottom-10">
+        <md-toolbar layout-align="center" class="md-toolbar-small toolbar-light" layout="row" ng-if="$root.user.id ==  $root.profileUser">
+            <span class="padding-top-8 padding-left-10">About us</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.edit('AboutUs')">
+                <i class="zmdi zmdi-edit"></i>
+                <md-tooltip>Edit</md-tooltip>
+            </md-button>
+        </md-toolbar>
+
+        <fieldset style="margin: 10px;">
+            <legend>Short Description</legend>
+            <div class="content">
+                <div class="row" layout="row" layout-padding>
+                    <md-input-container md-no-float class="md-block phao-input-noerror" flex>
+                        <span>{{vm.about.headline}}</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset style="margin: 10px;">
+            <legend>Address</legend>
+            <div class="content">
+                <table layout-padding>
+                    <tr>
+                        <td>Adrress : </td>
+                        <td><md-select ng-disabled="true" style="width: 100px"
+                                       placeholder="Country"
+                                       ng-model="vm.about.profile.country_code"
+                                       class="md-no-underline margin-0">
+                            <md-option ng-repeat="item in vm.countries" ng-value="item.code">{{item.name}}
+                            </md-option>
+                        </md-select>
+                        </td>
+                        <td>
+                            <md-select class="md-no-underline margin-0" ng-disabled="true"
+                                       placeholder="City" ng-model="vm.about.profile.city"
+                                       style="width: 100px">
+                                <md-option ng-value="item.id" ng-repeat="item in vm.cities">
+                                    {{item.name}}
+                                </md-option>
+                            </md-select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone :</td>
+                        <td><span>{{vm.about.profile.phone}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Email :</td>
+                        <td><span>{{vm.about.email}}</span></td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+
+        <fieldset style="margin: 10px;" >
+            <legend>Detail</legend>
+            <div class="content">
+                <div class="padding-10 forum-post-content" style="text-align: justify;"
+                     ng-bind-html="vm.about.profile.summary"></div>
+                <span ng-if="vm.about.profile.summary==''">Not have content</span>
+            </div>
+        </fieldset>
     </md-card>
 </div>
